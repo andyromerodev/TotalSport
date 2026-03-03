@@ -171,7 +171,12 @@
       "rondanas 11t",
       "rondanas 13t"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/termo-silicona-wrels-250ml.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/rondanas-11t-13t-aluminio-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/rondanas-11t-13t-aluminio-3.jpg"
+    ]
   },
   {
     "id": "forros-manetas-shimano",
