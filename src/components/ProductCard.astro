@@ -7,7 +7,8 @@ interface Props {
 }
 
 const { product } = Astro.props;
-const detailsHref = `${import.meta.env.BASE_URL}productos/${product.id}/`;
+const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const detailsHref = `${baseUrl}productos/${product.id}/`;
 const whatsappHref = buildWhatsAppLink(product.name);
 const coverImage = getProductImages(product)[0] ?? 'https://placehold.co/640x640?text=Sin+foto';
 ---
