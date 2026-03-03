@@ -4,12 +4,18 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  type?: 'website' | 'article';
 }
 
 const {
   title = 'Total Sport | Catalogo',
-  description = 'Catalogo de productos deportivos de Total Sport.'
+  description = 'Catalogo de productos deportivos de Total Sport.',
+  image = 'https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/licras-ciclismo-corte-laser-badana.jpg',
+  type = 'website'
 } = Astro.props;
+
+const canonicalUrl = Astro.url.href;
 ---
 
 <!doctype html>
@@ -18,6 +24,20 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Total Sport" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={title} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
     <title>{title}</title>
     <link rel="preconnect" href="https://raw.githubusercontent.com" />
   </head>

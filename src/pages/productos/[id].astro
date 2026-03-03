@@ -17,9 +17,15 @@ if (!product) {
 
 const whatsappHref = buildWhatsAppLink(product.name);
 const images = getProductImages(product);
+const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
 ---
 
-<MainLayout title={`${product.name} | Total Sport`} description={product.description ?? product.name}>
+<MainLayout
+  title={`${product.name} | Total Sport`}
+  description={product.description ?? product.name}
+  image={shareImage}
+  type="article"
+>
   <a href={baseUrl} class="back-link">Regresar al catalogo</a>
 
   <article class="product-detail">
@@ -27,13 +33,13 @@ const images = getProductImages(product);
       <button
         type="button"
         class="image-trigger"
-        data-lightbox-src={images[0] ?? 'https://placehold.co/900x900?text=Sin+foto'}
+        data-lightbox-src={shareImage}
         data-lightbox-alt={product.name}
         aria-label={`Ver ${product.name} en pantalla completa`}
       >
         <img
           class="main-image"
-          src={images[0] ?? 'https://placehold.co/900x900?text=Sin+foto'}
+          src={shareImage}
           alt={product.name}
           loading="eager"
           width="900"
