@@ -1,6 +1,6 @@
 ---
 import type { Product } from '../lib/catalog';
-import { buildWhatsAppLink } from '../lib/catalog';
+import { buildWhatsAppLink, getProductImages } from '../lib/catalog';
 
 interface Props {
   product: Product;
@@ -9,12 +9,13 @@ interface Props {
 const { product } = Astro.props;
 const detailsHref = `/productos/${product.id}/`;
 const whatsappHref = buildWhatsAppLink(product.name);
+const coverImage = getProductImages(product)[0] ?? 'https://placehold.co/640x640?text=Sin+foto';
 ---
 
 <article class="card">
   <a class="image-link" href={detailsHref}>
     <img
-      src={product.imageUrl}
+      src={coverImage}
       alt={product.name}
       loading="lazy"
       width="640"

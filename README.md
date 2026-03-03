@@ -16,6 +16,11 @@ Catalogo web estatico y rapido para Total Sport, con productos por categoria y s
 - `scripts/validate-products.mjs`: valida estructura de productos
 - `scripts/sync-soul.mjs`: actualiza bloque de catalogo en SOUL
 
+## Modelo de producto (resumen)
+
+- `imageUrl`: imagen unica (compatibilidad)
+- `images`: arreglo de imagenes para galerias (recomendado cuando hay varias fotos)
+
 ## Comandos
 
 ```bash

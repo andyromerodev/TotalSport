@@ -12,7 +12,8 @@ export type Product = {
   priceUsd: number;
   description?: string;
   variants?: ProductVariant[];
-  imageUrl: string;
+  imageUrl?: string;
+  images?: string[];
   aliases?: string[];
   active: boolean;
 };
@@ -49,4 +50,16 @@ export function buildWhatsAppLink(productName: string): string {
   }
 
   return `https://wa.me/?text=${encoded}`;
+}
+
+export function getProductImages(product: Product): string[] {
+  if (Array.isArray(product.images) && product.images.length > 0) {
+    return product.images;
+  }
+
+  if (product.imageUrl) {
+    return [product.imageUrl];
+  }
+
+  return [];
 }

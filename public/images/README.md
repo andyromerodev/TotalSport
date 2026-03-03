@@ -5,6 +5,7 @@ Upload product photos here using the same file names defined in `src/data/produc
 Example:
 - `src/data/products.json` -> `termo-silicona-wrels-250ml.jpg`
 - File path -> `public/images/termo-silicona-wrels-250ml.jpg`
+- Para galerias: `termo-silicona-wrels-250ml-2.jpg`, `termo-silicona-wrels-250ml-3.jpg`, etc.
 
 Recommended:
 - JPG/WebP

@@ -12,6 +12,10 @@ function isObject(value) {
   return typeof value === 'object' && value !== null && !Array.isArray(value);
 }
 
+function isRawGitHubUrl(value) {
+  return typeof value === 'string' && value.startsWith('https://raw.githubusercontent.com/');
+}
+
 async function main() {
   const raw = await readFile(productPath, 'utf-8');
   const products = JSON.parse(raw);
@@ -31,7 +35,7 @@ async function main() {
       return;
     }
 
-    const required = ['id', 'name', 'category', 'priceUsd', 'imageUrl', 'active'];
+    const required = ['id', 'name', 'category', 'priceUsd', 'active'];
     required.forEach((key) => {
       if (!(key in product)) {
         fail(`${ctx} is missing required key: ${key}.`);
@@ -59,8 +63,23 @@ async function main() {
       fail(`${ctx} has invalid priceUsd.`);
     }
 
-    if (typeof product.imageUrl !== 'string' || !product.imageUrl.startsWith('https://raw.githubusercontent.com/')) {
-      fail(`${ctx} must use a raw.githubusercontent.com imageUrl.`);
+    const hasSingleImage = 'imageUrl' in product && isRawGitHubUrl(product.imageUrl);
+    const hasImageList = Array.isArray(product.images) && product.images.length > 0;
+
+    if (!hasSingleImage && !hasImageList) {
+      fail(`${ctx} must define either imageUrl or images[] with raw.githubusercontent.com URLs.`);
+    }
+
+    if ('imageUrl' in product && !isRawGitHubUrl(product.imageUrl)) {
+      fail(`${ctx} imageUrl must use raw.githubusercontent.com.`);
+    }
+
+    if ('images' in product) {
+      if (!Array.isArray(product.images) || product.images.length === 0) {
+        fail(`${ctx} images must be a non-empty array when provided.`);
+      } else if (product.images.some((image) => !isRawGitHubUrl(image))) {
+        fail(`${ctx} images[] contains invalid URL. All images must use raw.githubusercontent.com.`);
+      }
     }
 
     if (typeof product.active !== 'boolean') {

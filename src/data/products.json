@@ -6,11 +6,24 @@
     "priceUsd": 5,
     "description": "Termo compacto de silicona para uso diario.",
     "variants": [
-      { "name": "Capacidad", "values": ["250 ml"] }
+      {
+        "name": "Capacidad",
+        "values": [
+          "250 ml"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termo-silicona-wrels-250ml.jpg",
-    "aliases": ["termo silicona wrels", "termo wrels"],
-    "active": true
+    "aliases": [
+      "termo silicona wrels",
+      "termo wrels"
+    ],
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termo-silicona-wrels-250ml.jpg",
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termo-silicona-wrels-250ml-2.jpg",
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termo-silicona-wrels-250ml-3.jpg"
+    ]
   },
   {
     "id": "termo-silicona-wrels-500ml",
@@ -19,10 +32,18 @@
     "priceUsd": 5,
     "description": "Termo de mayor capacidad para entrenamientos.",
     "variants": [
-      { "name": "Capacidad", "values": ["500 ml"] }
+      {
+        "name": "Capacidad",
+        "values": [
+          "500 ml"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termo-silicona-wrels-500ml.jpg",
-    "aliases": ["termo silicona wrels", "termo wrels"],
+    "aliases": [
+      "termo silicona wrels",
+      "termo wrels"
+    ],
     "active": true
   },
   {
@@ -32,11 +53,23 @@
     "priceUsd": 16,
     "description": "Precio por pareja.",
     "variants": [
-      { "name": "Presentacion", "values": ["Pareja"] },
-      { "name": "Color", "values": ["Rosado"] }
+      {
+        "name": "Presentacion",
+        "values": [
+          "Pareja"
+        ]
+      },
+      {
+        "name": "Color",
+        "values": [
+          "Rosado"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termos-thinkrider-engomados-rosados.jpg",
-    "aliases": ["termo thinkrider"],
+    "aliases": [
+      "termo thinkrider"
+    ],
     "active": true
   },
   {
@@ -46,11 +79,23 @@
     "priceUsd": 16,
     "description": "Precio por pareja.",
     "variants": [
-      { "name": "Presentacion", "values": ["Pareja"] },
-      { "name": "Color", "values": ["Amarillo claro"] }
+      {
+        "name": "Presentacion",
+        "values": [
+          "Pareja"
+        ]
+      },
+      {
+        "name": "Color",
+        "values": [
+          "Amarillo claro"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/termos-thinkrider-engomados-amarillo-claro.jpg",
-    "aliases": ["termo thinkrider"],
+    "aliases": [
+      "termo thinkrider"
+    ],
     "active": true
   },
   {
@@ -60,10 +105,19 @@
     "priceUsd": 15,
     "description": "Placas para pedales con angulo de 6 grados.",
     "variants": [
-      { "name": "Angulo", "values": ["6°"] }
+      {
+        "name": "Angulo",
+        "values": [
+          "6°"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/placas-shimano-6.jpg",
-    "aliases": ["placas shimano 6", "placas shimano amarillas", "placas base pedal"],
+    "aliases": [
+      "placas shimano 6",
+      "placas shimano amarillas",
+      "placas base pedal"
+    ],
     "active": true
   },
   {
@@ -73,10 +127,19 @@
     "priceUsd": 15,
     "description": "Placas para pedales con angulo fijo.",
     "variants": [
-      { "name": "Angulo", "values": ["0°"] }
+      {
+        "name": "Angulo",
+        "values": [
+          "0°"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/placas-shimano-0.jpg",
-    "aliases": ["placas shimano 0", "placas shimano rojas", "placas base pedal"],
+    "aliases": [
+      "placas shimano 0",
+      "placas shimano rojas",
+      "placas base pedal"
+    ],
     "active": true
   },
   {
@@ -86,11 +149,28 @@
     "priceUsd": 10,
     "description": "Disponibles en dorado, rojo, azul y negro.",
     "variants": [
-      { "name": "Medida", "values": ["11T", "13T"] },
-      { "name": "Color", "values": ["Dorado", "Rojo", "Azul", "Negro"] }
+      {
+        "name": "Medida",
+        "values": [
+          "11T",
+          "13T"
+        ]
+      },
+      {
+        "name": "Color",
+        "values": [
+          "Dorado",
+          "Rojo",
+          "Azul",
+          "Negro"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/rondanas-11t-13t-aluminio.jpg",
-    "aliases": ["rondanas 11t", "rondanas 13t"],
+    "aliases": [
+      "rondanas 11t",
+      "rondanas 13t"
+    ],
     "active": true
   },
   {
@@ -100,8 +180,14 @@
     "priceUsd": 12,
     "description": "Compatible con generaciones Shimano 9v, 10v y 11v especificadas en SOUL.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/forros-manetas-shimano.jpg",
-    "aliases": ["forros manetas shimano"],
-    "active": true
+    "aliases": [
+      "forros manetas shimano"
+    ],
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/forros-manetas-shimano.jpg",
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/forros-manetas-shimano-2.jpg"
+    ]
   },
   {
     "id": "timon-carbon-fsa-kforce",
@@ -110,7 +196,10 @@
     "priceUsd": 35,
     "description": "Timon de carbono para ciclismo.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/timon-carbon-fsa-kforce.jpg",
-    "aliases": ["timón fsa kforce", "timon fsa kforce"],
+    "aliases": [
+      "timón fsa kforce",
+      "timon fsa kforce"
+    ],
     "active": true
   },
   {
@@ -120,7 +209,10 @@
     "priceUsd": 20,
     "description": "Timon Ritchey con geometria Curve Logic.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/timon-ritchey-curve-logic.jpg",
-    "aliases": ["timón ritchey", "timon ritchey"],
+    "aliases": [
+      "timón ritchey",
+      "timon ritchey"
+    ],
     "active": true
   },
   {
@@ -130,11 +222,27 @@
     "priceUsd": 10,
     "description": "Licras cortas en blanco y negro.",
     "variants": [
-      { "name": "Color", "values": ["Blanco", "Negro"] },
-      { "name": "Talla", "values": ["S", "M", "L", "XL"] }
+      {
+        "name": "Color",
+        "values": [
+          "Blanco",
+          "Negro"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-pro-combat-cortas.jpg",
-    "aliases": ["licra pro combat"],
+    "aliases": [
+      "licra pro combat"
+    ],
     "active": true
   },
   {
@@ -144,11 +252,27 @@
     "priceUsd": 10,
     "description": "Licras largas en blanco y negro.",
     "variants": [
-      { "name": "Color", "values": ["Blanco", "Negro"] },
-      { "name": "Talla", "values": ["S", "M", "L", "XL"] }
+      {
+        "name": "Color",
+        "values": [
+          "Blanco",
+          "Negro"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-pro-combat-largas.jpg",
-    "aliases": ["licra pro combat"],
+    "aliases": [
+      "licra pro combat"
+    ],
     "active": true
   },
   {
@@ -158,11 +282,26 @@
     "priceUsd": 10,
     "description": "Desde el tobillo hasta 10 cm encima de la rodilla.",
     "variants": [
-      { "name": "Color", "values": ["Negro"] },
-      { "name": "Talla", "values": ["S", "M", "L", "XL"] }
+      {
+        "name": "Color",
+        "values": [
+          "Negro"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-compresion-semienteras.jpg",
-    "aliases": ["licra compresion"],
+    "aliases": [
+      "licra compresion"
+    ],
     "active": true
   },
   {
@@ -172,12 +311,32 @@
     "priceUsd": 25,
     "description": "Licras de ciclismo con badana.",
     "variants": [
-      { "name": "Color", "values": ["Negro"] },
-      { "name": "Talla", "values": ["S", "M", "L", "XL"] }
+      {
+        "name": "Color",
+        "values": [
+          "Negro"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-ciclismo-corte-laser-badana.jpg",
-    "aliases": ["licra con badana"],
-    "active": true
+    "aliases": [
+      "licra con badana"
+    ],
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-ciclismo-corte-laser-badana.jpg",
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-ciclismo-corte-laser-badana-2.jpg",
+      "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/licras-ciclismo-corte-laser-badana-3.jpg"
+    ]
   },
   {
     "id": "guantillas-corte-largo",
@@ -186,11 +345,25 @@
     "priceUsd": 10,
     "description": "Color negro talla S. Color blanco tallas S y M.",
     "variants": [
-      { "name": "Color", "values": ["Negro", "Blanco"] },
-      { "name": "Talla", "values": ["S", "M"] }
+      {
+        "name": "Color",
+        "values": [
+          "Negro",
+          "Blanco"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/guantillas-corte-largo.jpg",
-    "aliases": ["guantillas"],
+    "aliases": [
+      "guantillas"
+    ],
     "active": true
   },
   {
@@ -200,10 +373,17 @@
     "priceUsd": 5,
     "description": "Mangas en color blanco.",
     "variants": [
-      { "name": "Color", "values": ["Blanco"] }
+      {
+        "name": "Color",
+        "values": [
+          "Blanco"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/mangas-rockbros.jpg",
-    "aliases": ["mangas rockbros"],
+    "aliases": [
+      "mangas rockbros"
+    ],
     "active": true
   },
   {
@@ -213,10 +393,19 @@
     "priceUsd": 5,
     "description": "Mangas de proteccion UV.",
     "variants": [
-      { "name": "Color", "values": ["Blanco", "Gris", "Verde"] }
+      {
+        "name": "Color",
+        "values": [
+          "Blanco",
+          "Gris",
+          "Verde"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/mangas-proteccion-solar.jpg",
-    "aliases": ["mangas proteccion solar"],
+    "aliases": [
+      "mangas proteccion solar"
+    ],
     "active": true
   },
   {
@@ -243,7 +432,9 @@
       }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/medias-giro.jpg",
-    "aliases": ["medias giro"],
+    "aliases": [
+      "medias giro"
+    ],
     "active": true
   },
   {
@@ -253,11 +444,34 @@
     "priceUsd": 10,
     "description": "Modelos Team disponibles en varios colores.",
     "variants": [
-      { "name": "Color", "values": ["Negro", "Azul oscuro", "Gris oscuro", "Blanco", "Naranja"] },
-      { "name": "Team", "values": ["Ineos", "UAE", "Movistar", "Visma", "FDJ Groupama", "Lotto", "QuickStep", "Italia Team"] }
+      {
+        "name": "Color",
+        "values": [
+          "Negro",
+          "Azul oscuro",
+          "Gris oscuro",
+          "Blanco",
+          "Naranja"
+        ]
+      },
+      {
+        "name": "Team",
+        "values": [
+          "Ineos",
+          "UAE",
+          "Movistar",
+          "Visma",
+          "FDJ Groupama",
+          "Lotto",
+          "QuickStep",
+          "Italia Team"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/medias-aero-corte-laser.jpg",
-    "aliases": ["medias aero"],
+    "aliases": [
+      "medias aero"
+    ],
     "active": true
   },
   {
@@ -267,7 +481,9 @@
     "priceUsd": 4,
     "description": "Bateria tipo boton CR2032.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/bateria-cr2032.jpg",
-    "aliases": ["bateria cr2032"],
+    "aliases": [
+      "bateria cr2032"
+    ],
     "active": true
   },
   {
@@ -277,7 +493,9 @@
     "priceUsd": 4,
     "description": "Bateria tipo boton CR2450.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/bateria-cr2450.jpg",
-    "aliases": ["bateria cr2450"],
+    "aliases": [
+      "bateria cr2450"
+    ],
     "active": true
   },
   {
@@ -287,7 +505,9 @@
     "priceUsd": 1,
     "description": "Cintas para absorber sudor en entrenamiento.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/cintas-sudor.jpg",
-    "aliases": ["cinta sudor"],
+    "aliases": [
+      "cinta sudor"
+    ],
     "active": true
   },
   {
@@ -297,7 +517,9 @@
     "priceUsd": 12,
     "description": "Bombita portatil para inflado.",
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/bombita-aire.jpg",
-    "aliases": ["bombita aire"],
+    "aliases": [
+      "bombita aire"
+    ],
     "active": true
   },
   {
@@ -307,10 +529,17 @@
     "priceUsd": 50,
     "description": "Disponible en talla 42.",
     "variants": [
-      { "name": "Talla", "values": ["42"] }
+      {
+        "name": "Talla",
+        "values": [
+          "42"
+        ]
+      }
     ],
     "imageUrl": "https://raw.githubusercontent.com/andy/TotalSport/main/public/images/zapatillas-adidas-42.jpg",
-    "aliases": ["zapatillas adidas"],
+    "aliases": [
+      "zapatillas adidas"
+    ],
     "active": true
   }
 ]

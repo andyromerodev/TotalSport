@@ -1,6 +1,6 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { buildWhatsAppLink, getProducts, getProductById } from '../../lib/catalog';
+import { buildWhatsAppLink, getProductImages, getProducts, getProductById } from '../../lib/catalog';
 
 export function getStaticPaths() {
   return getProducts().map((product) => ({
@@ -15,13 +15,25 @@ if (!product) {
 }
 
 const whatsappHref = buildWhatsAppLink(product.name);
+const images = getProductImages(product);
 ---
 
 <MainLayout title={`${product.name} | Total Sport`} description={product.description ?? product.name}>
   <a href="/" class="back-link">Regresar al catalogo</a>
 
   <article class="product-detail">
-    <img src={product.imageUrl} alt={product.name} loading="eager" width="900" height="900" />
+    <div class="gallery">
+      <img src={images[0] ?? 'https://placehold.co/900x900?text=Sin+foto'} alt={product.name} loading="eager" width="900" height="900" />
+      {
+        images.length > 1 ? (
+          <div class="thumb-grid">
+            {images.slice(1).map((image, index) => (
+              <img src={image} alt={`${product.name} foto ${index + 2}`} loading="lazy" width="300" height="300" />
+            ))}
+          </div>
+        ) : null
+      }
+    </div>
 
     <div>
       <p class="eyebrow">{product.category}</p>
