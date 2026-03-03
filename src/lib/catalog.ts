@@ -41,6 +41,14 @@ export function getProductsByCategory(): Map<string, Product[]> {
   }, new Map<string, Product[]>());
 }
 
+export function slugifyCategory(category: string): string {
+  return category.toLowerCase().replaceAll(' ', '-');
+}
+
+export function getCategoryBySlug(slug: string): string | undefined {
+  return getCategories().find((category) => slugifyCategory(category) === slug);
+}
+
 export function buildWhatsAppLink(productName: string): string {
   const number = import.meta.env.PUBLIC_WHATSAPP_NUMBER;
   const encoded = encodeURIComponent(`Hola, me interesa este producto: ${productName}`);

@@ -1,17 +1,24 @@
 ---
-import MainLayout from '../layouts/MainLayout.astro';
-import ProductCard from '../components/ProductCard.astro';
-import { getCategories, getProductsByCategory, slugifyCategory } from '../lib/catalog';
+import MainLayout from '../../layouts/MainLayout.astro';
+import ProductCard from '../../components/ProductCard.astro';
+import { getCategories, getCategoryBySlug, getProductsByCategory, slugifyCategory } from '../../lib/catalog';
 
 const categories = getCategories();
 const productsByCategory = getProductsByCategory();
 const categorySlugs = categories.map((category) => ({ name: category, slug: slugifyCategory(category) }));
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const selectedCategory = categories[0];
+
+export function getStaticPaths() {
+  return getCategories().map((category) => ({
+    params: { slug: slugifyCategory(category) }
+  }));
+}
+
+const selectedCategory = getCategoryBySlug(Astro.params.slug ?? '') ?? categories[0];
 const selectedProducts = productsByCategory.get(selectedCategory) ?? [];
 ---
 
-<MainLayout title="Total Sport | Catalogo" description="Catalogo de productos de Total Sport ordenado por categorias.">
+<MainLayout title={`Total Sport | ${selectedCategory}`} description={`Catalogo de ${selectedCategory} de Total Sport.`}>
   <header class="hero">
     <p class="eyebrow">Total Sport</p>
     <h1>Catalogo de productos</h1>
@@ -39,12 +46,3 @@ const selectedProducts = productsByCategory.get(selectedCategory) ?? [];
     </div>
   </section>
 </MainLayout>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  const cat = params.get('cat');
-  if (cat) {
-    const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-    window.location.replace(`${base}categoria/${cat}/`);
-  }
-</script>
