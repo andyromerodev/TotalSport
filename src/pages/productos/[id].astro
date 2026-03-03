@@ -23,12 +23,35 @@ const images = getProductImages(product);
 
   <article class="product-detail">
     <div class="gallery">
-      <img src={images[0] ?? 'https://placehold.co/900x900?text=Sin+foto'} alt={product.name} loading="eager" width="900" height="900" />
+      <button
+        type="button"
+        class="image-trigger"
+        data-lightbox-src={images[0] ?? 'https://placehold.co/900x900?text=Sin+foto'}
+        data-lightbox-alt={product.name}
+        aria-label={`Ver ${product.name} en pantalla completa`}
+      >
+        <img
+          class="main-image"
+          src={images[0] ?? 'https://placehold.co/900x900?text=Sin+foto'}
+          alt={product.name}
+          loading="eager"
+          width="900"
+          height="900"
+        />
+      </button>
       {
         images.length > 1 ? (
           <div class="thumb-grid">
             {images.slice(1).map((image, index) => (
-              <img src={image} alt={`${product.name} foto ${index + 2}`} loading="lazy" width="300" height="300" />
+              <button
+                type="button"
+                class="image-trigger thumb-trigger"
+                data-lightbox-src={image}
+                data-lightbox-alt={`${product.name} foto ${index + 2}`}
+                aria-label={`Ver ${product.name} foto ${index + 2} en pantalla completa`}
+              >
+                <img class="thumb-image" src={image} alt={`${product.name} foto ${index + 2}`} loading="lazy" width="300" height="300" />
+              </button>
             ))}
           </div>
         ) : null
@@ -52,4 +75,171 @@ const images = getProductImages(product);
       <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">Solicitar por WhatsApp</a>
     </div>
   </article>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox-toolbar">
+      <button type="button" id="zoom-out" aria-label="Alejar">-</button>
+      <button type="button" id="zoom-reset" aria-label="Restablecer zoom">100%</button>
+      <button type="button" id="zoom-in" aria-label="Acercar">+</button>
+      <button type="button" id="lightbox-close" aria-label="Cerrar imagen">Cerrar</button>
+    </div>
+    <img id="lightbox-image" src="" alt="" />
+  </div>
 </MainLayout>
+
+<script>
+  const triggers = Array.from(document.querySelectorAll('.image-trigger'));
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  const closeButton = document.getElementById('lightbox-close');
+  const zoomInButton = document.getElementById('zoom-in');
+  const zoomOutButton = document.getElementById('zoom-out');
+  const zoomResetButton = document.getElementById('zoom-reset');
+
+  let scale = 1;
+  let translateX = 0;
+  let translateY = 0;
+  let dragging = false;
+  let dragStartX = 0;
+  let dragStartY = 0;
+  let dragOriginX = 0;
+  let dragOriginY = 0;
+
+  const updateZoom = () => {
+    if (!lightboxImage || !zoomResetButton) return;
+    lightboxImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    zoomResetButton.textContent = `${Math.round(scale * 100)}%`;
+    lightboxImage.dataset.zoomed = scale > 1 ? 'true' : 'false';
+  };
+
+  const openLightbox = (src, alt) => {
+    if (!lightbox || !lightboxImage) return;
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    lightboxImage.src = src;
+    lightboxImage.alt = alt;
+    updateZoom();
+    lightbox.classList.add('is-open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    if (!lightbox || !lightboxImage) return;
+    lightbox.classList.remove('is-open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    lightboxImage.src = '';
+    document.body.style.overflow = '';
+  };
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener('click', () => {
+      const src = trigger.getAttribute('data-lightbox-src');
+      const alt = trigger.getAttribute('data-lightbox-alt') ?? 'Imagen de producto';
+      if (!src) return;
+      openLightbox(src, alt);
+    });
+  });
+
+  closeButton?.addEventListener('click', closeLightbox);
+
+  lightbox?.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  zoomInButton?.addEventListener('click', () => {
+    scale = Math.min(scale + 0.2, 4);
+    updateZoom();
+  });
+
+  zoomOutButton?.addEventListener('click', () => {
+    scale = Math.max(scale - 0.2, 1);
+    updateZoom();
+  });
+
+  zoomResetButton?.addEventListener('click', () => {
+    scale = 1;
+    translateX = 0;
+    translateY = 0;
+    updateZoom();
+  });
+
+  lightboxImage?.addEventListener('wheel', (event) => {
+    event.preventDefault();
+    scale = event.deltaY < 0 ? Math.min(scale + 0.15, 4) : Math.max(scale - 0.15, 1);
+    if (scale <= 1) {
+      translateX = 0;
+      translateY = 0;
+    }
+    updateZoom();
+  });
+
+  const beginDrag = (x, y) => {
+    if (scale <= 1 || !lightboxImage) return;
+    dragging = true;
+    dragStartX = x;
+    dragStartY = y;
+    dragOriginX = translateX;
+    dragOriginY = translateY;
+    lightboxImage.dataset.dragging = 'true';
+  };
+
+  const moveDrag = (x, y) => {
+    if (!dragging || !lightboxImage) return;
+    const deltaX = x - dragStartX;
+    const deltaY = y - dragStartY;
+    translateX = dragOriginX + deltaX;
+    translateY = dragOriginY + deltaY;
+    updateZoom();
+  };
+
+  const endDrag = () => {
+    dragging = false;
+    if (!lightboxImage) return;
+    lightboxImage.dataset.dragging = 'false';
+  };
+
+  lightboxImage?.addEventListener('mousedown', (event) => {
+    event.preventDefault();
+    beginDrag(event.clientX, event.clientY);
+  });
+
+  window.addEventListener('mousemove', (event) => {
+    moveDrag(event.clientX, event.clientY);
+  });
+
+  window.addEventListener('mouseup', () => {
+    endDrag();
+  });
+
+  lightboxImage?.addEventListener(
+    'touchstart',
+    (event) => {
+      if (event.touches.length !== 1) return;
+      const touch = event.touches[0];
+      beginDrag(touch.clientX, touch.clientY);
+    },
+    { passive: true }
+  );
+
+  lightboxImage?.addEventListener(
+    'touchmove',
+    (event) => {
+      if (!dragging || event.touches.length !== 1) return;
+      const touch = event.touches[0];
+      moveDrag(touch.clientX, touch.clientY);
+    },
+    { passive: true }
+  );
+
+  window.addEventListener('touchend', () => {
+    endDrag();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeLightbox();
+  });
+</script>
