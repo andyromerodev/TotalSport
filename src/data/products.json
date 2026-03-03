@@ -248,7 +248,11 @@
     "aliases": [
       "licra pro combat"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/licras-pro-combat-cortas.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/licras-pro-combat-cortas-2.jpg"
+    ]
   },
   {
     "id": "licras-pro-combat-largas",
@@ -278,7 +282,11 @@
     "aliases": [
       "licra pro combat"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/licras-pro-combat-largas.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/licras-pro-combat-largas-2.jpg"
+    ]
   },
   {
     "id": "licras-compresion-semienteras",
@@ -369,7 +377,11 @@
     "aliases": [
       "guantillas"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/guantillas-corte-largo.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/guantillas-corte-largo-2.jpg"
+    ]
   },
   {
     "id": "mangas-rockbros",
