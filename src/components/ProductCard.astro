@@ -1,0 +1,35 @@
+---
+import type { Product } from '../lib/catalog';
+import { buildWhatsAppLink } from '../lib/catalog';
+
+interface Props {
+  product: Product;
+}
+
+const { product } = Astro.props;
+const detailsHref = `/productos/${product.id}/`;
+const whatsappHref = buildWhatsAppLink(product.name);
+---
+
+<article class="card">
+  <a class="image-link" href={detailsHref}>
+    <img
+      src={product.imageUrl}
+      alt={product.name}
+      loading="lazy"
+      width="640"
+      height="640"
+    />
+  </a>
+
+  <div class="card-content">
+    <h3>{product.name}</h3>
+    <p class="price">{product.priceUsd} USD</p>
+    {product.description && <p class="description">{product.description}</p>}
+
+    <div class="actions">
+      <a class="btn btn-outline" href={detailsHref}>Ver detalle</a>
+      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a>
+    </div>
+  </div>
+</article>

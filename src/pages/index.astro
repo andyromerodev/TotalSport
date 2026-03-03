@@ -1,0 +1,42 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import ProductCard from '../components/ProductCard.astro';
+import { getCategories, getProductsByCategory } from '../lib/catalog';
+
+const categories = getCategories();
+const productsByCategory = getProductsByCategory();
+---
+
+<MainLayout title="Total Sport | Catalogo" description="Catalogo de productos de Total Sport ordenado por categorias.">
+  <header class="hero">
+    <p class="eyebrow">Total Sport</p>
+    <h1>Catalogo de productos</h1>
+    <p class="lead">Selecciona una categoria y escribe por WhatsApp para confirmar tu pedido.</p>
+  </header>
+
+  <nav class="category-nav" aria-label="Categorias">
+    {
+      categories.map((category) => (
+        <a href={`#${category.toLowerCase().replaceAll(' ', '-')}`}>{category}</a>
+      ))
+    }
+  </nav>
+
+  {
+    categories.map((category) => {
+      const products = productsByCategory.get(category) ?? [];
+      return (
+        <section class="category-section" id={category.toLowerCase().replaceAll(' ', '-')}>
+          <div class="section-head">
+            <h2>{category}</h2>
+            <p>{products.length} productos</p>
+          </div>
+
+          <div class="grid">
+            {products.map((product) => <ProductCard product={product} />)}
+          </div>
+        </section>
+      );
+    })
+  }
+</MainLayout>

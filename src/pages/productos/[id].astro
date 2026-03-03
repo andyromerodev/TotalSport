@@ -1,0 +1,43 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import { buildWhatsAppLink, getProducts, getProductById } from '../../lib/catalog';
+
+export function getStaticPaths() {
+  return getProducts().map((product) => ({
+    params: { id: product.id }
+  }));
+}
+
+const product = getProductById(Astro.params.id ?? '');
+
+if (!product) {
+  return Astro.redirect('/');
+}
+
+const whatsappHref = buildWhatsAppLink(product.name);
+---
+
+<MainLayout title={`${product.name} | Total Sport`} description={product.description ?? product.name}>
+  <a href="/" class="back-link">Regresar al catalogo</a>
+
+  <article class="product-detail">
+    <img src={product.imageUrl} alt={product.name} loading="eager" width="900" height="900" />
+
+    <div>
+      <p class="eyebrow">{product.category}</p>
+      <h1>{product.name}</h1>
+      <p class="price">{product.priceUsd} USD</p>
+      {product.description && <p class="description">{product.description}</p>}
+
+      {
+        product.variants?.length ? (
+          <ul class="variants">
+            {product.variants.map((variant) => <li><strong>{variant.name}:</strong> {variant.values.join(', ')}</li>)}
+          </ul>
+        ) : null
+      }
+
+      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">Solicitar por WhatsApp</a>
+    </div>
+  </article>
+</MainLayout>

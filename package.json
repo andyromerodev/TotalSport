@@ -1,0 +1,18 @@
+{
+  "name": "totalsport-catalog",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.11.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "pnpm run validate-products && astro build",
+    "preview": "astro preview",
+    "validate-products": "node scripts/validate-products.mjs",
+    "sync-soul": "node scripts/sync-soul.mjs",
+    "sync-and-build": "pnpm run validate-products && pnpm run sync-soul && astro build"
+  },
+  "dependencies": {
+    "astro": "^5.17.0"
+  }
+}
