@@ -87,6 +87,11 @@ h1 {
   font-size: 0.9rem;
 }
 
+.category-nav a.is-active {
+  background: var(--brand);
+  color: #fff;
+}
+
 .category-section {
   margin-top: 2rem;
 }

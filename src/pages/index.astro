@@ -5,6 +5,14 @@ import { getCategories, getProductsByCategory } from '../lib/catalog';
 
 const categories = getCategories();
 const productsByCategory = getProductsByCategory();
+const categorySlugs = categories.map((category) => ({
+  name: category,
+  slug: category.toLowerCase().replaceAll(' ', '-')
+}));
+
+const selectedSlug = Astro.url.searchParams.get('cat') ?? categorySlugs[0]?.slug;
+const selectedCategory = categorySlugs.find((entry) => entry.slug === selectedSlug)?.name ?? categories[0];
+const selectedProducts = productsByCategory.get(selectedCategory) ?? [];
 ---
 
 <MainLayout title="Total Sport | Catalogo" description="Catalogo de productos de Total Sport ordenado por categorias.">
@@ -16,27 +24,22 @@ const productsByCategory = getProductsByCategory();
 
   <nav class="category-nav" aria-label="Categorias">
     {
-      categories.map((category) => (
-        <a href={`#${category.toLowerCase().replaceAll(' ', '-')}`}>{category}</a>
+      categorySlugs.map((entry) => (
+        <a href={`?cat=${entry.slug}`} class={entry.name === selectedCategory ? 'is-active' : ''}>
+          {entry.name}
+        </a>
       ))
     }
   </nav>
 
-  {
-    categories.map((category) => {
-      const products = productsByCategory.get(category) ?? [];
-      return (
-        <section class="category-section" id={category.toLowerCase().replaceAll(' ', '-')}>
-          <div class="section-head">
-            <h2>{category}</h2>
-            <p>{products.length} productos</p>
-          </div>
+  <section class="category-section" id={selectedCategory.toLowerCase().replaceAll(' ', '-')}>
+    <div class="section-head">
+      <h2>{selectedCategory}</h2>
+      <p>{selectedProducts.length} productos</p>
+    </div>
 
-          <div class="grid">
-            {products.map((product) => <ProductCard product={product} />)}
-          </div>
-        </section>
-      );
-    })
-  }
+    <div class="grid">
+      {selectedProducts.map((product) => <ProductCard product={product} />)}
+    </div>
+  </section>
 </MainLayout>
