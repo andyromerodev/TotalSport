@@ -99,48 +99,34 @@
     "active": true
   },
   {
-    "id": "placas-shimano-6",
-    "name": "Placas Shimano 6°",
+    "id": "placas-shimano",
+    "name": "Placas Shimano",
     "category": "Componentes bicicleta",
     "priceUsd": 15,
-    "description": "Placas para pedales con angulo de 6 grados.",
+    "description": "Placas Shimano disponibles en 0° y 6°.",
     "variants": [
       {
-        "name": "Angulo",
+        "name": "Grado",
         "values": [
-          "6°"
+          "0° (Rojo)",
+          "6° (Amarillo)"
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano-6.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano.jpg",
     "aliases": [
+      "placas base pedal",
+      "placas shimano 0",
       "placas shimano 6",
       "placas shimano amarillas",
-      "placas base pedal"
+      "placas shimano rojas"
     ],
-    "active": true
-  },
-  {
-    "id": "placas-shimano-0",
-    "name": "Placas Shimano 0°",
-    "category": "Componentes bicicleta",
-    "priceUsd": 15,
-    "description": "Placas para pedales con angulo fijo.",
-    "variants": [
-      {
-        "name": "Angulo",
-        "values": [
-          "0°"
-        ]
-      }
-    ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano-0.jpg",
-    "aliases": [
-      "placas shimano 0",
-      "placas shimano rojas",
-      "placas base pedal"
-    ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano-2.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano-3.png"
+    ]
   },
   {
     "id": "rondanas-11t-13t-aluminio",
