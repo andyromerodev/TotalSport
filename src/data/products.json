@@ -423,7 +423,13 @@
     "aliases": [
       "mangas proteccion solar"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-proteccion-solar.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-proteccion-solar-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-proteccion-solar-3.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-proteccion-solar-4.jpg"
+    ]
   },
   {
     "id": "medias-giro",
@@ -489,7 +495,11 @@
     "aliases": [
       "medias aero"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/medias-aero-corte-laser.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/medias-aero-corte-laser-2.jpg"
+    ]
   },
   {
     "id": "bateria-cr2032",
