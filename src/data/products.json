@@ -113,7 +113,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano.png",
     "aliases": [
       "placas base pedal",
       "placas shimano 0",
@@ -123,7 +123,7 @@
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano.png",
       "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano-2.png",
       "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/placas-shimano-3.png"
     ]
