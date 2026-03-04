@@ -516,6 +516,42 @@
     ]
   },
   {
+    "id": "mangas-wrels",
+    "name": "Mangas WRELS",
+    "category": "Ropa deportiva",
+    "priceUsd": 5,
+    "description": "Mangas marca WRELS en color blanca y negra, talla L.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Blanca",
+          "Negra"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "L"
+        ]
+      }
+    ],
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-wrels.jpg",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-wrels.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-wrels-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-wrels-3.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-wrels-4.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/mangas-wrels-5.jpg"
+    ],
+    "aliases": [
+      "mangas wrels",
+      "mangas blancas",
+      "mangas negras"
+    ],
+    "active": true
+  },
+  {
     "id": "bateria-cr2032",
     "name": "Batería CR2032",
     "category": "Accesorios",
