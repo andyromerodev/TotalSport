@@ -208,6 +208,33 @@
     "active": true
   },
   {
+    "id": "forro-timon-premium-negro",
+    "name": "Forro para timón premium",
+    "category": "Componentes bicicleta",
+    "priceUsd": 12,
+    "description": "Forro premium para timón en color negro.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Negro"
+        ]
+      }
+    ],
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forro-timon-premium-negro.jpg",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forro-timon-premium-negro.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forro-timon-premium-negro-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forro-timon-premium-negro-3.jpg"
+    ],
+    "aliases": [
+      "forro timon premium",
+      "forro para timon",
+      "forro timon negro"
+    ],
+    "active": true
+  },
+  {
     "id": "licras-pro-combat-cortas",
     "name": "Licras PRO COMBAT cortas",
     "category": "Ropa deportiva",
