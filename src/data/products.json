@@ -183,7 +183,7 @@
     "name": "Forros para manetas Shimano",
     "category": "Componentes bicicleta",
     "priceUsd": 12,
-    "description": "Compatible con generaciones Shimano 9v, 10v y 11v especificadas en SOUL.",
+    "description": "Compatible con generaciones Shimano 9v, 10v y 11v.",
     "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forros-manetas-shimano.jpg",
     "aliases": [
       "forros manetas shimano"
@@ -191,7 +191,8 @@
     "active": true,
     "images": [
       "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forros-manetas-shimano.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forros-manetas-shimano-2.jpg"
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forros-manetas-shimano-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/forros-manetas-shimano-3.jpg"
     ]
   },
   {
@@ -567,6 +568,10 @@
     "aliases": [
       "zapatillas adidas"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/zapatillas-adidas-42.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/zapatillas-adidas-42-2.jpg"
+    ]
   }
 ]
