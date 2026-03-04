@@ -548,7 +548,15 @@
     "aliases": [
       "bombita aire"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bombita-aire.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bombita-aire-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bombita-aire-3.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bombita-aire-4.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bombita-aire-5.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bombita-aire-6.jpg"
+    ]
   },
   {
     "id": "zapatillas-adidas-42",
