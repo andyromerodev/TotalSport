@@ -2,6 +2,12 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
 const productPath = path.resolve(process.cwd(), 'src/data/products.json');
+const allowedGroups = new Set([
+  'deporte-ciclismo',
+  'tecnologia-electronica',
+  'regalos',
+  'embarazadas'
+]);
 
 function fail(message) {
   console.error(`Validation error: ${message}`);
@@ -35,7 +41,7 @@ async function main() {
       return;
     }
 
-    const required = ['id', 'name', 'category', 'priceUsd', 'active'];
+    const required = ['id', 'name', 'group', 'category', 'priceUsd', 'active'];
     required.forEach((key) => {
       if (!(key in product)) {
         fail(`${ctx} is missing required key: ${key}.`);
@@ -57,6 +63,10 @@ async function main() {
 
     if (typeof product.category !== 'string' || product.category.trim() === '') {
       fail(`${ctx} has invalid category.`);
+    }
+
+    if (typeof product.group !== 'string' || !allowedGroups.has(product.group)) {
+      fail(`${ctx} has invalid group. Allowed: ${[...allowedGroups].join(', ')}.`);
     }
 
     if (typeof product.priceUsd !== 'number' || Number.isNaN(product.priceUsd) || product.priceUsd < 0) {

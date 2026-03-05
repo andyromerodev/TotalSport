@@ -8,6 +8,7 @@ export type ProductVariant = {
 export type Product = {
   id: string;
   name: string;
+  group: string;
   category: string;
   priceUsd: number;
   description?: string;
@@ -20,6 +21,29 @@ export type Product = {
 
 const products = productsData as Product[];
 
+export const COLLECTIONS = [
+  {
+    slug: 'deporte-ciclismo',
+    title: 'Ciclismo y Deporte',
+    description: 'Ropa, componentes, termos y accesorios deportivos.'
+  },
+  {
+    slug: 'tecnologia-electronica',
+    title: 'Tecnologia y Electronica',
+    description: 'Accesorios electronicos y dispositivos.'
+  },
+  {
+    slug: 'regalos',
+    title: 'Regalos',
+    description: 'Articulos para obsequiar y detalles especiales.'
+  },
+  {
+    slug: 'embarazadas',
+    title: 'Embarazadas',
+    description: 'Productos para embarazo y maternidad.'
+  }
+] as const;
+
 export function getProducts(): Product[] {
   return products.filter((product) => product.active);
 }
@@ -30,6 +54,22 @@ export function getProductById(id: string): Product | undefined {
 
 export function getCategories(): string[] {
   return [...new Set(getProducts().map((product) => product.category))];
+}
+
+export function getCollectionBySlug(slug: string) {
+  return COLLECTIONS.find((collection) => collection.slug === slug);
+}
+
+export function getProductsByGroup(group: string): Product[] {
+  return getProducts().filter((product) => product.group === group);
+}
+
+export function getCategoriesByGroup(group: string): string[] {
+  return [...new Set(getProductsByGroup(group).map((product) => product.category))];
+}
+
+export function getProductsByGroupAndCategory(group: string, category: string): Product[] {
+  return getProductsByGroup(group).filter((product) => product.category === category);
 }
 
 export function getProductsByCategory(): Map<string, Product[]> {
