@@ -1,13 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const productPath = path.resolve(process.cwd(), 'src/data/products.json');
-const allowedGroups = new Set([
-  'deporte-ciclismo',
-  'tecnologia-electronica',
-  'regalos',
-  'embarazadas'
-]);
+const storesIndexPath = path.resolve(process.cwd(), 'src/data/stores/index.json');
 
 function fail(message) {
   console.error(`Validation error: ${message}`);
@@ -22,107 +16,148 @@ function isRawGitHubUrl(value) {
   return typeof value === 'string' && value.startsWith('https://raw.githubusercontent.com/');
 }
 
-async function main() {
-  const raw = await readFile(productPath, 'utf-8');
-  const products = JSON.parse(raw);
+async function readJson(filePath) {
+  const raw = await readFile(filePath, 'utf-8');
+  return JSON.parse(raw);
+}
 
-  if (!Array.isArray(products) || products.length === 0) {
-    fail('`products.json` must be a non-empty array.');
+function validateProduct(product, ctx, ids) {
+  if (!isObject(product)) {
+    fail(`${ctx} must be an object.`);
     return;
   }
 
-  const ids = new Set();
-
-  products.forEach((product, index) => {
-    const ctx = `Product at index ${index}`;
-
-    if (!isObject(product)) {
-      fail(`${ctx} must be an object.`);
-      return;
-    }
-
-    const required = ['id', 'name', 'group', 'category', 'priceUsd', 'active'];
-    required.forEach((key) => {
-      if (!(key in product)) {
-        fail(`${ctx} is missing required key: ${key}.`);
-      }
-    });
-
-    if (typeof product.id !== 'string' || product.id.trim() === '') {
-      fail(`${ctx} has invalid id.`);
-    }
-
-    if (ids.has(product.id)) {
-      fail(`${ctx} duplicates id: ${product.id}.`);
-    }
-    ids.add(product.id);
-
-    if (typeof product.name !== 'string' || product.name.trim() === '') {
-      fail(`${ctx} has invalid name.`);
-    }
-
-    if (typeof product.category !== 'string' || product.category.trim() === '') {
-      fail(`${ctx} has invalid category.`);
-    }
-
-    if (typeof product.group !== 'string' || !allowedGroups.has(product.group)) {
-      fail(`${ctx} has invalid group. Allowed: ${[...allowedGroups].join(', ')}.`);
-    }
-
-    if (typeof product.priceUsd !== 'number' || Number.isNaN(product.priceUsd) || product.priceUsd < 0) {
-      fail(`${ctx} has invalid priceUsd.`);
-    }
-
-    const hasSingleImage = 'imageUrl' in product && isRawGitHubUrl(product.imageUrl);
-    const hasImageList = Array.isArray(product.images) && product.images.length > 0;
-
-    if (!hasSingleImage && !hasImageList) {
-      fail(`${ctx} must define either imageUrl or images[] with raw.githubusercontent.com URLs.`);
-    }
-
-    if ('imageUrl' in product && !isRawGitHubUrl(product.imageUrl)) {
-      fail(`${ctx} imageUrl must use raw.githubusercontent.com.`);
-    }
-
-    if ('images' in product) {
-      if (!Array.isArray(product.images) || product.images.length === 0) {
-        fail(`${ctx} images must be a non-empty array when provided.`);
-      } else if (product.images.some((image) => !isRawGitHubUrl(image))) {
-        fail(`${ctx} images[] contains invalid URL. All images must use raw.githubusercontent.com.`);
-      }
-    }
-
-    if (typeof product.active !== 'boolean') {
-      fail(`${ctx} has invalid active flag.`);
-    }
-
-    if ('variants' in product) {
-      if (!Array.isArray(product.variants)) {
-        fail(`${ctx} variants must be an array.`);
-      } else {
-        product.variants.forEach((variant, variantIndex) => {
-          if (!isObject(variant)) {
-            fail(`${ctx} variant ${variantIndex} must be an object.`);
-            return;
-          }
-
-          if (typeof variant.name !== 'string' || variant.name.trim() === '') {
-            fail(`${ctx} variant ${variantIndex} has invalid name.`);
-          }
-
-          if (!Array.isArray(variant.values) || variant.values.some((value) => typeof value !== 'string' || value.trim() === '')) {
-            fail(`${ctx} variant ${variantIndex} has invalid values.`);
-          }
-        });
-      }
+  const required = ['id', 'name', 'category', 'priceUsd', 'active'];
+  required.forEach((key) => {
+    if (!(key in product)) {
+      fail(`${ctx} is missing required key: ${key}.`);
     }
   });
+
+  if (typeof product.id !== 'string' || product.id.trim() === '') {
+    fail(`${ctx} has invalid id.`);
+  }
+
+  if (ids.has(product.id)) {
+    fail(`${ctx} duplicates global id: ${product.id}.`);
+  }
+  ids.add(product.id);
+
+  if (typeof product.name !== 'string' || product.name.trim() === '') {
+    fail(`${ctx} has invalid name.`);
+  }
+
+  if (typeof product.category !== 'string' || product.category.trim() === '') {
+    fail(`${ctx} has invalid category.`);
+  }
+
+  if (typeof product.priceUsd !== 'number' || Number.isNaN(product.priceUsd) || product.priceUsd < 0) {
+    fail(`${ctx} has invalid priceUsd.`);
+  }
+
+  const hasSingleImage = 'imageUrl' in product && isRawGitHubUrl(product.imageUrl);
+  const hasImageList = Array.isArray(product.images) && product.images.length > 0;
+
+  if (!hasSingleImage && !hasImageList) {
+    fail(`${ctx} must define either imageUrl or images[] with raw.githubusercontent.com URLs.`);
+  }
+
+  if ('imageUrl' in product && !isRawGitHubUrl(product.imageUrl)) {
+    fail(`${ctx} imageUrl must use raw.githubusercontent.com.`);
+  }
+
+  if ('images' in product) {
+    if (!Array.isArray(product.images) || product.images.length === 0) {
+      fail(`${ctx} images must be a non-empty array when provided.`);
+    } else if (product.images.some((image) => !isRawGitHubUrl(image))) {
+      fail(`${ctx} images[] contains invalid URL. All images must use raw.githubusercontent.com.`);
+    }
+  }
+
+  if (typeof product.active !== 'boolean') {
+    fail(`${ctx} has invalid active flag.`);
+  }
+
+  if ('variants' in product) {
+    if (!Array.isArray(product.variants)) {
+      fail(`${ctx} variants must be an array.`);
+    } else {
+      product.variants.forEach((variant, variantIndex) => {
+        if (!isObject(variant)) {
+          fail(`${ctx} variant ${variantIndex} must be an object.`);
+          return;
+        }
+
+        if (typeof variant.name !== 'string' || variant.name.trim() === '') {
+          fail(`${ctx} variant ${variantIndex} has invalid name.`);
+        }
+
+        if (!Array.isArray(variant.values) || variant.values.some((value) => typeof value !== 'string' || value.trim() === '')) {
+          fail(`${ctx} variant ${variantIndex} has invalid values.`);
+        }
+      });
+    }
+  }
+}
+
+async function main() {
+  const stores = await readJson(storesIndexPath);
+
+  if (!Array.isArray(stores) || stores.length === 0) {
+    fail('`src/data/stores/index.json` must be a non-empty array.');
+    return;
+  }
+
+  const slugs = new Set();
+  const ids = new Set();
+  let totalProducts = 0;
+
+  for (const [storeIndex, store] of stores.entries()) {
+    const storeCtx = `Store at index ${storeIndex}`;
+
+    if (!isObject(store)) {
+      fail(`${storeCtx} must be an object.`);
+      continue;
+    }
+
+    if (typeof store.slug !== 'string' || store.slug.trim() === '') {
+      fail(`${storeCtx} has invalid slug.`);
+      continue;
+    }
+
+    if (slugs.has(store.slug)) {
+      fail(`${storeCtx} duplicates slug: ${store.slug}.`);
+      continue;
+    }
+    slugs.add(store.slug);
+
+    if (typeof store.title !== 'string' || store.title.trim() === '') {
+      fail(`${storeCtx} has invalid title.`);
+    }
+
+    if (typeof store.description !== 'string' || store.description.trim() === '') {
+      fail(`${storeCtx} has invalid description.`);
+    }
+
+    const storeProductsPath = path.resolve(process.cwd(), `src/data/stores/${store.slug}/products.json`);
+    const products = await readJson(storeProductsPath);
+
+    if (!Array.isArray(products)) {
+      fail(`Store ${store.slug} products file must be an array.`);
+      continue;
+    }
+
+    for (const [productIndex, product] of products.entries()) {
+      validateProduct(product, `Store ${store.slug} product at index ${productIndex}`, ids);
+      totalProducts += 1;
+    }
+  }
 
   if (process.exitCode === 1) {
     return;
   }
 
-  console.log(`OK: ${products.length} products validated successfully.`);
+  console.log(`OK: ${stores.length} stores and ${totalProducts} products validated successfully.`);
 }
 
 main().catch((error) => {

@@ -1,0 +1,80 @@
+[
+  {
+    "id": "gkro",
+    "name": "GKRO",
+    "category": "Tecnologia",
+    "priceUsd": 0,
+    "description": "Producto GKRO. Precio por definir.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/gkro.png",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/gkro.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/gkro-2.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/gkro-3.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/gkro-4.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/gkro-5.png"
+    ],
+    "aliases": [
+      "gkro"
+    ],
+    "active": true
+  },
+  {
+    "id": "logi",
+    "name": "Mouse Logitech",
+    "category": "Tecnologia",
+    "priceUsd": 0,
+    "description": "Mouse Logitech. Precio por definir.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi.jpg",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi-3.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi-4.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi-5.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi-6.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi-7.jpg"
+    ],
+    "aliases": [
+      "logitech",
+      "mouse logi",
+      "mouse logitech"
+    ],
+    "active": true
+  },
+  {
+    "id": "redmi-buds-lite",
+    "name": "Redmi Buds Lite",
+    "category": "Tecnologia",
+    "priceUsd": 0,
+    "description": "Audifonos Redmi Buds Lite. Precio por definir.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/redmi-buds-lite.png",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/redmi-buds-lite.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/redmi-buds-lite-2.png"
+    ],
+    "aliases": [
+      "redmi buds",
+      "audifonos redmi"
+    ],
+    "active": true
+  },
+  {
+    "id": "keychron",
+    "name": "Teclado Keychron",
+    "category": "Tecnologia",
+    "priceUsd": 0,
+    "description": "Teclado Keychron. Precio por definir.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/keychron.webp",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/keychron.webp",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/keychron-2.webp",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/keychron-3.webp",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/keychron-4.webp"
+    ],
+    "aliases": [
+      "keychron",
+      "teclado keychron"
+    ],
+    "active": true
+  }
+]

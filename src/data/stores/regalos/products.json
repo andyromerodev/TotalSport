@@ -1,0 +1,40 @@
+[
+  {
+    "id": "linterna-recargable",
+    "name": "Linterna recargable",
+    "category": "Regalos",
+    "priceUsd": 0,
+    "description": "Linterna recargable. Precio por definir.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna.png",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna-2.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna-3.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna-4.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna-5.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/linterna-6.png"
+    ],
+    "aliases": [
+      "linterna"
+    ],
+    "active": true
+  },
+  {
+    "id": "stitch",
+    "name": "Stitch",
+    "category": "Regalos",
+    "priceUsd": 0,
+    "description": "Articulo Stitch para regalo. Precio por definir.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/stitch.png",
+    "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/stitch.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/stitch-2.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/regalos/stitch-3.png"
+    ],
+    "aliases": [
+      "stitch",
+      "regalo stitch"
+    ],
+    "active": true
+  }
+]

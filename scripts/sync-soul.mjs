@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 
-const productsPath = path.resolve(process.cwd(), 'src/data/products.json');
+const storesIndexPath = path.resolve(process.cwd(), 'src/data/stores/index.json');
 const soulPath = process.env.SOUL_PATH
   ? path.resolve(process.env.SOUL_PATH)
   : path.resolve(process.cwd(), '../nanobot-local/SOUL.md');
@@ -21,24 +21,29 @@ function formatProduct(product) {
   return lines.join('\n');
 }
 
-function buildCatalogText(products) {
-  const activeProducts = products.filter((product) => product.active);
-  const byCategory = new Map();
+function buildCatalogText(stores, productsByStore) {
+  const blocks = [START_MARKER];
 
-  for (const product of activeProducts) {
-    const list = byCategory.get(product.category) ?? [];
-    list.push(product);
-    byCategory.set(product.category, list);
-  }
+  for (const store of stores) {
+    const products = (productsByStore.get(store.slug) ?? []).filter((product) => product.active);
+    const byCategory = new Map();
 
-  const blocks = [];
+    for (const product of products) {
+      const list = byCategory.get(product.category) ?? [];
+      list.push(product);
+      byCategory.set(product.category, list);
+    }
 
-  for (const [category, list] of byCategory.entries()) {
-    blocks.push(category.toUpperCase());
+    blocks.push(store.title.toUpperCase());
     blocks.push('');
-    for (const product of list) {
-      blocks.push(formatProduct(product));
+
+    for (const [category, list] of byCategory.entries()) {
+      blocks.push(category.toUpperCase());
       blocks.push('');
+      for (const product of list) {
+        blocks.push(formatProduct(product));
+        blocks.push('');
+      }
     }
   }
 
@@ -46,7 +51,9 @@ function buildCatalogText(products) {
     blocks.pop();
   }
 
-  return `${START_MARKER}\n${blocks.join('\n')}\n${END_MARKER}`;
+  blocks.push(END_MARKER);
+
+  return blocks.join('\n');
 }
 
 function replaceCatalogBlock(soulText, newCatalogBlock) {
@@ -75,13 +82,21 @@ function replaceCatalogBlock(soulText, newCatalogBlock) {
 }
 
 async function main() {
-  const [productsRaw, soulRaw] = await Promise.all([
-    readFile(productsPath, 'utf-8'),
+  const [storesRaw, soulRaw] = await Promise.all([
+    readFile(storesIndexPath, 'utf-8'),
     readFile(soulPath, 'utf-8')
   ]);
 
-  const products = JSON.parse(productsRaw);
-  const catalogBlock = buildCatalogText(products);
+  const stores = JSON.parse(storesRaw);
+  const productsByStore = new Map();
+
+  for (const store of stores) {
+    const storeProductsPath = path.resolve(process.cwd(), `src/data/stores/${store.slug}/products.json`);
+    const products = JSON.parse(await readFile(storeProductsPath, 'utf-8'));
+    productsByStore.set(store.slug, products);
+  }
+
+  const catalogBlock = buildCatalogText(stores, productsByStore);
   const updatedSoul = replaceCatalogBlock(soulRaw, catalogBlock);
 
   await writeFile(soulPath, `${updatedSoul.trimEnd()}\n`, 'utf-8');

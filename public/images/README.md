@@ -1,13 +1,21 @@
 # Images folder
 
-Upload product photos here using the same file names defined in `src/data/products.json`.
+Las imagenes ahora se organizan por tiendita:
 
-Example:
-- `src/data/products.json` -> `termo-silicona-wrels-250ml.jpg`
-- File path -> `public/images/termo-silicona-wrels-250ml.jpg`
-- Para galerias: `termo-silicona-wrels-250ml-2.jpg`, `termo-silicona-wrels-250ml-3.jpg`, etc.
+- `public/images/stores/deportes/`
+- `public/images/stores/tecnologia-electronica/`
+- `public/images/stores/regalos/`
+- `public/images/stores/embarazadas/`
 
-Recommended:
-- JPG/WebP
-- 1200px max side
-- compressed files under 300KB when possible
+Usa nombres consistentes con `products.json` de cada tienda.
+
+Ejemplo:
+
+- `src/data/stores/deportes/products.json` -> `forro-timon-premium-negro.jpg`
+- archivo -> `public/images/stores/deportes/forro-timon-premium-negro.jpg`
+
+Recomendado:
+
+- JPG/WebP/PNG
+- lado maximo 1200px
+- menos de 300KB cuando sea posible

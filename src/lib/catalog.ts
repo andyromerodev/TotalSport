@@ -1,4 +1,8 @@
-import productsData from '../data/products.json';
+import storesMetaData from '../data/stores/index.json';
+import deportesProductsData from '../data/stores/deportes/products.json';
+import tecnologiaProductsData from '../data/stores/tecnologia-electronica/products.json';
+import regalosProductsData from '../data/stores/regalos/products.json';
+import embarazadasProductsData from '../data/stores/embarazadas/products.json';
 
 export type ProductVariant = {
   name: string;
@@ -8,7 +12,6 @@ export type ProductVariant = {
 export type Product = {
   id: string;
   name: string;
-  group: string;
   category: string;
   priceUsd: number;
   description?: string;
@@ -19,74 +22,51 @@ export type Product = {
   active: boolean;
 };
 
-const products = productsData as Product[];
+export type StoreMeta = {
+  slug: string;
+  title: string;
+  description: string;
+};
 
-export const COLLECTIONS = [
-  {
-    slug: 'deporte-ciclismo',
-    title: 'Ciclismo y Deporte',
-    description: 'Ropa, componentes, termos y accesorios deportivos.'
-  },
-  {
-    slug: 'tecnologia-electronica',
-    title: 'Tecnologia y Electronica',
-    description: 'Accesorios electronicos y dispositivos.'
-  },
-  {
-    slug: 'regalos',
-    title: 'Regalos',
-    description: 'Articulos para obsequiar y detalles especiales.'
-  },
-  {
-    slug: 'embarazadas',
-    title: 'Embarazadas',
-    description: 'Productos para embarazo y maternidad.'
-  }
-] as const;
+const stores = storesMetaData as StoreMeta[];
+
+const storeProductsMap: Record<string, Product[]> = {
+  deportes: deportesProductsData as Product[],
+  'tecnologia-electronica': tecnologiaProductsData as Product[],
+  regalos: regalosProductsData as Product[],
+  embarazadas: embarazadasProductsData as Product[]
+};
+
+export function getStores(): StoreMeta[] {
+  return stores;
+}
+
+export function getStoreBySlug(slug: string): StoreMeta | undefined {
+  return getStores().find((store) => store.slug === slug);
+}
+
+export function getStoreProducts(slug: string): Product[] {
+  return (storeProductsMap[slug] ?? []).filter((product) => product.active);
+}
+
+export function getStoreCategories(slug: string): string[] {
+  return [...new Set(getStoreProducts(slug).map((product) => product.category))];
+}
+
+export function getStoreProductsByCategory(slug: string, category: string): Product[] {
+  return getStoreProducts(slug).filter((product) => product.category === category);
+}
 
 export function getProducts(): Product[] {
-  return products.filter((product) => product.active);
+  return getStores().flatMap((store) => getStoreProducts(store.slug));
 }
 
 export function getProductById(id: string): Product | undefined {
   return getProducts().find((product) => product.id === id);
 }
 
-export function getCategories(): string[] {
-  return [...new Set(getProducts().map((product) => product.category))];
-}
-
-export function getCollectionBySlug(slug: string) {
-  return COLLECTIONS.find((collection) => collection.slug === slug);
-}
-
-export function getProductsByGroup(group: string): Product[] {
-  return getProducts().filter((product) => product.group === group);
-}
-
-export function getCategoriesByGroup(group: string): string[] {
-  return [...new Set(getProductsByGroup(group).map((product) => product.category))];
-}
-
-export function getProductsByGroupAndCategory(group: string, category: string): Product[] {
-  return getProductsByGroup(group).filter((product) => product.category === category);
-}
-
-export function getProductsByCategory(): Map<string, Product[]> {
-  return getProducts().reduce((acc, product) => {
-    const list = acc.get(product.category) ?? [];
-    list.push(product);
-    acc.set(product.category, list);
-    return acc;
-  }, new Map<string, Product[]>());
-}
-
 export function slugifyCategory(category: string): string {
   return category.toLowerCase().replaceAll(' ', '-');
-}
-
-export function getCategoryBySlug(slug: string): string | undefined {
-  return getCategories().find((category) => slugifyCategory(category) === slug);
 }
 
 export function buildWhatsAppLink(productName: string): string {
@@ -110,4 +90,12 @@ export function getProductImages(product: Product): string[] {
   }
 
   return [];
+}
+
+export function findStoreSlugByCategorySlug(categorySlug: string): string | undefined {
+  for (const store of getStores()) {
+    const match = getStoreCategories(store.slug).find((category) => slugifyCategory(category) === categorySlug);
+    if (match) return store.slug;
+  }
+  return undefined;
 }

@@ -1,42 +1,41 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { COLLECTIONS, getProductsByGroup, getProductImages } from '../lib/catalog';
+import { getProductImages, getStoreProducts, getStores } from '../lib/catalog';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
-const collections = COLLECTIONS.map((collection) => {
-  const products = getProductsByGroup(collection.slug);
-  const coverImage = products.length > 0 ? getProductImages(products[0])[0] : undefined;
+const stores = getStores().map((store) => {
+  const products = getStoreProducts(store.slug);
   return {
-    ...collection,
+    ...store,
     count: products.length,
-    coverImage
+    coverImage: products[0] ? getProductImages(products[0])[0] : undefined
   };
 });
 ---
 
-<MainLayout title="Total Sport | Colecciones" description="Explora el catalogo por colecciones: deporte, tecnologia, regalos y embarazadas.">
+<MainLayout title="Total Sport | Tienditas" description="Explora el catalogo por tienditas independientes.">
   <header class="hero">
     <p class="eyebrow">Total Sport</p>
-    <h1>Colecciones</h1>
-    <p class="lead">Elige una coleccion para cargar solo los productos que te interesan.</p>
+    <h1>Tienditas</h1>
+    <p class="lead">Cada tiendita tiene su propio inventario e imagenes para mantener todo organizado.</p>
   </header>
 
-  <section class="collection-grid" aria-label="Colecciones del catalogo">
+  <section class="collection-grid" aria-label="Tienditas del catalogo">
     {
-      collections.map((collection) => (
-        <a class="collection-card" href={`${baseUrl}coleccion/${collection.slug}/`}>
+      stores.map((store) => (
+        <a class="collection-card" href={`${baseUrl}tienda/${store.slug}/`}>
           {
-            collection.coverImage ? (
-              <img src={collection.coverImage} alt={collection.title} loading="lazy" width="640" height="640" />
+            store.coverImage ? (
+              <img src={store.coverImage} alt={store.title} loading="lazy" width="640" height="640" />
             ) : (
-              <div class="collection-empty">Próximamente</div>
+              <div class="collection-empty">Proximamente</div>
             )
           }
           <div class="collection-card-content">
-            <h2>{collection.title}</h2>
-            <p>{collection.description}</p>
-            <span>{collection.count} productos</span>
+            <h2>{store.title}</h2>
+            <p>{store.description}</p>
+            <span>{store.count} productos</span>
           </div>
         </a>
       ))

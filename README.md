@@ -1,25 +1,15 @@
 # Total Sport Catalog (Astro 5)
 
-Catalogo web estatico y rapido para Total Sport, con productos por categoria y sincronizacion de inventario con Nanobot.
+Catalogo web estatico para Total Sport organizado por tienditas independientes.
 
-## Stack
+## Estructura por tiendita
 
-- Astro 5
-- JSON como fuente unica de verdad (`src/data/products.json`)
-- Scripts Node para validar datos y sincronizar `SOUL.md`
-
-## Estructura
-
-- `src/data/products.json`: inventario principal
-- `src/pages/index.astro`: home + categorias + grid de productos
-- `src/pages/productos/[id].astro`: detalle de producto
-- `scripts/validate-products.mjs`: valida estructura de productos
-- `scripts/sync-soul.mjs`: actualiza bloque de catalogo en SOUL
-
-## Modelo de producto (resumen)
-
-- `imageUrl`: imagen unica (compatibilidad)
-- `images`: arreglo de imagenes para galerias (recomendado cuando hay varias fotos)
+- `src/data/stores/index.json`: metadatos de tienditas
+- `src/data/stores/<slug>/products.json`: inventario de cada tiendita
+- `public/images/stores/<slug>/`: imagenes de cada tiendita
+- `src/pages/tienda/[store].astro`: entrada de cada tiendita
+- `src/pages/tienda/[store]/categoria/[category].astro`: categoria dentro de la tiendita
+- `src/pages/productos/[id].astro`: detalle de producto (global)
 
 ## Comandos
 
@@ -31,37 +21,42 @@ pnpm sync-soul
 pnpm build
 ```
 
+Comando de migracion (una sola vez):
+
+```bash
+pnpm migrate-stores
+```
+
+## Modelo de producto
+
+Campos por producto en cada `products.json`:
+
+- `id`, `name`, `category`, `priceUsd`, `active`
+- opcionales: `description`, `variants`, `imageUrl`, `images`, `aliases`
+
 ## Variables opcionales
 
-- `PUBLIC_WHATSAPP_NUMBER`: numero para enlaces `wa.me` (solo digitos, ej. `5351234567`)
-- `PUBLIC_SITE_URL`: URL publica del sitio para metadatos
-- `PUBLIC_BASE_PATH`: base path si publicas en subruta
-- `SOUL_PATH`: ruta custom para `SOUL.md` al sincronizar
+- `PUBLIC_WHATSAPP_NUMBER`: numero para enlaces `wa.me` (solo digitos)
+- `PUBLIC_SITE_URL`: URL publica del sitio
+- `PUBLIC_BASE_PATH`: base path del sitio
+- `SOUL_PATH`: ruta custom para `SOUL.md`
 
-### Configuracion recomendada
+## Flujo recomendado
 
-1. Copia `.env.example` a `.env`.
-2. Completa al menos:
-   - `PUBLIC_WHATSAPP_NUMBER`
-   - `PUBLIC_SITE_URL`
-3. Para GitHub Pages, crea variables en el repo:
-   - `PUBLIC_WHATSAPP_NUMBER`
-   - `PUBLIC_SITE_URL` (ejemplo: `https://TU_USUARIO.github.io`)
-   - `PUBLIC_BASE_PATH` (vacio para user/org page, o `/<repo>` para project page)
+1. Edita inventario en `src/data/stores/<slug>/products.json`.
+2. Sube imagenes en `public/images/stores/<slug>/`.
+3. Ejecuta `pnpm validate-products`.
+4. Ejecuta `pnpm sync-soul` para actualizar `/Users/andy/Documents/nanobot-local/SOUL.md`.
+5. Publica con push a GitHub.
 
-## Flujo operativo recomendado
+## Compatibilidad
 
-1. Agrega o edita productos en `src/data/products.json`.
-2. Sube fotos a `public/images/` con el nombre esperado en `imageUrl`.
-3. Corre `pnpm validate-products`.
-4. Corre `pnpm sync-soul` para actualizar `/Users/andy/Documents/nanobot-local/SOUL.md`.
-5. Publica en GitHub para desplegar en GitHub Pages.
+- `src/data/products.json` quedo marcado como deprecado.
+- Rutas legacy `/coleccion/...` y `/categoria/...` redirigen a `/tienda/...`.
 
 ## Marcadores en SOUL
 
-El script usa estos delimitadores:
+El sync usa:
 
 - `<!-- CATALOG:START -->`
 - `<!-- CATALOG:END -->`
-
-Si no existen, intenta insertar automaticamente el bloque entre `PRODUCTOS DISPONIBLES` y `REGLAS GENERALES`.

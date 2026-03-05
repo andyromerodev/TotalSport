@@ -8,6 +8,7 @@
     "dev": "astro dev",
     "build": "pnpm run validate-products && astro build",
     "preview": "astro preview",
+    "migrate-stores": "node scripts/migrate-to-stores.mjs",
     "validate-products": "node scripts/validate-products.mjs",
     "sync-soul": "node scripts/sync-soul.mjs",
     "sync-and-build": "pnpm run validate-products && pnpm run sync-soul && astro build"

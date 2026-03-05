@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "deportes",
+    "title": "Tiendita de Deportes",
+    "description": "Ropa, componentes, termos y accesorios para ciclismo y deporte."
+  },
+  {
+    "slug": "tecnologia-electronica",
+    "title": "Tiendita de Tecnologia y Electronica",
+    "description": "Gadgets, audio, teclados y accesorios electronicos."
+  },
+  {
+    "slug": "regalos",
+    "title": "Tiendita de Regalos",
+    "description": "Detalles y productos para regalar."
+  },
+  {
+    "slug": "embarazadas",
+    "title": "Tiendita para Embarazadas",
+    "description": "Productos pensados para embarazo y maternidad."
+  }
+]

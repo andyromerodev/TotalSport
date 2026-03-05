@@ -1,68 +1,40 @@
 ---
-import MainLayout from '../../../../layouts/MainLayout.astro';
-import ProductCard from '../../../../components/ProductCard.astro';
-import {
-  COLLECTIONS,
-  getCategoriesByGroup,
-  getCollectionBySlug,
-  getProductsByGroupAndCategory,
-  slugifyCategory
-} from '../../../../lib/catalog';
+import { getStoreBySlug, getStoreCategories, getStores, slugifyCategory } from '../../../../lib/catalog';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const legacyGroup = Astro.params.group ?? '';
+const category = Astro.params.category ?? '';
 
 export function getStaticPaths() {
-  return COLLECTIONS.flatMap((collection) =>
-    getCategoriesByGroup(collection.slug).map((category) => ({
-      params: {
-        group: collection.slug,
-        category: slugifyCategory(category)
-      }
-    }))
-  );
+  const paths = [];
+  for (const store of getStores()) {
+    const legacyGroupSlug = store.slug === 'deportes' ? 'deporte-ciclismo' : store.slug;
+    for (const storeCategory of getStoreCategories(store.slug)) {
+      paths.push({
+        params: {
+          group: legacyGroupSlug,
+          category: slugifyCategory(storeCategory)
+        }
+      });
+    }
+  }
+  return paths;
 }
 
-const group = Astro.params.group ?? '';
-const categorySlug = Astro.params.category ?? '';
-const collection = getCollectionBySlug(group) ?? COLLECTIONS[0];
-const categories = getCategoriesByGroup(collection.slug);
-const selectedCategory = categories.find((entry) => slugifyCategory(entry) === categorySlug) ?? categories[0];
-const selectedProducts = selectedCategory ? getProductsByGroupAndCategory(collection.slug, selectedCategory) : [];
+const mappedStore = legacyGroup === 'deporte-ciclismo' ? 'deportes' : legacyGroup;
+const targetStore = getStoreBySlug(mappedStore) ? mappedStore : 'deportes';
+const target = `${baseUrl}tienda/${targetStore}/categoria/${category}/`;
 ---
 
-<MainLayout title={`Total Sport | ${collection.title}`} description={`${selectedCategory ?? ''} en ${collection.title}`.trim()}>
-  <header class="hero">
-    <p class="eyebrow">Total Sport</p>
-    <h1>{collection.title}</h1>
-    <p class="lead">{collection.description}</p>
-  </header>
-
-  <nav class="collection-nav" aria-label="Colecciones">
-    {
-      COLLECTIONS.map((entry) => (
-        <a href={`${baseUrl}coleccion/${entry.slug}/`} class={entry.slug === collection.slug ? 'is-active' : ''}>{entry.title}</a>
-      ))
-    }
-  </nav>
-
-  <nav class="category-nav" aria-label="Categorias">
-    {
-      categories.map((category) => (
-        <a href={`${baseUrl}coleccion/${collection.slug}/categoria/${slugifyCategory(category)}/`} class={category === selectedCategory ? 'is-active' : ''}>
-          {category}
-        </a>
-      ))
-    }
-  </nav>
-
-  <section class="category-section">
-    <div class="section-head">
-      <h2>{selectedCategory}</h2>
-      <p>{selectedProducts.length} productos</p>
-    </div>
-
-    <div class="grid">
-      {selectedProducts.map((product) => <ProductCard product={product} />)}
-    </div>
-  </section>
-</MainLayout>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content={`0; url=${target}`} />
+    <title>Redirigiendo...</title>
+  </head>
+  <body>
+    <p>Redirigiendo a la nueva ruta de tiendita...</p>
+    <a href={target}>Continuar</a>
+  </body>
+</html>
