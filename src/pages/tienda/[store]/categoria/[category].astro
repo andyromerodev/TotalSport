@@ -31,13 +31,7 @@ const selectedProducts = selectedCategory ? getStoreProductsByCategory(store.slu
     <p class="lead">{store.description}</p>
   </header>
 
-  <nav class="collection-nav" aria-label="Tienditas">
-    {
-      getStores().map((entry) => (
-        <a href={`${baseUrl}tienda/${entry.slug}/`} class={entry.slug === store.slug ? 'is-active' : ''}>{entry.title}</a>
-      ))
-    }
-  </nav>
+  
 
   <nav class="category-nav" aria-label="Categorias">
     {
