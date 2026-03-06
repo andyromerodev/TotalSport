@@ -2,6 +2,10 @@
 
 Catalogo web estatico para ALKILO organizado por tienditas independientes.
 
+Reglas de estabilidad del desarrollo:
+
+- `DEVELOPMENT_RULES.md`
+
 ## Estructura por tiendita
 
 - `src/data/stores/index.json`: metadatos de tienditas
