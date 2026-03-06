@@ -16,11 +16,13 @@ const coverImage = getProductImages(product)[0] ?? 'https://placehold.co/640x640
 <article class="card">
   <a class="image-link" href={detailsHref}>
     <img
+      class="blur-up-image"
       src={coverImage}
       alt={product.name}
       loading="lazy"
       width="640"
       height="640"
+      data-blur-up
     />
   </a>
 

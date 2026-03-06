@@ -16,9 +16,8 @@ const selectedCategory = categories[0];
 const selectedProducts = selectedCategory ? getStoreProductsByCategory(store.slug, selectedCategory) : [];
 ---
 
-<MainLayout title={`Total Sport | ${store.title}`} description={store.description}>
+<MainLayout title={`ALKILO | ${store.title}`} description={store.description}>
   <header class="hero">
-    <p class="eyebrow">Total Sport</p>
     <h1>{store.title}</h1>
     <p class="lead">{store.description}</p>
   </header>

@@ -21,7 +21,7 @@ const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
 ---
 
 <MainLayout
-  title={`${product.name} | Total Sport`}
+  title={`${product.name} | ALKILO`}
   description={product.description ?? product.name}
   image={shareImage}
   type="article"
@@ -38,12 +38,13 @@ const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
         aria-label={`Ver ${product.name} en pantalla completa`}
       >
         <img
-          class="main-image"
+          class="main-image blur-up-image"
           src={shareImage}
           alt={product.name}
           loading="eager"
           width="900"
           height="900"
+          data-blur-up
         />
       </button>
       {
@@ -57,7 +58,7 @@ const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
                 data-lightbox-alt={`${product.name} foto ${index + 2}`}
                 aria-label={`Ver ${product.name} foto ${index + 2} en pantalla completa`}
               >
-                <img class="thumb-image" src={image} alt={`${product.name} foto ${index + 2}`} loading="lazy" width="300" height="300" />
+                <img class="thumb-image blur-up-image" src={image} alt={`${product.name} foto ${index + 2}`} loading="lazy" width="300" height="300" data-blur-up />
               </button>
             ))}
           </div>

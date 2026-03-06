@@ -24,9 +24,8 @@ const selectedCategory = categories.find((category) => slugifyCategory(category)
 const selectedProducts = selectedCategory ? getStoreProductsByCategory(store.slug, selectedCategory) : [];
 ---
 
-<MainLayout title={`Total Sport | ${store.title}`} description={`${selectedCategory ?? ''} en ${store.title}`.trim()}>
+<MainLayout title={`ALKILO | ${store.title}`} description={`${selectedCategory ?? ''} en ${store.title}`.trim()}>
   <header class="hero">
-    <p class="eyebrow">Total Sport</p>
     <h1>{store.title}</h1>
     <p class="lead">{store.description}</p>
   </header>

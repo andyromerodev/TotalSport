@@ -1,6 +1,6 @@
-# Total Sport Catalog (Astro 5)
+# ALKILO Catalog (Astro 5)
 
-Catalogo web estatico para Total Sport organizado por tienditas independientes.
+Catalogo web estatico para ALKILO organizado por tienditas independientes.
 
 ## Estructura por tiendita
 

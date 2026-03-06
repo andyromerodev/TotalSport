@@ -9,31 +9,54 @@ const storeCoverBySlug: Record<string, string> = {
   regalos: `${baseUrl}images/tienda-regalos.jpg`,
   embarazadas: `${baseUrl}images/tienda-embarazadas.jpg`
 };
+const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: string }> = {
+  deportes: { kicker: 'Activa', accent: '#0a7f52', soft: '#d8f1e7' },
+  'tecnologia-electronica': { kicker: 'Digital', accent: '#0f4aa3', soft: '#d8e5ff' },
+  regalos: { kicker: 'Detalles', accent: '#8a3f2d', soft: '#f6ddd6' },
+  embarazadas: { kicker: 'Cuidado', accent: '#9a4f76', soft: '#f5dfeb' }
+};
 
 const stores = getStores().map((store) => {
   const products = getStoreProducts(store.slug);
+  const theme = storeThemeBySlug[store.slug] ?? { kicker: 'Tienda', accent: '#0a7f52', soft: '#d8f1e7' };
   return {
     ...store,
     count: products.length,
-    coverImage: storeCoverBySlug[store.slug]
+    coverImage: storeCoverBySlug[store.slug],
+    theme
   };
 });
 ---
 
-<MainLayout title="Total Sport | Tienditas" description="Explora el catalogo por tienditas independientes.">
+<MainLayout title="ALKILO | Tienditas" description="Explora el catalogo por tienditas independientes.">
   <header class="hero">
-    <p class="eyebrow">Total Sport</p>
     <h1>Tienditas</h1>
-    <p class="lead">Cada tiendita tiene su propio inventario e imagenes para mantener todo organizado.</p>
+    <p class="lead">Explora cada universo de productos por separado para una experiencia rapida y clara.</p>
   </header>
 
   <section class="collection-grid" aria-label="Tienditas del catalogo">
     {
       stores.map((store) => (
-        <a class="collection-card" href={`${baseUrl}tienda/${store.slug}/`}>
+        <a
+          class={`collection-card store-card store-${store.slug}`}
+          href={`${baseUrl}tienda/${store.slug}/`}
+          style={`--store-accent:${store.theme.accent};--store-soft:${store.theme.soft};`}
+        >
           {
             store.coverImage ? (
-              <img class="store-cover" src={store.coverImage} alt={store.title} loading="lazy" width="640" height="640" />
+              <div class="store-media">
+                <img
+                  class="store-cover blur-up-image"
+                  src={store.coverImage}
+                  alt={store.title}
+                  loading="lazy"
+                  width="640"
+                  height="640"
+                  data-blur-up
+                />
+                <div class="store-overlay"></div>
+                <span class="store-kicker">{store.theme.kicker}</span>
+              </div>
             ) : (
               <div class="collection-empty">Proximamente</div>
             )
@@ -41,23 +64,13 @@ const stores = getStores().map((store) => {
           <div class="collection-card-content">
             <h2>{store.title}</h2>
             <p>{store.description}</p>
-            <span>{store.count} productos</span>
+            <div class="store-meta">
+              <span>{store.count} productos</span>
+              <span>Entrar</span>
+            </div>
           </div>
         </a>
       ))
     }
   </section>
 </MainLayout>
-
-<script>
-  const covers = document.querySelectorAll('.store-cover');
-  for (const cover of covers) {
-    const markLoaded = () => cover.classList.add('is-loaded');
-    if (cover.complete) {
-      markLoaded();
-    } else {
-      cover.addEventListener('load', markLoaded, { once: true });
-      cover.addEventListener('error', markLoaded, { once: true });
-    }
-  }
-</script>
