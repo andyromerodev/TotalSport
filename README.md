@@ -6,6 +6,10 @@ Reglas de estabilidad del desarrollo:
 
 - `DEVELOPMENT_RULES.md`
 
+Indice de skills del proyecto:
+
+- `SKILLS_INDEX.md`
+
 ## Estructura por tiendita
 
 - `src/data/stores/index.json`: metadatos de tienditas
