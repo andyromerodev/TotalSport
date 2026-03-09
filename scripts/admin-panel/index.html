@@ -12,16 +12,20 @@
   <body>
     <main class="shell">
       <header class="mast">
-        <p class="kicker">TotalSport</p>
+        <p class="kicker">TotalSport Admin</p>
         <h1>Admin de Inventario y Ganancia</h1>
         <p class="lead">Panel local en <strong>localhost</strong>. No expone costos ni ventas al sitio público.</p>
+        <p class="runtime" id="runtime-meta"></p>
       </header>
 
       <section class="metrics" id="metrics"></section>
 
       <section class="layout">
         <article class="card controls">
-          <h2>Registrar movimiento</h2>
+          <div class="card-head">
+            <h2>Registrar movimiento</h2>
+            <p class="muted">Accion directa sobre stock y contabilidad</p>
+          </div>
           <form id="movement-form">
             <label>
               Producto
@@ -81,7 +85,10 @@
 
         <article class="card list">
           <div class="list-head">
-            <h2>Productos</h2>
+            <div class="card-head">
+              <h2>Productos</h2>
+              <p class="muted" id="products-count"></p>
+            </div>
             <input id="search" type="search" placeholder="Buscar producto" />
           </div>
           <div class="table-wrap">
@@ -104,7 +111,10 @@
 
       <section class="card ledger">
         <div class="list-head">
-          <h2>Historial</h2>
+          <div class="card-head">
+            <h2>Historial</h2>
+            <p class="muted">Ultimos movimientos registrados</p>
+          </div>
           <div class="range">
             <input id="from" type="date" />
             <input id="to" type="date" />

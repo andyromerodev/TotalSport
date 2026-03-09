@@ -2,6 +2,8 @@ const metricsEl = document.getElementById('metrics');
 const productsTable = document.getElementById('products-table');
 const ledgerList = document.getElementById('ledger-list');
 const statusEl = document.getElementById('status');
+const runtimeMeta = document.getElementById('runtime-meta');
+const productsCount = document.getElementById('products-count');
 
 const movementForm = document.getElementById('movement-form');
 const productSelect = document.getElementById('productId');
@@ -28,6 +30,12 @@ const currency = new Intl.NumberFormat('en-US', {
 
 let products = [];
 let ledger = [];
+const movementLabel = {
+  ENTRY: 'Entrada',
+  EXIT: 'Salida',
+  ADJUSTMENT: 'Ajuste',
+  SALE: 'Venta'
+};
 
 function setStatus(message, error = false) {
   statusEl.textContent = message;
@@ -79,6 +87,8 @@ function renderProductsTable() {
     );
   });
 
+  productsCount.textContent = `${filtered.length} de ${products.length} visibles`;
+
   productsTable.innerHTML = filtered
     .map((item) => {
       const lowClass = item.currentStock <= 0 ? 'stock-low' : '';
@@ -105,7 +115,8 @@ function renderLedger() {
   ledgerList.innerHTML = ledger
     .slice(0, 80)
     .map((entry) => {
-      const parts = [`${entry.type} x${entry.qty}`, entry.productId, prettyDate(entry.timestamp)];
+      const label = movementLabel[entry.type] ?? entry.type;
+      const parts = [`${label} x${entry.qty}`, entry.productId, prettyDate(entry.timestamp)];
       if (typeof entry.revenueUsd === 'number') parts.push(`Ingresos ${currency.format(entry.revenueUsd)}`);
       if (typeof entry.profitUsd === 'number') parts.push(`Ganancia ${currency.format(entry.profitUsd)}`);
       if (entry.note) parts.push(entry.note);
@@ -130,6 +141,12 @@ async function loadProducts() {
   renderProductsTable();
 }
 
+async function loadRuntimeMeta() {
+  const data = await fetchJson('/api/health');
+  const now = new Date().toLocaleString();
+  runtimeMeta.textContent = `Datos privados: ${data.adminDataDir} • Actualizado: ${now}`;
+}
+
 async function loadDashboard() {
   const query = new URLSearchParams();
   if (fromInput.value) query.set('from', fromInput.value);
@@ -150,7 +167,7 @@ async function loadLedger() {
 }
 
 async function refreshAll() {
-  await Promise.all([loadProducts(), loadDashboard(), loadLedger()]);
+  await Promise.all([loadProducts(), loadDashboard(), loadLedger(), loadRuntimeMeta()]);
 }
 
 typeSelect.addEventListener('change', () => {
