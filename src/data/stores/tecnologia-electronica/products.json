@@ -20,9 +20,9 @@
   },
   {
     "id": "logi",
-    "name": "Mouse Logitech",
+    "name": "Combo de teclado y mouse Logitech",
     "category": "Tecnologia",
-    "priceUsd": 0,
+    "priceUsd": 40,
     "description": "Mouse Logitech. Precio por definir.",
     "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/tecnologia-electronica/logi.jpg",
     "images": [
