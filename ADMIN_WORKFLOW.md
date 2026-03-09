@@ -8,20 +8,19 @@ Guia rapida para manejar inventario/ventas de forma privada y publicar solo stoc
 - Repo privado: `/Users/andy/Documents/totalsport-admin-data`
 - `pnpm` instalado
 
-## 2) Configuracion por sesion de terminal
+## 2) Configuracion recomendada (una sola vez)
 
-Ejecuta esto una vez por terminal abierta:
+Crear archivo `.env` local en el repo publico:
 
 ```bash
 cd /Users/andy/Documents/TotalSport
-export ADMIN_DATA_PATH="/Users/andy/Documents/totalsport-admin-data"
+cat > .env <<'EOF'
+ADMIN_DATA_PATH=/Users/andy/Documents/totalsport-admin-data
+ADMIN_PORT=4310
+EOF
 ```
 
-Verificacion opcional:
-
-```bash
-echo $ADMIN_DATA_PATH
-```
+Con esto, los comandos `admin:*`, `validate-admin-data` y `export-public-stock` ya leen variables automaticamente.
 
 ## 3) Primera vez (bootstrap)
 
@@ -29,7 +28,6 @@ Si el repo privado esta vacio o quieres inicializar estructura:
 
 ```bash
 cd /Users/andy/Documents/TotalSport
-export ADMIN_DATA_PATH="/Users/andy/Documents/totalsport-admin-data"
 pnpm admin:init-data
 pnpm validate-admin-data
 ```
@@ -45,7 +43,6 @@ Esto crea/valida en el repo privado:
 
 ```bash
 cd /Users/andy/Documents/TotalSport
-export ADMIN_DATA_PATH="/Users/andy/Documents/totalsport-admin-data"
 pnpm admin:start
 ```
 
@@ -75,7 +72,6 @@ Si no usaste el boton del panel, exporta por terminal:
 
 ```bash
 cd /Users/andy/Documents/TotalSport
-export ADMIN_DATA_PATH="/Users/andy/Documents/totalsport-admin-data"
 pnpm export-public-stock
 ```
 
@@ -134,7 +130,6 @@ Pasos:
 
 ```bash
 cd /Users/andy/Documents/TotalSport
-export ADMIN_DATA_PATH="/Users/andy/Documents/totalsport-admin-data"
 pnpm validate-admin-data
 ```
 
@@ -156,7 +151,6 @@ Prueba otro puerto:
 
 ```bash
 cd /Users/andy/Documents/TotalSport
-export ADMIN_DATA_PATH="/Users/andy/Documents/totalsport-admin-data"
 ADMIN_PORT=4311 pnpm admin:start
 ```
 
