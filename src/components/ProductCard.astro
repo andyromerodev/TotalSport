@@ -27,13 +27,14 @@ const coverImage = getProductImages(product)[0] ?? 'https://placehold.co/640x640
   </a>
 
   <div class="card-content">
+    {!product.inStock && <p class="stock-badge">Agotado</p>}
     <h3>{product.name}</h3>
     <p class="price">{product.priceUsd} USD</p>
     {product.description && <p class="description">{product.description}</p>}
 
     <div class="actions">
       <a class="btn btn-outline" href={detailsHref}>Ver detalle</a>
-      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">WhatsApp</a>
+      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">{product.inStock ? 'WhatsApp' : 'Consultar reposicion'}</a>
     </div>
   </div>
 </article>

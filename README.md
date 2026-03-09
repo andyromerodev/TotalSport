@@ -14,6 +14,7 @@ Indice de skills del proyecto:
 
 - `src/data/stores/index.json`: metadatos de tienditas
 - `src/data/stores/<slug>/products.json`: inventario de cada tiendita
+- `src/data/public-stock.json`: proyeccion publica de stock (sin costos/ganancias)
 - `public/images/stores/<slug>/`: imagenes de cada tiendita
 - `src/pages/tienda/[store].astro`: entrada de cada tiendita
 - `src/pages/tienda/[store]/categoria/[category].astro`: categoria dentro de la tiendita
@@ -27,6 +28,12 @@ pnpm dev
 pnpm validate-products
 pnpm sync-soul
 pnpm build
+
+# Admin privado local
+pnpm admin:init-data
+pnpm admin:start
+pnpm validate-admin-data
+pnpm export-public-stock
 ```
 
 Comando de migracion (una sola vez):
@@ -48,6 +55,34 @@ Campos por producto en cada `products.json`:
 - `PUBLIC_SITE_URL`: URL publica del sitio
 - `PUBLIC_BASE_PATH`: base path del sitio
 - `SOUL_PATH`: ruta custom para `SOUL.md`
+- `ADMIN_DATA_PATH`: ruta al repo/carpeta privada (`../totalsport-admin-data` por defecto)
+- `ADMIN_PORT`: puerto del panel local (por defecto `4310`)
+
+## Admin privado local (inventario y contabilidad)
+
+Objetivo: mantener costos, ventas y ganancia fuera del repo publico.
+
+Archivos esperados en `ADMIN_DATA_PATH`:
+
+- `products-finance.json`: costo, precio de venta, stock actual, unidades vendidas, ingresos y ganancia por producto.
+- `inventory-ledger.json`: historial de movimientos (`ENTRY`, `EXIT`, `ADJUSTMENT`, `SALE`).
+
+Flujo recomendado:
+
+1. Crea o clona tu repo privado para datos (ej: `../totalsport-admin-data`).
+2. Ejecuta `pnpm admin:init-data` para bootstrap de `products-finance.json` e `inventory-ledger.json`.
+3. Ejecuta `pnpm admin:start` y abre `http://127.0.0.1:4310`.
+4. Registra movimientos de inventario/ventas en el panel.
+5. Ejecuta `pnpm export-public-stock` (o usa el boton del panel) para actualizar `src/data/public-stock.json`.
+6. Haz commit/push solo del repo publico con datos sanitizados.
+
+El export publico incluye solo:
+
+- `productId`, `inStock`, `availableQty`, `updatedAt`
+
+No exporta:
+
+- `costUsd`, `profitUsd`, `revenueUsd`, historial de ventas o notas internas.
 
 ## Flujo recomendado
 

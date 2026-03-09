@@ -70,6 +70,7 @@ const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
       <p class="eyebrow">{product.category}</p>
       <h1>{product.name}</h1>
       <p class="price">{product.priceUsd} USD</p>
+      {!product.inStock && <p class="stock-badge detail-stock-badge">Agotado</p>}
       {product.description && <p class="description">{product.description}</p>}
 
       {
@@ -80,7 +81,7 @@ const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
         ) : null
       }
 
-      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">Solicitar por WhatsApp</a>
+      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">{product.inStock ? 'Solicitar por WhatsApp' : 'Consultar reposicion por WhatsApp'}</a>
     </div>
   </article>
 

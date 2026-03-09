@@ -3,6 +3,7 @@ import deportesProductsData from '../data/stores/deportes/products.json';
 import tecnologiaProductsData from '../data/stores/tecnologia-electronica/products.json';
 import regalosProductsData from '../data/stores/regalos/products.json';
 import embarazadasProductsData from '../data/stores/embarazadas/products.json';
+import publicStockData from '../data/public-stock.json';
 
 export type ProductVariant = {
   name: string;
@@ -20,6 +21,8 @@ export type Product = {
   images?: string[];
   aliases?: string[];
   active: boolean;
+  inStock: boolean;
+  availableQty?: number;
 };
 
 export type StoreMeta = {
@@ -29,13 +32,27 @@ export type StoreMeta = {
 };
 
 const stores = storesMetaData as StoreMeta[];
+const publicStockMap = new Map(
+  (publicStockData as { productId: string; inStock: boolean; availableQty?: number }[]).map((entry) => [entry.productId, entry])
+);
 
 const storeProductsMap: Record<string, Product[]> = {
-  deportes: deportesProductsData as Product[],
-  'tecnologia-electronica': tecnologiaProductsData as Product[],
-  regalos: regalosProductsData as Product[],
-  embarazadas: embarazadasProductsData as Product[]
+  deportes: enrichWithStock(deportesProductsData as Omit<Product, 'inStock' | 'availableQty'>[]),
+  'tecnologia-electronica': enrichWithStock(tecnologiaProductsData as Omit<Product, 'inStock' | 'availableQty'>[]),
+  regalos: enrichWithStock(regalosProductsData as Omit<Product, 'inStock' | 'availableQty'>[]),
+  embarazadas: enrichWithStock(embarazadasProductsData as Omit<Product, 'inStock' | 'availableQty'>[])
 };
+
+function enrichWithStock(products: Omit<Product, 'inStock' | 'availableQty'>[]): Product[] {
+  return products.map((product) => {
+    const stock = publicStockMap.get(product.id);
+    return {
+      ...product,
+      inStock: stock?.inStock ?? true,
+      availableQty: stock?.availableQty
+    };
+  });
+}
 
 export function getStores(): StoreMeta[] {
   return stores;
