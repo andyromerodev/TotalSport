@@ -53,7 +53,12 @@
     "aliases": [
       "cinta sudor"
     ],
-    "active": true
+    "active": true,
+     "images": [
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor-2.jpg",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor-3.jpg"
+      ]
   },
   {
     "id": "zapatillas-adidas-42",
