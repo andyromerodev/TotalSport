@@ -1,26 +1,26 @@
 [
   {
-    "id": "bateria-cr2032",
+    "id": "Batería-CR2032",
     "name": "Batería CR2032",
     "category": "Accesorios",
     "priceUsd": 4,
-    "description": "Bateria tipo boton CR2032.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bateria-cr2032.jpg",
+    "description": "Batería tipo boton CR2032.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/Batería-CR2032.jpg",
     "aliases": [
-      "bateria cr2032"
+      "Batería CR2032"
     ],
     "active": true,
     "group": "deporte-ciclismo"
   },
   {
-    "id": "bateria-cr2450",
+    "id": "Batería-CR2450",
     "name": "Batería CR2450",
     "category": "Accesorios",
     "priceUsd": 4,
-    "description": "Bateria tipo boton CR2450.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/bateria-cr2450.jpg",
+    "description": "Batería tipo boton CR2450.",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/Batería-CR2450.jpg",
     "aliases": [
-      "bateria cr2450"
+      "Batería CR2450"
     ],
     "active": true,
     "group": "deporte-ciclismo"

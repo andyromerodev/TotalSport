@@ -1,12 +1,12 @@
 [
   {
-    "productId": "bateria-cr2032",
+    "productId": "Batería-CR2032",
     "inStock": true,
     "availableQty": 10,
     "updatedAt": "2026-03-09T22:08:38.145Z"
   },
   {
-    "productId": "bateria-cr2450",
+    "productId": "Batería-CR2450",
     "inStock": false,
     "availableQty": 0,
     "updatedAt": "2026-03-09T22:08:38.145Z"
