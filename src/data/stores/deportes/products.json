@@ -29,18 +29,18 @@
     "category": "Accesorios",
     "priceUsd": 12,
     "description": "Bombita portatil para inflado.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire.png",
     "aliases": [
       "bombita aire"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-3.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-4.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-5.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-6.jpg"
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-2.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-3.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-4.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-5.png",
+      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-6.png"
     ]
   },
   {
