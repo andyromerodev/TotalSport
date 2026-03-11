@@ -27,7 +27,7 @@ const stores = getStores().map((store) => {
   return {
     ...store,
     count: products.length,
-    coverImage: storeCoverBySlug[store.slug],
+    coverImage: storeCoverBySlug[store.slug as keyof typeof storeCoverBySlug],
     theme
   };
 });
@@ -58,7 +58,7 @@ const stores = getStores().map((store) => {
                   loading={index === 0 ? 'eager' : 'lazy'}
                   fetchpriority={index === 0 ? 'high' : 'auto'}
                   widths={[420, 560]}
-                  formats={['webp']}
+                  format="webp"
                   quality={68}
                   width={560}
                   height={253}
