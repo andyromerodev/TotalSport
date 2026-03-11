@@ -6,19 +6,19 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
 const storeCoverBySlug = {
   deportes: {
     src: `${baseUrl}images/tienda-deportes.webp`,
-    srcset: `${baseUrl}images/tienda-deportes-420.jpg 420w, ${baseUrl}images/tienda-deportes-760.jpg 760w`
+    srcset: `${baseUrl}images/tienda-deportes-420.jpg 420w, ${baseUrl}images/tienda-deportes-560.jpg 560w`
   },
   'tecnologia-electronica': {
     src: `${baseUrl}images/tienda-tecnologias.webp`,
-    srcset: `${baseUrl}images/tienda-tecnologias-420.jpg 420w, ${baseUrl}images/tienda-tecnologias-760.jpg 760w`
+    srcset: `${baseUrl}images/tienda-tecnologias-420.jpg 420w, ${baseUrl}images/tienda-tecnologias-560.jpg 560w`
   },
   regalos: {
     src: `${baseUrl}images/tienda-regalos.webp`,
-    srcset: `${baseUrl}images/tienda-regalos-420.jpg 420w, ${baseUrl}images/tienda-regalos-760.jpg 760w`
+    srcset: `${baseUrl}images/tienda-regalos-420.jpg 420w, ${baseUrl}images/tienda-regalos-560.jpg 560w`
   },
   embarazadas: {
     src: `${baseUrl}images/tienda-embarazadas.webp`,
-    srcset: `${baseUrl}images/tienda-embarazadas-420.jpg 420w, ${baseUrl}images/tienda-embarazadas-760.jpg 760w`
+    srcset: `${baseUrl}images/tienda-embarazadas-420.jpg 420w, ${baseUrl}images/tienda-embarazadas-560.jpg 560w`
   }
 };
 const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: string }> = {
@@ -61,12 +61,12 @@ const stores = getStores().map((store) => {
                   class="store-cover blur-up-image"
                   src={store.coverImage.src}
                   srcset={store.coverImage.srcset}
-                  sizes="(max-width: 768px) 92vw, (max-width: 1160px) 46vw, 360px"
+                  sizes="(max-width: 768px) 92vw, 377px"
                   alt={store.title}
                   loading={index === 0 ? 'eager' : 'lazy'}
                   fetchpriority={index === 0 ? 'high' : 'auto'}
-                  width="760"
-                  height="344"
+                  width="560"
+                  height="253"
                   data-blur-up
                 />
                 <div class="store-overlay"></div>
