@@ -6,7 +6,7 @@
   "packageManager": "pnpm@10.11.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "pnpm run validate-products && astro build",
+    "build": "pnpm run validate-products && astro build && node scripts/validate-home-performance.mjs",
     "preview": "astro preview",
     "migrate-stores": "node scripts/migrate-to-stores.mjs",
     "validate-products": "node scripts/validate-products.mjs",
@@ -15,7 +15,7 @@
     "admin:start": "node --env-file-if-exists=.env scripts/admin-server.mjs",
     "export-public-stock": "node --env-file-if-exists=.env scripts/export-public-stock.mjs",
     "sync-soul": "node scripts/sync-soul.mjs",
-    "sync-and-build": "pnpm run validate-products && pnpm run sync-soul && astro build"
+    "sync-and-build": "pnpm run validate-products && pnpm run sync-soul && astro build && node scripts/validate-home-performance.mjs"
   },
   "dependencies": {
     "astro": "^5.17.0"

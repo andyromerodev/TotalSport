@@ -58,3 +58,12 @@ Estas reglas son obligatorias para mantener el sitio estable, escalable y facil 
 
 ## 10) Regla de oro
 - Si una mejora compromete estabilidad, priorizar estabilidad.
+
+## 11) Guardrail de performance (obligatorio)
+- El Home debe mantener portada LCP con:
+  - primera imagen `loading=\"eager\"`
+  - primera imagen `fetchpriority=\"high\"`
+  - `srcset` responsivo en formato WebP
+- No usar `.jpg/.jpeg` para portadas de Home en HTML final.
+- El script `scripts/validate-home-performance.mjs` debe pasar en cada build.
+- `pnpm build` ya incluye esta validacion; si falla, no hacer push/deploy.
