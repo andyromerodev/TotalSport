@@ -50,6 +50,10 @@ Guia rapida para saber que skill usar en cada tarea del proyecto.
   - Usar cuando: vas a hacer push/deploy.
   - Resultado: validacion de build/rutas/sync antes de release.
 
+- `astro-lighthouse-guardrail`
+  - Usar cuando: quieres evitar regresiones de Lighthouse en Home (LCP/imagenes/cache path).
+  - Resultado: validacion anti-regresion con guardrails obligatorios en build.
+
 ## 7) UI consistente
 
 - `astro-ui-consistency`
