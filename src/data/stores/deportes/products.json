@@ -5,7 +5,7 @@
     "category": "Accesorios",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2032.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/Batería-CR2032.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bateria-CR2032.jpg",
     "aliases": [
       "Batería CR2032"
     ],
@@ -17,7 +17,7 @@
     "category": "Accesorios",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2450.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/Batería-CR2450.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bateria-CR2450.jpg",
     "aliases": [
       "Batería CR2450"
     ],
@@ -633,7 +633,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termos-thinkrider-engomados-amarillo-claro.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-amarillo.jpg",
     "aliases": [
       "termo thinkrider"
     ],
@@ -659,7 +659,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termos-thinkrider-engomados-rosados.jpg",
+    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-rosado.jpg",
     "aliases": [
       "termo thinkrider"
     ],
