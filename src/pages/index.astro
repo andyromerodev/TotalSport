@@ -1,25 +1,18 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
+import { Image } from 'astro:assets';
 import { getStoreProducts, getStores } from '../lib/catalog';
+import coverDeportes from '../assets/store-covers/tienda-deportes.webp';
+import coverTecnologias from '../assets/store-covers/tienda-tecnologias.webp';
+import coverRegalos from '../assets/store-covers/tienda-regalos.webp';
+import coverEmbarazadas from '../assets/store-covers/tienda-embarazadas.webp';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const storeCoverBySlug = {
-  deportes: {
-    src: `${baseUrl}images/tienda-deportes.webp`,
-    srcset: `${baseUrl}images/tienda-deportes-420.jpg 420w, ${baseUrl}images/tienda-deportes-560.jpg 560w`
-  },
-  'tecnologia-electronica': {
-    src: `${baseUrl}images/tienda-tecnologias.webp`,
-    srcset: `${baseUrl}images/tienda-tecnologias-420.jpg 420w, ${baseUrl}images/tienda-tecnologias-560.jpg 560w`
-  },
-  regalos: {
-    src: `${baseUrl}images/tienda-regalos.webp`,
-    srcset: `${baseUrl}images/tienda-regalos-420.jpg 420w, ${baseUrl}images/tienda-regalos-560.jpg 560w`
-  },
-  embarazadas: {
-    src: `${baseUrl}images/tienda-embarazadas.webp`,
-    srcset: `${baseUrl}images/tienda-embarazadas-420.jpg 420w, ${baseUrl}images/tienda-embarazadas-560.jpg 560w`
-  }
+  deportes: coverDeportes,
+  'tecnologia-electronica': coverTecnologias,
+  regalos: coverRegalos,
+  embarazadas: coverEmbarazadas
 };
 const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: string }> = {
   deportes: { kicker: 'Activa', accent: '#0a7f52', soft: '#d8f1e7' },
@@ -57,16 +50,18 @@ const stores = getStores().map((store) => {
           {
             store.coverImage ? (
               <div class="store-media">
-                <img
+                <Image
                   class="store-cover blur-up-image"
-                  src={store.coverImage.src}
-                  srcset={store.coverImage.srcset}
+                  src={store.coverImage}
                   sizes="(max-width: 768px) 92vw, 377px"
                   alt={store.title}
                   loading={index === 0 ? 'eager' : 'lazy'}
                   fetchpriority={index === 0 ? 'high' : 'auto'}
-                  width="560"
-                  height="253"
+                  widths={[420, 560]}
+                  formats={['webp']}
+                  quality={68}
+                  width={560}
+                  height={253}
                   data-blur-up
                 />
                 <div class="store-overlay"></div>
