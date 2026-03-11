@@ -3,11 +3,23 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { getStoreProducts, getStores } from '../lib/catalog';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
-const storeCoverBySlug: Record<string, string> = {
-  deportes: `${baseUrl}images/tienda-deportes.webp`,
-  'tecnologia-electronica': `${baseUrl}images/tienda-tecnologias.webp`,
-  regalos: `${baseUrl}images/tienda-regalos.webp`,
-  embarazadas: `${baseUrl}images/tienda-embarazadas.webp`
+const storeCoverBySlug = {
+  deportes: {
+    src: `${baseUrl}images/tienda-deportes.webp`,
+    srcset: `${baseUrl}images/tienda-deportes-420.jpg 420w, ${baseUrl}images/tienda-deportes-760.jpg 760w`
+  },
+  'tecnologia-electronica': {
+    src: `${baseUrl}images/tienda-tecnologias.webp`,
+    srcset: `${baseUrl}images/tienda-tecnologias-420.jpg 420w, ${baseUrl}images/tienda-tecnologias-760.jpg 760w`
+  },
+  regalos: {
+    src: `${baseUrl}images/tienda-regalos.webp`,
+    srcset: `${baseUrl}images/tienda-regalos-420.jpg 420w, ${baseUrl}images/tienda-regalos-760.jpg 760w`
+  },
+  embarazadas: {
+    src: `${baseUrl}images/tienda-embarazadas.webp`,
+    srcset: `${baseUrl}images/tienda-embarazadas-420.jpg 420w, ${baseUrl}images/tienda-embarazadas-760.jpg 760w`
+  }
 };
 const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: string }> = {
   deportes: { kicker: 'Activa', accent: '#0a7f52', soft: '#d8f1e7' },
@@ -36,7 +48,7 @@ const stores = getStores().map((store) => {
 
   <section class="collection-grid" aria-label="Tienditas del catalogo">
     {
-      stores.map((store) => (
+      stores.map((store, index) => (
         <a
           class={`collection-card store-card store-${store.slug}`}
           href={`${baseUrl}tienda/${store.slug}/`}
@@ -47,11 +59,14 @@ const stores = getStores().map((store) => {
               <div class="store-media">
                 <img
                   class="store-cover blur-up-image"
-                  src={store.coverImage}
+                  src={store.coverImage.src}
+                  srcset={store.coverImage.srcset}
+                  sizes="(max-width: 768px) 92vw, (max-width: 1160px) 46vw, 360px"
                   alt={store.title}
-                  loading="lazy"
-                  width="640"
-                  height="640"
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  fetchpriority={index === 0 ? 'high' : 'auto'}
+                  width="760"
+                  height="344"
                   data-blur-up
                 />
                 <div class="store-overlay"></div>
