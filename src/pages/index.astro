@@ -4,10 +4,10 @@ import { getStoreProducts, getStores } from '../lib/catalog';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const storeCoverBySlug: Record<string, string> = {
-  deportes: `${baseUrl}images/tienda-deportes.jpg`,
-  'tecnologia-electronica': `${baseUrl}images/tienda-tecnologias.jpg`,
-  regalos: `${baseUrl}images/tienda-regalos.jpg`,
-  embarazadas: `${baseUrl}images/tienda-embarazadas.jpg`
+  deportes: `${baseUrl}images/tienda-deportes.webp`,
+  'tecnologia-electronica': `${baseUrl}images/tienda-tecnologias.webp`,
+  regalos: `${baseUrl}images/tienda-regalos.webp`,
+  embarazadas: `${baseUrl}images/tienda-embarazadas.webp`
 };
 const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: string }> = {
   deportes: { kicker: 'Activa', accent: '#0a7f52', soft: '#d8f1e7' },
