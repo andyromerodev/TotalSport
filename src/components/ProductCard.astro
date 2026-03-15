@@ -1,6 +1,7 @@
 ---
-import type { Product } from '../lib/catalog';
-import { buildWhatsAppLink, getProductImages } from '../lib/catalog';
+import type { Product } from '../domain/catalog.types';
+import { buildWhatsAppLink } from '../lib/whatsapp';
+import { getProductImages } from '../lib/productImages';
 
 interface Props {
   product: Product;

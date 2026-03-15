@@ -1,9 +1,12 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { buildWhatsAppLink, getProductImages, getProducts, getProductById } from '../../lib/catalog';
+import { getAllProducts } from '../../application/getAllProducts';
+import { getProductById } from '../../application/getProductById';
+import { buildWhatsAppLink } from '../../lib/whatsapp';
+import { getProductImages } from '../../lib/productImages';
 
 export function getStaticPaths() {
-  return getProducts().map((product) => ({
+  return getAllProducts().map((product) => ({
     params: { id: product.id }
   }));
 }
