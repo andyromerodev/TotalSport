@@ -18,7 +18,7 @@
     "sync-and-build": "pnpm run validate-products && pnpm run sync-soul && astro build && node scripts/validate-home-performance.mjs"
   },
   "dependencies": {
-    "astro": "^5.17.0"
+    "astro": "^6.0.5"
   },
   "devDependencies": {
     "sharp": "^0.34.5"
