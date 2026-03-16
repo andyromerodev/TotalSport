@@ -1,4 +1,11 @@
-import { bootstrapFinanceFromCatalog, ensureAdminDataFiles, loadAdminData, loadCatalogProducts, resolveAdminDataPaths, saveAdminData } from './admin-data-core.mjs';
+import {
+  ensureAdminDataFiles,
+  loadAdminData,
+  saveAdminData,
+  resolveAdminDataPaths
+} from './infrastructure/jsonAdminRepository.mjs';
+import { loadCatalogProducts } from './infrastructure/jsonCatalogReader.mjs';
+import { bootstrapFinanceFromCatalog } from './domain/inventory.rules.mjs';
 
 async function main() {
   await ensureAdminDataFiles();

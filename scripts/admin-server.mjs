@@ -1,23 +1,16 @@
 import { createServer } from 'node:http';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { URL } from 'node:url';
-import {
-  applyMovement,
-  bootstrapFinanceFromCatalog,
-  buildPublicStock,
-  computeDashboard,
-  ensureAdminDataFiles,
-  loadAdminData,
-  loadCatalogProducts,
-  normalizeMovementInput,
-  resolveAdminDataPaths,
-  saveAdminData
-} from './admin-data-core.mjs';
+import { ensureAdminDataFiles, resolveAdminDataPaths } from './infrastructure/jsonAdminRepository.mjs';
+import { getProducts } from './application/getProducts.mjs';
+import { getDashboard } from './application/getDashboard.mjs';
+import { getLedger } from './application/getLedger.mjs';
+import { registerMovement } from './application/registerMovement.mjs';
+import { exportPublicStock } from './application/exportPublicStock.mjs';
 
 const rootDir = process.cwd();
 const uiDir = path.resolve(rootDir, 'scripts/admin-panel');
-const publicStockPath = path.resolve(rootDir, 'src/data/public-stock.json');
 
 const port = Number(process.env.ADMIN_PORT ?? 4310);
 const host = '127.0.0.1';
@@ -43,131 +36,43 @@ async function readBody(req) {
   return JSON.parse(raw);
 }
 
-function withCatalogMeta(finance, catalog) {
-  const catalogById = new Map(catalog.map((item) => [item.productId, item]));
-
-  return finance.map((record) => {
-    const meta = catalogById.get(record.productId);
-    return {
-      ...record,
-      name: meta?.name ?? record.productId,
-      category: meta?.category ?? 'Sin categoria',
-      storeSlug: meta?.storeSlug ?? 'n/a',
-      storeTitle: meta?.storeTitle ?? 'n/a',
-      inStock: record.currentStock > 0
-    };
-  });
-}
-
-function filterFinanceRecords(records, query) {
-  const q = (query.search ?? '').toString().trim().toLowerCase();
-  const store = (query.store ?? '').toString().trim().toLowerCase();
-  const category = (query.category ?? '').toString().trim().toLowerCase();
-  const status = (query.status ?? '').toString().trim().toLowerCase();
-
-  return records.filter((record) => {
-    if (q.length > 0) {
-      const matches =
-        record.productId.toLowerCase().includes(q) ||
-        record.name.toLowerCase().includes(q) ||
-        record.category.toLowerCase().includes(q);
-      if (!matches) return false;
-    }
-
-    if (store.length > 0 && record.storeSlug.toLowerCase() !== store) {
-      return false;
-    }
-
-    if (category.length > 0 && record.category.toLowerCase() !== category) {
-      return false;
-    }
-
-    if (status === 'in-stock' && record.currentStock <= 0) {
-      return false;
-    }
-
-    if (status === 'out-of-stock' && record.currentStock > 0) {
-      return false;
-    }
-
-    return true;
-  });
-}
-
 async function handleApi(req, res, url) {
-  const catalog = await loadCatalogProducts();
-  const catalogById = new Map(catalog.map((item) => [item.productId, item]));
-  const { finance, ledger } = await loadAdminData();
-  const mergedFinance = bootstrapFinanceFromCatalog(catalog, finance);
-
   if (req.method === 'GET' && url.pathname === '/api/health') {
     const { adminDataDir } = resolveAdminDataPaths();
     return sendJson(res, 200, { ok: true, adminDataDir });
   }
 
   if (req.method === 'GET' && url.pathname === '/api/products') {
-    const records = withCatalogMeta(mergedFinance, catalog);
-    const filtered = filterFinanceRecords(records, Object.fromEntries(url.searchParams.entries()));
-    const stores = [...new Set(records.map((item) => item.storeSlug))].sort();
-    const categories = [...new Set(records.map((item) => item.category))].sort();
-
-    return sendJson(res, 200, {
-      items: filtered,
-      stores,
-      categories
-    });
+    const result = await getProducts(Object.fromEntries(url.searchParams.entries()));
+    return sendJson(res, 200, result);
   }
 
   if (req.method === 'GET' && url.pathname === '/api/ledger') {
-    const from = url.searchParams.get('from') ?? undefined;
-    const to = url.searchParams.get('to') ?? undefined;
-    const productId = url.searchParams.get('productId') ?? '';
-
-    const filtered = ledger
-      .filter((movement) => {
-        if (productId && movement.productId !== productId) return false;
-
-        const ts = new Date(movement.timestamp);
-        if (Number.isNaN(ts.getTime())) return false;
-
-        if (from && ts < new Date(from)) return false;
-        if (to && ts > new Date(to)) return false;
-
-        return true;
-      })
-      .sort((a, b) => (a.timestamp < b.timestamp ? 1 : -1));
-
-    return sendJson(res, 200, { items: filtered });
+    const result = await getLedger({
+      productId: url.searchParams.get('productId') ?? '',
+      from: url.searchParams.get('from') ?? undefined,
+      to: url.searchParams.get('to') ?? undefined
+    });
+    return sendJson(res, 200, result);
   }
 
   if (req.method === 'GET' && url.pathname === '/api/dashboard') {
-    const from = url.searchParams.get('from') ?? undefined;
-    const to = url.searchParams.get('to') ?? undefined;
-    const dashboard = computeDashboard(mergedFinance, ledger, from, to);
-    return sendJson(res, 200, dashboard);
+    const result = await getDashboard(
+      url.searchParams.get('from') ?? undefined,
+      url.searchParams.get('to') ?? undefined
+    );
+    return sendJson(res, 200, result);
   }
 
   if (req.method === 'POST' && url.pathname === '/api/movements') {
     const payload = await readBody(req);
-    const movement = normalizeMovementInput(payload, catalogById);
-    const nextFinance = applyMovement({ movement, finance: mergedFinance, catalogById });
-    const nextLedger = [...ledger, movement];
-
-    await saveAdminData(nextFinance, nextLedger);
-    return sendJson(res, 201, {
-      movement,
-      product: withCatalogMeta(nextFinance, catalog).find((item) => item.productId === movement.productId)
-    });
+    const result = await registerMovement(payload);
+    return sendJson(res, 201, result);
   }
 
   if (req.method === 'POST' && url.pathname === '/api/export-public-stock') {
-    const publicStock = buildPublicStock(mergedFinance, catalog);
-    await writeFile(publicStockPath, `${JSON.stringify(publicStock, null, 2)}\n`, 'utf-8');
-
-    return sendJson(res, 200, {
-      exported: publicStock.length,
-      target: publicStockPath
-    });
+    const result = await exportPublicStock();
+    return sendJson(res, 200, result);
   }
 
   return sendJson(res, 404, { error: 'Not found' });
