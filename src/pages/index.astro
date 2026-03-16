@@ -1,8 +1,8 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
 import { Image } from 'astro:assets';
-import { getStores } from '../application/getStores';
-import { getStoreProducts } from '../application/getStoreProducts';
+import { getStoresUseCase } from '../application/GetStoresUseCase';
+import { getStoreProductsUseCase } from '../application/GetStoreProductsUseCase';
 import coverDeportes from '../assets/store-covers/tienda-deportes.webp';
 import coverTecnologias from '../assets/store-covers/tienda-tecnologias.webp';
 import coverRegalos from '../assets/store-covers/tienda-regalos.webp';
@@ -22,8 +22,8 @@ const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: s
   embarazadas: { kicker: 'Cuidado', accent: '#9a4f76', soft: '#f5dfeb' }
 };
 
-const stores = getStores().map((store) => {
-  const products = getStoreProducts(store.slug);
+const stores = getStoresUseCase().map((store) => {
+  const products = getStoreProductsUseCase(store.slug);
   const theme = storeThemeBySlug[store.slug] ?? { kicker: 'Tienda', accent: '#0a7f52', soft: '#d8f1e7' };
   return {
     ...store,

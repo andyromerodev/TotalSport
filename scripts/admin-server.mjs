@@ -3,11 +3,11 @@ import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { URL } from 'node:url';
 import { ensureAdminDataFiles, resolveAdminDataPaths } from './infrastructure/jsonAdminRepository.mjs';
-import { getProducts } from './application/getProducts.mjs';
-import { getDashboard } from './application/getDashboard.mjs';
-import { getLedger } from './application/getLedger.mjs';
-import { registerMovement } from './application/registerMovement.mjs';
-import { exportPublicStock } from './application/exportPublicStock.mjs';
+import { getProductsUseCase } from './application/GetProductsUseCase.mjs';
+import { getDashboardUseCase } from './application/GetDashboardUseCase.mjs';
+import { getLedgerUseCase } from './application/GetLedgerUseCase.mjs';
+import { registerMovementUseCase } from './application/RegisterMovementUseCase.mjs';
+import { exportPublicStockUseCase } from './application/ExportPublicStockUseCase.mjs';
 
 const rootDir = process.cwd();
 const uiDir = path.resolve(rootDir, 'scripts/admin-panel');
@@ -43,12 +43,12 @@ async function handleApi(req, res, url) {
   }
 
   if (req.method === 'GET' && url.pathname === '/api/products') {
-    const result = await getProducts(Object.fromEntries(url.searchParams.entries()));
+    const result = await getProductsUseCase(Object.fromEntries(url.searchParams.entries()));
     return sendJson(res, 200, result);
   }
 
   if (req.method === 'GET' && url.pathname === '/api/ledger') {
-    const result = await getLedger({
+    const result = await getLedgerUseCase({
       productId: url.searchParams.get('productId') ?? '',
       from: url.searchParams.get('from') ?? undefined,
       to: url.searchParams.get('to') ?? undefined
@@ -57,7 +57,7 @@ async function handleApi(req, res, url) {
   }
 
   if (req.method === 'GET' && url.pathname === '/api/dashboard') {
-    const result = await getDashboard(
+    const result = await getDashboardUseCase(
       url.searchParams.get('from') ?? undefined,
       url.searchParams.get('to') ?? undefined
     );
@@ -66,12 +66,12 @@ async function handleApi(req, res, url) {
 
   if (req.method === 'POST' && url.pathname === '/api/movements') {
     const payload = await readBody(req);
-    const result = await registerMovement(payload);
+    const result = await registerMovementUseCase(payload);
     return sendJson(res, 201, result);
   }
 
   if (req.method === 'POST' && url.pathname === '/api/export-public-stock') {
-    const result = await exportPublicStock();
+    const result = await exportPublicStockUseCase();
     return sendJson(res, 200, result);
   }
 

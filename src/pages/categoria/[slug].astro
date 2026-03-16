@@ -1,18 +1,18 @@
 ---
-import { getStores } from '../../application/getStores';
-import { getStoreCategories } from '../../application/getStoreCategories';
-import { findStoreSlugByCategorySlug } from '../../application/findStoreByCategory';
+import { getStoresUseCase } from '../../application/GetStoresUseCase';
+import { getStoreCategoriesUseCase } from '../../application/GetStoreCategoriesUseCase';
+import { findStoreSlugByCategorySlugUseCase } from '../../application/FindStoreByCategoryUseCase';
 import { slugifyCategory } from '../../lib/slugify';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const categorySlug = Astro.params.slug ?? '';
-const storeSlug = findStoreSlugByCategorySlug(categorySlug) ?? 'deportes';
+const storeSlug = findStoreSlugByCategorySlugUseCase(categorySlug) ?? 'deportes';
 const target = `${baseUrl}tienda/${storeSlug}/categoria/${categorySlug}/`;
 
 export function getStaticPaths() {
   const slugs = new Set();
-  for (const store of getStores()) {
-    for (const category of getStoreCategories(store.slug)) {
+  for (const store of getStoresUseCase()) {
+    for (const category of getStoreCategoriesUseCase(store.slug)) {
       slugs.add(slugifyCategory(category));
     }
   }

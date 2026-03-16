@@ -1,10 +1,10 @@
 import type { ICatalogRepository } from '../domain/catalog.repository';
-import type { Product } from '../domain/catalog.types';
 import { jsonCatalogRepository } from '../infrastructure/jsonCatalogRepository';
+import { getStoreProductsUseCase } from './GetStoreProductsUseCase';
 
-export function getStoreProducts(
+export function getStoreCategoriesUseCase(
   slug: string,
   repo: ICatalogRepository = jsonCatalogRepository
-): Product[] {
-  return repo.getProductsByStore(slug).filter((product) => product.active);
+): string[] {
+  return [...new Set(getStoreProductsUseCase(slug, repo).map((product) => product.category))];
 }

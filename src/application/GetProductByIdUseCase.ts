@@ -1,11 +1,11 @@
 import type { ICatalogRepository } from '../domain/catalog.repository';
 import type { Product } from '../domain/catalog.types';
 import { jsonCatalogRepository } from '../infrastructure/jsonCatalogRepository';
-import { getAllProducts } from './getAllProducts';
+import { getAllProductsUseCase } from './GetAllProductsUseCase';
 
-export function getProductById(
+export function getProductByIdUseCase(
   id: string,
   repo: ICatalogRepository = jsonCatalogRepository
 ): Product | undefined {
-  return getAllProducts(repo).find((product) => product.id === id);
+  return getAllProductsUseCase(repo).find((product) => product.id === id);
 }

@@ -2,9 +2,9 @@ import { loadCatalogProducts } from '../infrastructure/jsonCatalogReader.mjs';
 import { loadAdminData, saveAdminData } from '../infrastructure/jsonAdminRepository.mjs';
 import { bootstrapFinanceFromCatalog, applyMovement } from '../domain/inventory.rules.mjs';
 import { normalizeMovementInput } from '../lib/normalize.mjs';
-import { withCatalogMeta } from './getProducts.mjs';
+import { withCatalogMeta } from './GetProductsUseCase.mjs';
 
-export async function registerMovement(payload) {
+export async function registerMovementUseCase(payload) {
   const catalog = await loadCatalogProducts();
   const catalogById = new Map(catalog.map((item) => [item.productId, item]));
   const { finance, ledger } = await loadAdminData();

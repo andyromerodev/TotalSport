@@ -1,7 +1,7 @@
-import { exportPublicStock } from './application/exportPublicStock.mjs';
+import { exportPublicStockUseCase } from './application/ExportPublicStockUseCase.mjs';
 
 async function main() {
-  const { exported, target } = await exportPublicStock();
+  const { exported, target } = await exportPublicStockUseCase();
   console.log(`Exported ${exported} public stock records to ${target}`);
 }
 

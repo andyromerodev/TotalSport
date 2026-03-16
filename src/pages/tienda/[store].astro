@@ -1,22 +1,22 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
 import ProductCard from '../../components/ProductCard.astro';
-import { getStores, getStoreBySlug } from '../../application/getStores';
-import { getStoreCategories } from '../../application/getStoreCategories';
-import { getStoreProductsByCategory } from '../../application/getStoreProductsByCategory';
+import { getStoresUseCase, getStoreBySlugUseCase } from '../../application/GetStoresUseCase';
+import { getStoreCategoriesUseCase } from '../../application/GetStoreCategoriesUseCase';
+import { getStoreProductsByCategoryUseCase } from '../../application/GetStoreProductsByCategoryUseCase';
 import { slugifyCategory } from '../../lib/slugify';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 export function getStaticPaths() {
-  return getStores().map((store) => ({ params: { store: store.slug } }));
+  return getStoresUseCase().map((store) => ({ params: { store: store.slug } }));
 }
 
 const storeSlug = Astro.params.store ?? '';
-const store = getStoreBySlug(storeSlug) ?? getStores()[0];
-const categories = getStoreCategories(store.slug);
+const store = getStoreBySlugUseCase(storeSlug) ?? getStoresUseCase()[0];
+const categories = getStoreCategoriesUseCase(store.slug);
 const selectedCategory = categories[0];
-const selectedProducts = selectedCategory ? getStoreProductsByCategory(store.slug, selectedCategory) : [];
+const selectedProducts = selectedCategory ? getStoreProductsByCategoryUseCase(store.slug, selectedCategory) : [];
 ---
 
 <MainLayout title={`ALKILO | ${store.title}`} description={store.description}>

@@ -4,7 +4,7 @@ import { bootstrapFinanceFromCatalog } from '../domain/inventory.rules.mjs';
 import { buildPublicStock } from '../domain/stock.projection.mjs';
 import { writePublicStock } from '../infrastructure/publicStockWriter.mjs';
 
-export async function exportPublicStock() {
+export async function exportPublicStockUseCase() {
   const catalog = await loadCatalogProducts();
   const { finance } = await loadAdminData();
   const mergedFinance = bootstrapFinanceFromCatalog(catalog, finance);

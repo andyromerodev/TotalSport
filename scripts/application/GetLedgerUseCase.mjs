@@ -1,6 +1,6 @@
 import { loadAdminData } from '../infrastructure/jsonAdminRepository.mjs';
 
-export async function getLedger({ productId, from, to } = {}) {
+export async function getLedgerUseCase({ productId, from, to } = {}) {
   const { ledger } = await loadAdminData();
 
   const filtered = ledger

@@ -1,17 +1,17 @@
 ---
-import { getStores, getStoreBySlug } from '../../application/getStores';
+import { getStoresUseCase, getStoreBySlugUseCase } from '../../application/GetStoresUseCase';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 const legacyGroup = Astro.params.group ?? '';
 
 export function getStaticPaths() {
-  const stores = getStores().map((store) => store.slug);
+  const stores = getStoresUseCase().map((store) => store.slug);
   const legacy = stores.map((slug) => (slug === 'deportes' ? 'deporte-ciclismo' : slug));
   return legacy.map((group) => ({ params: { group } }));
 }
 
 const mappedStore = legacyGroup === 'deporte-ciclismo' ? 'deportes' : legacyGroup;
-const targetStore = getStoreBySlug(mappedStore) ? mappedStore : 'deportes';
+const targetStore = getStoreBySlugUseCase(mappedStore) ? mappedStore : 'deportes';
 const target = `${baseUrl}tienda/${targetStore}/`;
 ---
 

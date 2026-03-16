@@ -53,7 +53,7 @@ export function filterFinanceRecords(records, query) {
   });
 }
 
-export async function getProducts(query = {}) {
+export async function getProductsUseCase(query = {}) {
   const catalog = await loadCatalogProducts();
   const { finance } = await loadAdminData();
   const mergedFinance = bootstrapFinanceFromCatalog(catalog, finance);
