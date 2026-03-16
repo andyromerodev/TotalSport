@@ -7,6 +7,7 @@
 
 | ID | Time | T | Title | Read |
 |----|------|---|-------|------|
-| #237 | 5:10 PM | 🔴 | Fixed TypeScript Index Signature Error with Type Assertion | ~325 |
+| #239 | 5:10 PM | ✅ | Changed Astro Image Component API from formats to format | ~212 |
+| #237 | " | 🔴 | Fixed TypeScript Index Signature Error with Type Assertion | ~325 |
 | #235 | 5:08 PM | 🔵 | TypeScript Index Signature Error in Store Cover Image Mapping | ~315 |
 </claude-mem-context>
