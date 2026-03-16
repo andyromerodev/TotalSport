@@ -1,17 +1,17 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { getAllProducts } from '../../application/getAllProducts';
-import { getProductById } from '../../application/getProductById';
+import { getAllProductsUseCase } from '../../application/GetAllProductsUseCase';
+import { getProductByIdUseCase } from '../../application/GetProductByIdUseCase';
 import { buildWhatsAppLink } from '../../lib/whatsapp';
 import { getProductImages } from '../../lib/productImages';
 
 export function getStaticPaths() {
-  return getAllProducts().map((product) => ({
+  return getAllProductsUseCase().map((product) => ({
     params: { id: product.id }
   }));
 }
 
-const product = getProductById(Astro.params.id ?? '');
+const product = getProductByIdUseCase(Astro.params.id ?? '');
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 if (!product) {

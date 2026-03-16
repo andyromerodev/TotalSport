@@ -2,11 +2,11 @@ import type { ICatalogRepository } from '../domain/catalog.repository';
 import type { StoreMeta } from '../domain/catalog.types';
 import { jsonCatalogRepository } from '../infrastructure/jsonCatalogRepository';
 
-export function getStores(repo: ICatalogRepository = jsonCatalogRepository): StoreMeta[] {
+export function getStoresUseCase(repo: ICatalogRepository = jsonCatalogRepository): StoreMeta[] {
   return repo.getStores();
 }
 
-export function getStoreBySlug(
+export function getStoreBySlugUseCase(
   slug: string,
   repo: ICatalogRepository = jsonCatalogRepository
 ): StoreMeta | undefined {

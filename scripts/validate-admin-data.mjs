@@ -1,4 +1,5 @@
-import { loadAdminData, loadCatalogProducts } from './admin-data-core.mjs';
+import { loadAdminData } from './infrastructure/jsonAdminRepository.mjs';
+import { loadCatalogProducts } from './infrastructure/jsonCatalogReader.mjs';
 
 async function main() {
   const catalog = await loadCatalogProducts();

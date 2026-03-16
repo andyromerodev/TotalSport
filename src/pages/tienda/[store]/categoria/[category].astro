@@ -1,16 +1,16 @@
 ---
 import MainLayout from '../../../../layouts/MainLayout.astro';
 import ProductCard from '../../../../components/ProductCard.astro';
-import { getStores, getStoreBySlug } from '../../../../application/getStores';
-import { getStoreCategories } from '../../../../application/getStoreCategories';
-import { getStoreProductsByCategory } from '../../../../application/getStoreProductsByCategory';
+import { getStoresUseCase, getStoreBySlugUseCase } from '../../../../application/GetStoresUseCase';
+import { getStoreCategoriesUseCase } from '../../../../application/GetStoreCategoriesUseCase';
+import { getStoreProductsByCategoryUseCase } from '../../../../application/GetStoreProductsByCategoryUseCase';
 import { slugifyCategory } from '../../../../lib/slugify';
 
 const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
 
 export function getStaticPaths() {
-  return getStores().flatMap((store) =>
-    getStoreCategories(store.slug).map((category) => ({
+  return getStoresUseCase().flatMap((store) =>
+    getStoreCategoriesUseCase(store.slug).map((category) => ({
       params: {
         store: store.slug,
         category: slugifyCategory(category)
@@ -21,10 +21,10 @@ export function getStaticPaths() {
 
 const storeSlug = Astro.params.store ?? '';
 const categorySlug = Astro.params.category ?? '';
-const store = getStoreBySlug(storeSlug) ?? getStores()[0];
-const categories = getStoreCategories(store.slug);
+const store = getStoreBySlugUseCase(storeSlug) ?? getStoresUseCase()[0];
+const categories = getStoreCategoriesUseCase(store.slug);
 const selectedCategory = categories.find((category) => slugifyCategory(category) === categorySlug) ?? categories[0];
-const selectedProducts = selectedCategory ? getStoreProductsByCategory(store.slug, selectedCategory) : [];
+const selectedProducts = selectedCategory ? getStoreProductsByCategoryUseCase(store.slug, selectedCategory) : [];
 ---
 
 <MainLayout title={`ALKILO | ${store.title}`} description={`${selectedCategory ?? ''} en ${store.title}`.trim()}>
