@@ -2,8 +2,9 @@
 import MainLayout from '../../layouts/MainLayout.astro';
 import { getAllProductsUseCase } from '../../application/GetAllProductsUseCase';
 import { getProductByIdUseCase } from '../../application/GetProductByIdUseCase';
-import { buildWhatsAppLink } from '../../lib/whatsapp';
 import { getProductImages } from '../../lib/productImages';
+import { normalizeBaseUrl, toProductDetailVM } from '../../ui/vue/adapters/catalogViewModelMappers';
+import ProductDetailPage from '../../ui/vue/components/ProductDetailPage.vue';
 
 export function getStaticPaths() {
   return getAllProductsUseCase().map((product) => ({
@@ -12,15 +13,14 @@ export function getStaticPaths() {
 }
 
 const product = getProductByIdUseCase(Astro.params.id ?? '');
-const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const baseUrl = normalizeBaseUrl(import.meta.env.BASE_URL);
 
 if (!product) {
   return Astro.redirect(baseUrl);
 }
 
-const whatsappHref = buildWhatsAppLink(product.name);
-const images = getProductImages(product);
-const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
+const detailVm = toProductDetailVM(product, baseUrl);
+const shareImage = getProductImages(product)[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
 ---
 
 <MainLayout
@@ -29,229 +29,5 @@ const shareImage = images[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
   image={shareImage}
   type="article"
 >
-  <a href={baseUrl} class="back-link">Regresar al catalogo</a>
-
-  <article class="product-detail">
-    <div class="gallery">
-      <button
-        type="button"
-        class="image-trigger"
-        data-lightbox-src={shareImage}
-        data-lightbox-alt={product.name}
-        aria-label={`Ver ${product.name} en pantalla completa`}
-      >
-        <img
-          class="main-image blur-up-image"
-          src={shareImage}
-          alt={product.name}
-          loading="eager"
-          width="900"
-          height="900"
-          data-blur-up
-        />
-      </button>
-      {
-        images.length > 1 ? (
-          <div class="thumb-grid">
-            {images.slice(1).map((image, index) => (
-              <button
-                type="button"
-                class="image-trigger thumb-trigger"
-                data-lightbox-src={image}
-                data-lightbox-alt={`${product.name} foto ${index + 2}`}
-                aria-label={`Ver ${product.name} foto ${index + 2} en pantalla completa`}
-              >
-                <img class="thumb-image blur-up-image" src={image} alt={`${product.name} foto ${index + 2}`} loading="lazy" width="300" height="300" data-blur-up />
-              </button>
-            ))}
-          </div>
-        ) : null
-      }
-    </div>
-
-    <div>
-      <p class="eyebrow">{product.category}</p>
-      <h1>{product.name}</h1>
-      <p class="price">{product.priceUsd} USD</p>
-      {!product.inStock && <p class="stock-badge detail-stock-badge">Agotado</p>}
-      {product.description && <p class="description">{product.description}</p>}
-
-      {
-        product.variants?.length ? (
-          <ul class="variants">
-            {product.variants.map((variant) => <li><strong>{variant.name}:</strong> {variant.values.join(', ')}</li>)}
-          </ul>
-        ) : null
-      }
-
-      <a class="btn" href={whatsappHref} target="_blank" rel="noreferrer">{product.inStock ? 'Solicitar por WhatsApp' : 'Consultar reposicion por WhatsApp'}</a>
-    </div>
-  </article>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-toolbar">
-      <button type="button" id="zoom-out" aria-label="Alejar">-</button>
-      <button type="button" id="zoom-reset" aria-label="Restablecer zoom">100%</button>
-      <button type="button" id="zoom-in" aria-label="Acercar">+</button>
-      <button type="button" id="lightbox-close" aria-label="Cerrar imagen">Cerrar</button>
-    </div>
-    <img id="lightbox-image" src="" alt="" />
-  </div>
+  <ProductDetailPage client:load product={detailVm} />
 </MainLayout>
-
-<script>
-  const triggers = Array.from(document.querySelectorAll('.image-trigger'));
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImage = document.getElementById('lightbox-image');
-  const closeButton = document.getElementById('lightbox-close');
-  const zoomInButton = document.getElementById('zoom-in');
-  const zoomOutButton = document.getElementById('zoom-out');
-  const zoomResetButton = document.getElementById('zoom-reset');
-
-  let scale = 1;
-  let translateX = 0;
-  let translateY = 0;
-  let dragging = false;
-  let dragStartX = 0;
-  let dragStartY = 0;
-  let dragOriginX = 0;
-  let dragOriginY = 0;
-
-  const updateZoom = () => {
-    if (!lightboxImage || !zoomResetButton) return;
-    lightboxImage.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-    zoomResetButton.textContent = `${Math.round(scale * 100)}%`;
-    lightboxImage.dataset.zoomed = scale > 1 ? 'true' : 'false';
-  };
-
-  const openLightbox = (src, alt) => {
-    if (!lightbox || !lightboxImage) return;
-    scale = 1;
-    translateX = 0;
-    translateY = 0;
-    lightboxImage.src = src;
-    lightboxImage.alt = alt;
-    updateZoom();
-    lightbox.classList.add('is-open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  };
-
-  const closeLightbox = () => {
-    if (!lightbox || !lightboxImage) return;
-    lightbox.classList.remove('is-open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    lightboxImage.src = '';
-    document.body.style.overflow = '';
-  };
-
-  triggers.forEach((trigger) => {
-    trigger.addEventListener('click', () => {
-      const src = trigger.getAttribute('data-lightbox-src');
-      const alt = trigger.getAttribute('data-lightbox-alt') ?? 'Imagen de producto';
-      if (!src) return;
-      openLightbox(src, alt);
-    });
-  });
-
-  closeButton?.addEventListener('click', closeLightbox);
-
-  lightbox?.addEventListener('click', (event) => {
-    if (event.target === lightbox) {
-      closeLightbox();
-    }
-  });
-
-  zoomInButton?.addEventListener('click', () => {
-    scale = Math.min(scale + 0.2, 4);
-    updateZoom();
-  });
-
-  zoomOutButton?.addEventListener('click', () => {
-    scale = Math.max(scale - 0.2, 1);
-    updateZoom();
-  });
-
-  zoomResetButton?.addEventListener('click', () => {
-    scale = 1;
-    translateX = 0;
-    translateY = 0;
-    updateZoom();
-  });
-
-  lightboxImage?.addEventListener('wheel', (event) => {
-    event.preventDefault();
-    scale = event.deltaY < 0 ? Math.min(scale + 0.15, 4) : Math.max(scale - 0.15, 1);
-    if (scale <= 1) {
-      translateX = 0;
-      translateY = 0;
-    }
-    updateZoom();
-  });
-
-  const beginDrag = (x, y) => {
-    if (scale <= 1 || !lightboxImage) return;
-    dragging = true;
-    dragStartX = x;
-    dragStartY = y;
-    dragOriginX = translateX;
-    dragOriginY = translateY;
-    lightboxImage.dataset.dragging = 'true';
-  };
-
-  const moveDrag = (x, y) => {
-    if (!dragging || !lightboxImage) return;
-    const deltaX = x - dragStartX;
-    const deltaY = y - dragStartY;
-    translateX = dragOriginX + deltaX;
-    translateY = dragOriginY + deltaY;
-    updateZoom();
-  };
-
-  const endDrag = () => {
-    dragging = false;
-    if (!lightboxImage) return;
-    lightboxImage.dataset.dragging = 'false';
-  };
-
-  lightboxImage?.addEventListener('mousedown', (event) => {
-    event.preventDefault();
-    beginDrag(event.clientX, event.clientY);
-  });
-
-  window.addEventListener('mousemove', (event) => {
-    moveDrag(event.clientX, event.clientY);
-  });
-
-  window.addEventListener('mouseup', () => {
-    endDrag();
-  });
-
-  lightboxImage?.addEventListener(
-    'touchstart',
-    (event) => {
-      if (event.touches.length !== 1) return;
-      const touch = event.touches[0];
-      beginDrag(touch.clientX, touch.clientY);
-    },
-    { passive: true }
-  );
-
-  lightboxImage?.addEventListener(
-    'touchmove',
-    (event) => {
-      if (!dragging || event.touches.length !== 1) return;
-      const touch = event.touches[0];
-      moveDrag(touch.clientX, touch.clientY);
-    },
-    { passive: true }
-  );
-
-  window.addEventListener('touchend', () => {
-    endDrag();
-  });
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') closeLightbox();
-  });
-</script>
