@@ -16,6 +16,14 @@ function isRawGitHubUrl(value) {
   return typeof value === 'string' && value.startsWith('https://raw.githubusercontent.com/');
 }
 
+/** Acepta filename relativo (ej. "foto.jpg") o URL absoluta de raw.githubusercontent.com */
+function isValidImageRef(value) {
+  if (typeof value !== 'string' || value.trim() === '') return false;
+  if (isRawGitHubUrl(value)) return true;
+  // filename relativo: no empieza con http, tiene extension de imagen
+  return !value.startsWith('http') && /\.(jpg|jpeg|png|webp|gif|avif|svg)$/i.test(value);
+}
+
 async function readJson(filePath) {
   const raw = await readFile(filePath, 'utf-8');
   return JSON.parse(raw);
@@ -55,22 +63,22 @@ function validateProduct(product, ctx, ids) {
     fail(`${ctx} has invalid priceUsd.`);
   }
 
-  const hasSingleImage = 'imageUrl' in product && isRawGitHubUrl(product.imageUrl);
+  const hasSingleImage = 'imageUrl' in product && isValidImageRef(product.imageUrl);
   const hasImageList = Array.isArray(product.images) && product.images.length > 0;
 
   if (!hasSingleImage && !hasImageList) {
-    fail(`${ctx} must define either imageUrl or images[] with raw.githubusercontent.com URLs.`);
+    fail(`${ctx} must define either imageUrl (raw.githubusercontent.com URL or filename) or images[].`);
   }
 
-  if ('imageUrl' in product && !isRawGitHubUrl(product.imageUrl)) {
-    fail(`${ctx} imageUrl must use raw.githubusercontent.com.`);
+  if ('imageUrl' in product && !isValidImageRef(product.imageUrl)) {
+    fail(`${ctx} imageUrl must be a raw.githubusercontent.com URL or a relative filename with image extension.`);
   }
 
   if ('images' in product) {
     if (!Array.isArray(product.images) || product.images.length === 0) {
       fail(`${ctx} images must be a non-empty array when provided.`);
-    } else if (product.images.some((image) => !isRawGitHubUrl(image))) {
-      fail(`${ctx} images[] contains invalid URL. All images must use raw.githubusercontent.com.`);
+    } else if (product.images.some((image) => !isValidImageRef(image))) {
+      fail(`${ctx} images[] contains an invalid entry. Each must be a raw.githubusercontent.com URL or a relative filename.`);
     }
   }
 
