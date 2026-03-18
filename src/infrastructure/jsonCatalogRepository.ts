@@ -6,13 +6,16 @@ import tecnologiaProductsData from '../data/stores/tecnologia-electronica/produc
 import regalosProductsData from '../data/stores/regalos/products.json';
 import embarazadasProductsData from '../data/stores/embarazadas/products.json';
 import { jsonStockRepository } from './jsonStockRepository';
+import { resolveImageUrl, resolveImageUrls } from './imageUrlResolver';
 
-function enrichWithStock(products: RawProduct[]): Product[] {
+function enrichWithStock(storeSlug: string, products: RawProduct[]): Product[] {
   const stockMap = jsonStockRepository.getStockMap();
   return products.map((product) => {
     const stock = stockMap.get(product.id);
     return {
       ...product,
+      imageUrl: product.imageUrl ? resolveImageUrl(storeSlug, product.imageUrl) : undefined,
+      images: product.images ? resolveImageUrls(storeSlug, product.images) : undefined,
       inStock: stock?.inStock ?? true,
       availableQty: stock?.availableQty,
     };
@@ -20,10 +23,10 @@ function enrichWithStock(products: RawProduct[]): Product[] {
 }
 
 const storeProductsMap: Record<string, Product[]> = {
-  deportes: enrichWithStock(deportesProductsData as RawProduct[]),
-  'tecnologia-electronica': enrichWithStock(tecnologiaProductsData as RawProduct[]),
-  regalos: enrichWithStock(regalosProductsData as RawProduct[]),
-  embarazadas: enrichWithStock(embarazadasProductsData as RawProduct[]),
+  deportes: enrichWithStock('deportes', deportesProductsData as RawProduct[]),
+  'tecnologia-electronica': enrichWithStock('tecnologia-electronica', tecnologiaProductsData as RawProduct[]),
+  regalos: enrichWithStock('regalos', regalosProductsData as RawProduct[]),
+  embarazadas: enrichWithStock('embarazadas', embarazadasProductsData as RawProduct[]),
 };
 
 export const jsonCatalogRepository: ICatalogRepository = {

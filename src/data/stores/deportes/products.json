@@ -5,7 +5,7 @@
     "category": "Accesorios",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2032.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bateria-CR2032.jpg",
+    "imageUrl": "bateria-CR2032.jpg",
     "aliases": [
       "Batería CR2032"
     ],
@@ -17,7 +17,7 @@
     "category": "Accesorios",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2450.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bateria-CR2450.jpg",
+    "imageUrl": "bateria-CR2450.jpg",
     "aliases": [
       "Batería CR2450"
     ],
@@ -29,18 +29,18 @@
     "category": "Accesorios",
     "priceUsd": 12,
     "description": "Bombita portatil para inflado.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire.png",
+    "imageUrl": "bombita-aire.png",
     "aliases": [
       "bombita aire"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-2.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-3.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-4.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-5.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/bombita-aire-6.png"
+      "bombita-aire.png",
+      "bombita-aire-2.png",
+      "bombita-aire-3.png",
+      "bombita-aire-4.png",
+      "bombita-aire-5.png",
+      "bombita-aire-6.png"
     ]
   },
   {
@@ -49,16 +49,16 @@
     "category": "Accesorios",
     "priceUsd": 1,
     "description": "Cintas para absorber sudor en entrenamiento.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor.jpg",
+    "imageUrl": "cintas-sudor.jpg",
     "aliases": [
       "cinta sudor"
     ],
     "active": true,
-     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/cintas-sudor-3.jpg"
-      ]
+    "images": [
+      "cintas-sudor.jpg",
+      "cintas-sudor-2.jpg",
+      "cintas-sudor-3.jpg"
+    ]
   },
   {
     "id": "zapatillas-adidas-42",
@@ -74,14 +74,14 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/zapatillas-adidas-42.jpg",
+    "imageUrl": "zapatillas-adidas-42.jpg",
     "aliases": [
       "zapatillas adidas"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/zapatillas-adidas-42.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/zapatillas-adidas-42-2.jpg"
+      "zapatillas-adidas-42.jpg",
+      "zapatillas-adidas-42-2.jpg"
     ]
   },
   {
@@ -98,11 +98,11 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-premium-negro.jpg",
+    "imageUrl": "forro-timon-premium-negro.jpg",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-premium-negro.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-premium-negro-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-premium-negro-3.png"
+      "forro-timon-premium-negro.jpg",
+      "forro-timon-premium-negro-2.jpg",
+      "forro-timon-premium-negro-3.png"
     ],
     "aliases": [
       "forro timon premium",
@@ -117,15 +117,15 @@
     "category": "Componentes bicicleta",
     "priceUsd": 12,
     "description": "Compatible con generaciones Shimano 9v, 10v y 11v.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forros-manetas-shimano.jpg",
+    "imageUrl": "forros-manetas-shimano.jpg",
     "aliases": [
       "forros manetas shimano"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forros-manetas-shimano.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forros-manetas-shimano-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forros-manetas-shimano-3.jpg"
+      "forros-manetas-shimano.jpg",
+      "forros-manetas-shimano-2.jpg",
+      "forros-manetas-shimano-3.jpg"
     ]
   },
   {
@@ -143,7 +143,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/placas-shimano.png",
+    "imageUrl": "placas-shimano.png",
     "aliases": [
       "placas base pedal",
       "placas shimano 0",
@@ -153,9 +153,9 @@
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/placas-shimano.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/placas-shimano-2.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/placas-shimano-3.png"
+      "placas-shimano.png",
+      "placas-shimano-2.png",
+      "placas-shimano-3.png"
     ]
   },
   {
@@ -182,16 +182,16 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/rondanas-11t-13t-aluminio.jpg",
+    "imageUrl": "rondanas-11t-13t-aluminio.jpg",
     "aliases": [
       "rondanas 11t",
       "rondanas 13t"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/rondanas-11t-13t-aluminio.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/rondanas-11t-13t-aluminio-2.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/rondanas-11t-13t-aluminio-3.png"
+      "rondanas-11t-13t-aluminio.jpg",
+      "rondanas-11t-13t-aluminio-2.png",
+      "rondanas-11t-13t-aluminio-3.png"
     ]
   },
   {
@@ -200,7 +200,7 @@
     "category": "Componentes bicicleta",
     "priceUsd": 35,
     "description": "Timon de carbono para ciclismo.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/timon-carbon-fsa-kforce.jpg",
+    "imageUrl": "timon-carbon-fsa-kforce.jpg",
     "aliases": [
       "timón fsa kforce",
       "timon fsa kforce"
@@ -213,7 +213,7 @@
     "category": "Componentes bicicleta",
     "priceUsd": 20,
     "description": "Timon Ritchey con geometria Curve Logic.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/timon-ritchey-curve-logic.jpg",
+    "imageUrl": "timon-ritchey-curve-logic.jpg",
     "aliases": [
       "timón ritchey",
       "timon ritchey"
@@ -242,14 +242,14 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/guantillas-corte-largo.jpg",
+    "imageUrl": "guantillas-corte-largo.jpg",
     "aliases": [
       "guantillas"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/guantillas-corte-largo.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/guantillas-corte-largo-2.jpg"
+      "guantillas-corte-largo.jpg",
+      "guantillas-corte-largo-2.jpg"
     ]
   },
   {
@@ -275,15 +275,15 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-ciclismo-corte-laser-badana.jpg",
+    "imageUrl": "licras-ciclismo-corte-laser-badana.jpg",
     "aliases": [
       "licra con badana"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-ciclismo-corte-laser-badana.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-ciclismo-corte-laser-badana-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-ciclismo-corte-laser-badana-3.jpg"
+      "licras-ciclismo-corte-laser-badana.jpg",
+      "licras-ciclismo-corte-laser-badana-2.jpg",
+      "licras-ciclismo-corte-laser-badana-3.jpg"
     ]
   },
   {
@@ -309,7 +309,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-compresion-semienteras.jpg",
+    "imageUrl": "licras-compresion-semienteras.jpg",
     "aliases": [
       "licra compresion"
     ],
@@ -339,14 +339,14 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-pro-combat-cortas.jpg",
+    "imageUrl": "licras-pro-combat-cortas.jpg",
     "aliases": [
       "licra pro combat"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-pro-combat-cortas.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-pro-combat-cortas-2.jpg"
+      "licras-pro-combat-cortas.jpg",
+      "licras-pro-combat-cortas-2.jpg"
     ]
   },
   {
@@ -373,14 +373,14 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-pro-combat-largas.jpg",
+    "imageUrl": "licras-pro-combat-largas.jpg",
     "aliases": [
       "licra pro combat"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-pro-combat-largas.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/licras-pro-combat-largas-2.jpg"
+      "licras-pro-combat-largas.jpg",
+      "licras-pro-combat-largas-2.jpg"
     ]
   },
   {
@@ -399,16 +399,16 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-proteccion-solar.jpg",
+    "imageUrl": "mangas-proteccion-solar.jpg",
     "aliases": [
       "mangas proteccion solar"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-proteccion-solar.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-proteccion-solar-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-proteccion-solar-3.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-proteccion-solar-4.jpg"
+      "mangas-proteccion-solar.jpg",
+      "mangas-proteccion-solar-2.jpg",
+      "mangas-proteccion-solar-3.jpg",
+      "mangas-proteccion-solar-4.jpg"
     ]
   },
   {
@@ -425,14 +425,14 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-rockbros.png",
+    "imageUrl": "mangas-rockbros.png",
     "aliases": [
       "mangas rockbros"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-rockbros.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-rockbros-2.png"
+      "mangas-rockbros.png",
+      "mangas-rockbros-2.png"
     ]
   },
   {
@@ -456,13 +456,13 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-wrels.png",
+    "imageUrl": "mangas-wrels.png",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-wrels.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-wrels-2.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-wrels-3.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-wrels-4.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/mangas-wrels-5.png"
+      "mangas-wrels.png",
+      "mangas-wrels-2.png",
+      "mangas-wrels-3.png",
+      "mangas-wrels-4.png",
+      "mangas-wrels-5.png"
     ],
     "aliases": [
       "mangas wrels",
@@ -502,14 +502,14 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-aero-corte-laser.jpg",
+    "imageUrl": "medias-aero-corte-laser.jpg",
     "aliases": [
       "medias aero"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-aero-corte-laser.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-aero-corte-laser-2.jpg"
+      "medias-aero-corte-laser.jpg",
+      "medias-aero-corte-laser-2.jpg"
     ]
   },
   {
@@ -535,19 +535,19 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro.png",
+    "imageUrl": "medias-giro.png",
     "aliases": [
       "medias giro"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro-2.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro-3.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro-5.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro-6.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro-7.png",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/medias-giro-8.jpg"
+      "medias-giro.png",
+      "medias-giro-2.png",
+      "medias-giro-3.png",
+      "medias-giro-5.png",
+      "medias-giro-6.png",
+      "medias-giro-7.png",
+      "medias-giro-8.jpg"
     ]
   },
   {
@@ -564,16 +564,16 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-silicona-wrels-250ml.jpg",
+    "imageUrl": "termo-silicona-wrels-250ml.jpg",
     "aliases": [
       "termo silicona wrels",
       "termo wrels"
     ],
     "active": true,
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-silicona-wrels-250ml.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-silicona-wrels-250ml-2.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-silicona-wrels-250ml-3.jpg"
+      "termo-silicona-wrels-250ml.jpg",
+      "termo-silicona-wrels-250ml-2.jpg",
+      "termo-silicona-wrels-250ml-3.jpg"
     ]
   },
   {
@@ -590,7 +590,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-silicona-wrels-500ml.jpg",
+    "imageUrl": "termo-silicona-wrels-500ml.jpg",
     "aliases": [
       "termo silicona wrels",
       "termo wrels"
@@ -603,10 +603,10 @@
     "category": "Termos",
     "priceUsd": 0,
     "description": "Termo Elite. Precio por definir.",
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-elite.jpg",
+    "imageUrl": "termo-elite.jpg",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-elite.jpg",
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-elite-2.jpg"
+      "termo-elite.jpg",
+      "termo-elite-2.jpg"
     ],
     "aliases": [
       "termo elite"
@@ -633,7 +633,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-amarillo.jpg",
+    "imageUrl": "termo-amarillo.jpg",
     "aliases": [
       "termo thinkrider"
     ],
@@ -659,7 +659,7 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/termo-rosado.jpg",
+    "imageUrl": "termo-rosado.jpg",
     "aliases": [
       "termo thinkrider"
     ],
@@ -679,9 +679,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-negro.webp",
+    "imageUrl": "forro-timon-bucklos-negro.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-negro.webp"
+      "forro-timon-bucklos-negro.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -704,9 +704,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-blanco.webp",
+    "imageUrl": "forro-timon-bucklos-blanco.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-blanco.webp"
+      "forro-timon-bucklos-blanco.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -729,9 +729,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-rojo.webp",
+    "imageUrl": "forro-timon-bucklos-rojo.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-rojo.webp"
+      "forro-timon-bucklos-rojo.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -754,9 +754,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-rosado.webp",
+    "imageUrl": "forro-timon-bucklos-rosado.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-rosado.webp"
+      "forro-timon-bucklos-rosado.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -779,9 +779,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-naranja.webp",
+    "imageUrl": "forro-timon-bucklos-naranja.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-naranja.webp"
+      "forro-timon-bucklos-naranja.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -804,9 +804,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-azul.webp",
+    "imageUrl": "forro-timon-bucklos-azul.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-azul.webp"
+      "forro-timon-bucklos-azul.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -829,9 +829,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-verde-menta.webp",
+    "imageUrl": "forro-timon-bucklos-verde-menta.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-verde-menta.webp"
+      "forro-timon-bucklos-verde-menta.webp"
     ],
     "aliases": [
       "forro timon bucklos",
@@ -854,9 +854,9 @@
         ]
       }
     ],
-    "imageUrl": "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-morado.webp",
+    "imageUrl": "forro-timon-bucklos-morado.webp",
     "images": [
-      "https://raw.githubusercontent.com/andyromerodev/TotalSport/main/public/images/stores/deportes/forro-timon-bucklos-morado.webp"
+      "forro-timon-bucklos-morado.webp"
     ],
     "aliases": [
       "forro timon bucklos",
