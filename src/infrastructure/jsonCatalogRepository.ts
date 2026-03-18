@@ -16,7 +16,7 @@ function enrichWithStock(storeSlug: string, products: RawProduct[]): Product[] {
       ...product,
       imageUrl: product.imageUrl ? resolveImageUrl(storeSlug, product.imageUrl) : undefined,
       images: product.images ? resolveImageUrls(storeSlug, product.images) : undefined,
-      inStock: stock?.inStock ?? true,
+      inStock: stock?.inStock ?? false,
       availableQty: stock?.availableQty,
     };
   });
