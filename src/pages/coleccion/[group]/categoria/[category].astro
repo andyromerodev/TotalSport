@@ -1,47 +1,15 @@
 ---
 import MainLayout from '../../../../layouts/MainLayout.astro';
-import { getStoresUseCase, getStoreBySlugUseCase } from '../../../../application/GetStoresUseCase';
-import { getStoreCategoriesUseCase } from '../../../../application/GetStoreCategoriesUseCase';
-import { getStoreProductsByCategoryUseCase } from '../../../../application/GetStoreProductsByCategoryUseCase';
-import { slugifyCategory } from '../../../../lib/slugify';
-import { normalizeBaseUrl, toStoreCatalogUiState } from '../../../../ui/vue/adapters/catalogViewModelMappers';
 import StoreCatalogPage from '../../../../ui/vue/components/StoreCatalogPage.vue';
+import { getLegacyGroupCategoryStaticPaths, getLegacyGroupCategoryPageData } from '../../../../ui/vue/routes/legacyRoutes';
 
-const baseUrl = normalizeBaseUrl(import.meta.env.BASE_URL);
-const legacyGroup = Astro.params.group ?? '';
-const categorySlug = Astro.params.category ?? '';
+export const getStaticPaths = getLegacyGroupCategoryStaticPaths;
 
-export function getStaticPaths() {
-  const paths = [];
-  for (const store of getStoresUseCase()) {
-    const legacyGroupSlug = store.slug === 'deportes' ? 'deporte-ciclismo' : store.slug;
-    for (const storeCategory of getStoreCategoriesUseCase(store.slug)) {
-      paths.push({
-        params: {
-          group: legacyGroupSlug,
-          category: slugifyCategory(storeCategory)
-        }
-      });
-    }
-  }
-  return paths;
-}
-
-const mappedStore = legacyGroup === 'deporte-ciclismo' ? 'deportes' : legacyGroup;
-const store = getStoreBySlugUseCase(mappedStore) ?? getStoresUseCase()[0];
-const categories = getStoreCategoriesUseCase(store.slug);
-const selectedCategory = categories.find((category) => slugifyCategory(category) === categorySlug) ?? categories[0];
-const selectedProducts = selectedCategory ? getStoreProductsByCategoryUseCase(store.slug, selectedCategory) : [];
-
-const catalog = toStoreCatalogUiState({
-  store,
-  categories,
-  selectedCategory,
-  selectedProducts,
-  baseUrl,
-  routeSegment: 'coleccion',
-  storePathSlug: legacyGroup === 'deporte-ciclismo' ? 'deporte-ciclismo' : store.slug
-});
+const { store, selectedCategory, catalog } = getLegacyGroupCategoryPageData(
+  Astro.params.group ?? '',
+  Astro.params.category ?? '',
+  import.meta.env.BASE_URL
+);
 ---
 
 <MainLayout title={`ALKILO | ${store.title}`} description={`${selectedCategory ?? ''} en ${store.title}`.trim()}>

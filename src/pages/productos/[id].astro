@@ -1,26 +1,14 @@
 ---
 import MainLayout from '../../layouts/MainLayout.astro';
-import { getAllProductsUseCase } from '../../application/GetAllProductsUseCase';
-import { getProductByIdUseCase } from '../../application/GetProductByIdUseCase';
-import { getProductImages } from '../../lib/productImages';
-import { normalizeBaseUrl, toProductDetailUiState } from '../../ui/vue/adapters/catalogViewModelMappers';
 import ProductDetailPage from '../../ui/vue/components/ProductDetailPage.vue';
+import { getStaticPaths as _paths, getProductPageData } from '../../ui/vue/routes/productRoutes';
 
-export function getStaticPaths() {
-  return getAllProductsUseCase().map((product) => ({
-    params: { id: product.id }
-  }));
-}
+export const getStaticPaths = _paths;
 
-const product = getProductByIdUseCase(Astro.params.id ?? '');
-const baseUrl = normalizeBaseUrl(import.meta.env.BASE_URL);
+const pageData = getProductPageData(Astro.params.id ?? '', import.meta.env.BASE_URL);
+if (!pageData) return Astro.redirect(import.meta.env.BASE_URL);
 
-if (!product) {
-  return Astro.redirect(baseUrl);
-}
-
-const productDetailUiState = toProductDetailUiState(product, baseUrl);
-const shareImage = getProductImages(product)[0] ?? 'https://placehold.co/900x900?text=Sin+foto';
+const { product, uiState, shareImage } = pageData;
 ---
 
 <MainLayout
@@ -29,5 +17,5 @@ const shareImage = getProductImages(product)[0] ?? 'https://placehold.co/900x900
   image={shareImage}
   type="article"
 >
-  <ProductDetailPage client:load product={productDetailUiState} />
+  <ProductDetailPage client:load product={uiState} />
 </MainLayout>

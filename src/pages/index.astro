@@ -1,71 +1,9 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro';
-import { getImage } from 'astro:assets';
-import { getStoresUseCase } from '../application/GetStoresUseCase';
-import { getStoreProductsUseCase } from '../application/GetStoreProductsUseCase';
-import { toStoreCardUiState, normalizeBaseUrl } from '../ui/vue/adapters/catalogViewModelMappers';
 import StoreIndexPage from '../ui/vue/components/StoreIndexPage.vue';
-import coverDeportes from '../assets/store-covers/tienda-deportes.webp';
-import coverTecnologias from '../assets/store-covers/tienda-tecnologias.webp';
-import coverRegalos from '../assets/store-covers/tienda-regalos.webp';
-import coverEmbarazadas from '../assets/store-covers/tienda-embarazadas.webp';
+import { getHomePageData } from '../ui/vue/routes/homeRoutes';
 
-const baseUrl = normalizeBaseUrl(import.meta.env.BASE_URL);
-const storeCoverBySlug = {
-  deportes: coverDeportes.src,
-  'tecnologia-electronica': coverTecnologias.src,
-  regalos: coverRegalos.src,
-  embarazadas: coverEmbarazadas.src
-};
-const storeThemeBySlug: Record<string, { kicker: string; accent: string; soft: string }> = {
-  deportes: { kicker: 'Activa', accent: '#0a7f52', soft: '#d8f1e7' },
-  'tecnologia-electronica': { kicker: 'Digital', accent: '#0f4aa3', soft: '#d8e5ff' },
-  regalos: { kicker: 'Detalles', accent: '#8a3f2d', soft: '#f6ddd6' },
-  embarazadas: { kicker: 'Cuidado', accent: '#9a4f76', soft: '#f5dfeb' }
-};
-
-const optimizedCovers = Object.fromEntries(
-  await Promise.all(
-    Object.entries({
-      deportes: coverDeportes,
-      'tecnologia-electronica': coverTecnologias,
-      regalos: coverRegalos,
-      embarazadas: coverEmbarazadas
-    }).map(async ([slug, image]) => {
-      const optimized = await getImage({
-        src: image,
-        width: 420,
-        widths: [420, 560],
-        format: 'webp',
-        quality: 60,
-        sizes: '(max-width: 768px) 92vw, 377px'
-      });
-
-      return [
-        slug,
-        {
-          src: optimized.src,
-          srcSet: optimized.srcSet.attribute,
-          sizes: optimized.attributes.sizes ?? '(max-width: 768px) 92vw, 377px'
-        }
-      ];
-    })
-  )
-);
-
-const stores = getStoresUseCase().map((store, index) => {
-  const products = getStoreProductsUseCase(store.slug);
-  const optimizedCover = optimizedCovers[store.slug as keyof typeof optimizedCovers];
-
-  return toStoreCardUiState(store, products.length, baseUrl, {
-    coverImageUrl: optimizedCover?.src ?? storeCoverBySlug[store.slug as keyof typeof storeCoverBySlug],
-    coverSrcSet: optimizedCover?.srcSet,
-    coverSizes: optimizedCover?.sizes,
-    coverLoading: index === 0 ? 'eager' : 'lazy',
-    coverFetchPriority: index === 0 ? 'high' : 'auto',
-    theme: storeThemeBySlug[store.slug]
-  });
-});
+const stores = await getHomePageData(import.meta.env.BASE_URL);
 ---
 
 <MainLayout title="ALKILO | Tienditas" description="Explora el catalogo por tienditas independientes.">

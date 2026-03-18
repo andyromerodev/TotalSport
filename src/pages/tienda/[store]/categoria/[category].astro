@@ -1,39 +1,15 @@
 ---
 import MainLayout from '../../../../layouts/MainLayout.astro';
-import { getStoresUseCase, getStoreBySlugUseCase } from '../../../../application/GetStoresUseCase';
-import { getStoreCategoriesUseCase } from '../../../../application/GetStoreCategoriesUseCase';
-import { getStoreProductsByCategoryUseCase } from '../../../../application/GetStoreProductsByCategoryUseCase';
-import { slugifyCategory } from '../../../../lib/slugify';
-import { normalizeBaseUrl, toStoreCatalogUiState } from '../../../../ui/vue/adapters/catalogViewModelMappers';
 import StoreCatalogPage from '../../../../ui/vue/components/StoreCatalogPage.vue';
+import { getStaticPaths as _paths, getStoreCategoryPageData } from '../../../../ui/vue/routes/storeCategoryRoutes';
 
-const baseUrl = normalizeBaseUrl(import.meta.env.BASE_URL);
+export const getStaticPaths = _paths;
 
-export function getStaticPaths() {
-  return getStoresUseCase().flatMap((store) =>
-    getStoreCategoriesUseCase(store.slug).map((category) => ({
-      params: {
-        store: store.slug,
-        category: slugifyCategory(category)
-      }
-    }))
-  );
-}
-
-const storeSlug = Astro.params.store ?? '';
-const categorySlug = Astro.params.category ?? '';
-const store = getStoreBySlugUseCase(storeSlug) ?? getStoresUseCase()[0];
-const categories = getStoreCategoriesUseCase(store.slug);
-const selectedCategory = categories.find((category) => slugifyCategory(category) === categorySlug) ?? categories[0];
-const selectedProducts = selectedCategory ? getStoreProductsByCategoryUseCase(store.slug, selectedCategory) : [];
-
-const catalog = toStoreCatalogUiState({
-  store,
-  categories,
-  selectedCategory,
-  selectedProducts,
-  baseUrl
-});
+const { store, selectedCategory, catalog } = getStoreCategoryPageData(
+  Astro.params.store ?? '',
+  Astro.params.category ?? '',
+  import.meta.env.BASE_URL
+);
 ---
 
 <MainLayout title={`ALKILO | ${store.title}`} description={`${selectedCategory ?? ''} en ${store.title}`.trim()}>
