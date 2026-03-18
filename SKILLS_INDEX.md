@@ -2,6 +2,16 @@
 
 Guia rapida para saber que skill usar en cada tarea del proyecto.
 
+## 0) Arquitectura y codigo
+
+- `clean-architecture`
+  - Usar cuando: agregas una nueva feature, use case, repositorio, componente Vue o UiState.
+  - Resultado: implementacion que respeta Domain → Application → Infrastructure → UI, con nombres Android-style y SOLID aplicado.
+
+- `commit-message`
+  - Usar cuando: quieres hacer un commit de los cambios actuales.
+  - Resultado: commit con mensaje conciso en formato convencional, sin atribuciones de autor ni lineas de co-autor.
+
 ## 1) Estructura y escalabilidad
 
 - `astro-store-scaffold`
@@ -61,6 +71,10 @@ Guia rapida para saber que skill usar en cada tarea del proyecto.
   - Resultado: interfaz coherente con el sistema visual de ALKILO.
 
 ## Flujo recomendado por tipo de tarea
+
+- Nueva feature completa (use case + Vue + página):
+  1. `clean-architecture`
+  2. `astro-release-checklist`
 
 - Nueva tiendita:
   1. `astro-store-scaffold`
