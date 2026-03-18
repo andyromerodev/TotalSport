@@ -4,7 +4,7 @@ import { getStoresUseCase, getStoreBySlugUseCase } from '../../../../application
 import { getStoreCategoriesUseCase } from '../../../../application/GetStoreCategoriesUseCase';
 import { getStoreProductsByCategoryUseCase } from '../../../../application/GetStoreProductsByCategoryUseCase';
 import { slugifyCategory } from '../../../../lib/slugify';
-import { normalizeBaseUrl, toStoreCatalogVM } from '../../../../ui/vue/adapters/catalogViewModelMappers';
+import { normalizeBaseUrl, toStoreCatalogUiState } from '../../../../ui/vue/adapters/catalogViewModelMappers';
 import StoreCatalogPage from '../../../../ui/vue/components/StoreCatalogPage.vue';
 
 const baseUrl = normalizeBaseUrl(import.meta.env.BASE_URL);
@@ -27,7 +27,7 @@ const categories = getStoreCategoriesUseCase(store.slug);
 const selectedCategory = categories.find((category) => slugifyCategory(category) === categorySlug) ?? categories[0];
 const selectedProducts = selectedCategory ? getStoreProductsByCategoryUseCase(store.slug, selectedCategory) : [];
 
-const catalog = toStoreCatalogVM({
+const catalog = toStoreCatalogUiState({
   store,
   categories,
   selectedCategory,

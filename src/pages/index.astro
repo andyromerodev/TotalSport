@@ -3,7 +3,7 @@ import MainLayout from '../layouts/MainLayout.astro';
 import { getImage } from 'astro:assets';
 import { getStoresUseCase } from '../application/GetStoresUseCase';
 import { getStoreProductsUseCase } from '../application/GetStoreProductsUseCase';
-import { toStoreCardVM, normalizeBaseUrl } from '../ui/vue/adapters/catalogViewModelMappers';
+import { toStoreCardUiState, normalizeBaseUrl } from '../ui/vue/adapters/catalogViewModelMappers';
 import StoreIndexPage from '../ui/vue/components/StoreIndexPage.vue';
 import coverDeportes from '../assets/store-covers/tienda-deportes.webp';
 import coverTecnologias from '../assets/store-covers/tienda-tecnologias.webp';
@@ -57,7 +57,7 @@ const stores = getStoresUseCase().map((store, index) => {
   const products = getStoreProductsUseCase(store.slug);
   const optimizedCover = optimizedCovers[store.slug as keyof typeof optimizedCovers];
 
-  return toStoreCardVM(store, products.length, baseUrl, {
+  return toStoreCardUiState(store, products.length, baseUrl, {
     coverImageUrl: optimizedCover?.src ?? storeCoverBySlug[store.slug as keyof typeof storeCoverBySlug],
     coverSrcSet: optimizedCover?.srcSet,
     coverSizes: optimizedCover?.sizes,

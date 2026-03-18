@@ -1,7 +1,9 @@
 <script setup lang="ts">
-import type { ProductCardVM } from '../types/catalogViewModels';
+import type { ProductCardUiState } from '../types/catalogUiState';
 
-defineProps<{ product: ProductCardVM }>();
+// defineProps: declara props de entrada del componente (tipadas en TS).
+// Equivalente Android: parametros de un @Composable.
+defineProps<{ product: ProductCardUiState }>();
 </script>
 
 <template>

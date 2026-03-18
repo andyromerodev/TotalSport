@@ -1,23 +1,26 @@
 import { computed } from 'vue';
-import type { StoreCatalogVM, StoreVM } from '../types/catalogViewModels';
-import { useCatalogUiStore } from '../stores/catalogUiStore';
+import type { StoreCatalogUiState, StoreCardUiState } from '../types/catalogUiState';
+import { useCatalogViewModel } from '../stores/catalogViewModel';
 
-export function useHomeCatalog(initialCards: StoreVM[]) {
-  const store = useCatalogUiStore();
-  store.hydrateHome(initialCards);
+// Dos composables separados para respetar SRP:
+// - useHomeCatalog: estado de cards de home.
+// - useStoreCatalog: estado de listado por tienda/categoria.
+export function useHomeCatalog(initialCards: StoreCardUiState[]) {
+  const store = useCatalogViewModel();
+  store.loadHomeUiState(initialCards);
 
   return {
-    storeCards: computed(() => store.storeCards),
-    hasStoreCards: computed(() => store.hasStoreCards),
+    homeStoreCardsUiState: store.homeStoreCardsUiState,
+    hasHomeStoreCards: store.hasHomeStoreCards,
   };
 }
 
-export function useStoreCatalog(initialCatalog: StoreCatalogVM) {
-  const store = useCatalogUiStore();
-  store.hydrateStoreCatalog(initialCatalog);
+export function useStoreCatalog(initialCatalog: StoreCatalogUiState) {
+  const store = useCatalogViewModel();
+  store.loadStoreCatalogUiState(initialCatalog);
 
   return {
-    storeCatalog: computed(() => store.storeCatalog),
+    storeCatalogUiState: computed(() => store.storeCatalogUiState),
     hasSelectedProducts: computed(() => store.hasSelectedProducts),
   };
 }

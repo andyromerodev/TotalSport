@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
 import { useProductDetail } from '../composables/useProductDetail';
-import type { ProductDetailVM } from '../types/catalogViewModels';
+import type { ProductDetailUiState } from '../types/catalogUiState';
 
-const props = defineProps<{ product: ProductDetailVM }>();
-const { productDetail } = useProductDetail(props.product);
+// defineProps: contrato de entrada del componente.
+const props = defineProps<{ product: ProductDetailUiState }>();
+const { productDetailUiState } = useProductDetail(props.product);
 
+// ref = estado mutable reactivo local del componente.
+// Equivalente Compose: remember { mutableStateOf(...) }.
 const scale = ref(1);
 const translateX = ref(0);
 const translateY = ref(0);
@@ -18,7 +21,8 @@ const dragStartY = ref(0);
 const dragOriginX = ref(0);
 const dragOriginY = ref(0);
 
-const vm = computed(() => productDetail.value);
+// computed = estado derivado reactivo.
+const vm = computed(() => productDetailUiState.value);
 const images = computed(() => vm.value?.images ?? []);
 const shareImage = computed(() => images.value[0] ?? 'https://placehold.co/900x900?text=Sin+foto');
 const transformStyle = computed(() => `translate(${translateX.value}px, ${translateY.value}px) scale(${scale.value})`);

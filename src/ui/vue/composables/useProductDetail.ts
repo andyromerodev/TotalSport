@@ -1,12 +1,17 @@
 import { computed } from 'vue';
-import type { ProductDetailVM } from '../types/catalogViewModels';
-import { useCatalogUiStore } from '../stores/catalogUiStore';
+import type { ProductDetailUiState } from '../types/catalogUiState';
+import { useCatalogViewModel } from '../stores/catalogViewModel';
 
-export function useProductDetail(initialProduct: ProductDetailVM) {
-  const store = useCatalogUiStore();
-  store.hydrateProductDetail(initialProduct);
+// Composable = funcion reutilizable de logica de UI.
+// Equivalente Android: helper de capa presentation o extension que prepara estado para pantalla.
+export function useProductDetail(initialProduct: ProductDetailUiState) {
+  const store = useCatalogViewModel();
+
+  // Carga el UiState inicial venido del server (Astro SSR) al ViewModel cliente.
+  store.loadProductDetailUiState(initialProduct);
 
   return {
-    productDetail: computed(() => store.productDetail),
+    // Exponemos lectura derivada para mantener API estable del composable.
+    productDetailUiState: computed(() => store.productDetailUiState),
   };
 }

@@ -2,12 +2,14 @@
 import { computed } from 'vue';
 import { useStoreCatalog } from '../composables/useStoreCatalog';
 import ProductCard from './ProductCard.vue';
-import type { StoreCatalogVM } from '../types/catalogViewModels';
+import type { StoreCatalogUiState } from '../types/catalogUiState';
 
-const props = defineProps<{ catalog: StoreCatalogVM }>();
-const { storeCatalog, hasSelectedProducts } = useStoreCatalog(props.catalog);
+// Props tipadas que vienen del server render de Astro.
+const props = defineProps<{ catalog: StoreCatalogUiState }>();
+const { storeCatalogUiState, hasSelectedProducts } = useStoreCatalog(props.catalog);
 
-const view = computed(() => storeCatalog.value);
+// computed = estado derivado reactivo (Compose: derivedStateOf).
+const view = computed(() => storeCatalogUiState.value);
 const showProducts = computed(() => hasSelectedProducts.value);
 </script>
 

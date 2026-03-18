@@ -1,11 +1,9 @@
 <script setup lang="ts">
-import { computed } from 'vue';
 import { useHomeCatalog } from '../composables/useStoreCatalog';
-import type { StoreVM } from '../types/catalogViewModels';
+import type { StoreCardUiState } from '../types/catalogUiState';
 
-const props = defineProps<{ stores: StoreVM[] }>();
-const { storeCards } = useHomeCatalog(props.stores);
-const cards = computed(() => storeCards.value);
+const props = defineProps<{ stores: StoreCardUiState[] }>();
+const { homeStoreCardsUiState } = useHomeCatalog(props.stores);
 </script>
 
 <template>
@@ -16,7 +14,7 @@ const cards = computed(() => storeCards.value);
 
   <section class="collection-grid" aria-label="Tienditas del catalogo">
     <a
-      v-for="store in cards"
+      v-for="store in homeStoreCardsUiState"
       :key="store.slug"
       class="collection-card store-card"
       :href="store.href"

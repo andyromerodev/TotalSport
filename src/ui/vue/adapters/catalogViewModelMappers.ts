@@ -3,21 +3,25 @@ import { getProductImages } from '../../../lib/productImages';
 import { slugifyCategory } from '../../../lib/slugify';
 import { buildWhatsAppLink } from '../../../lib/whatsapp';
 import type {
-  ProductCardVM,
-  ProductDetailVM,
-  StoreCatalogVM,
-  StoreThemeVM,
-  StoreVM,
-} from '../types/catalogViewModels';
+  ProductCardUiState,
+  ProductDetailUiState,
+  StoreCatalogUiState,
+  StoreThemeUiState,
+  StoreCardUiState,
+} from '../types/catalogUiState';
 
+// Adapter/Mapper de presentacion:
+// Convierte entidades de dominio (Product, StoreMeta) a UiState de UI.
+// Equivalente Android: mapper Domain -> UiState usado por ViewModel.
+// Regla de arquitectura: la UI no conoce detalles del dominio/repositorio.
 const FALLBACK_IMAGE = 'https://placehold.co/900x900?text=Sin+foto';
-const DEFAULT_THEME: StoreThemeVM = { kicker: 'Tienda', accent: '#0a7f52', soft: '#d8f1e7' };
+const DEFAULT_THEME: StoreThemeUiState = { kicker: 'Tienda', accent: '#0a7f52', soft: '#d8f1e7' };
 
 export function normalizeBaseUrl(baseUrl: string): string {
   return baseUrl.endsWith('/') ? baseUrl : `${baseUrl}/`;
 }
 
-export function toStoreCardVM(
+export function toStoreCardUiState(
   store: StoreMeta,
   count: number,
   baseUrl: string,
@@ -27,9 +31,9 @@ export function toStoreCardVM(
     coverSizes?: string;
     coverLoading?: 'lazy' | 'eager';
     coverFetchPriority?: 'auto' | 'high' | 'low';
-    theme?: StoreThemeVM;
+    theme?: StoreThemeUiState;
   }
-): StoreVM {
+): StoreCardUiState {
   const normalizedBase = normalizeBaseUrl(baseUrl);
 
   return {
@@ -47,7 +51,7 @@ export function toStoreCardVM(
   };
 }
 
-export function toProductCardVM(product: Product, baseUrl: string): ProductCardVM {
+export function toProductCardUiState(product: Product, baseUrl: string): ProductCardUiState {
   const normalizedBase = normalizeBaseUrl(baseUrl);
   const coverImage = getProductImages(product)[0] ?? FALLBACK_IMAGE;
 
@@ -64,7 +68,7 @@ export function toProductCardVM(product: Product, baseUrl: string): ProductCardV
   };
 }
 
-export function toStoreCatalogVM(input: {
+export function toStoreCatalogUiState(input: {
   store: StoreMeta;
   categories: string[];
   selectedCategory?: string;
@@ -72,8 +76,11 @@ export function toStoreCatalogVM(input: {
   baseUrl: string;
   routeSegment?: 'tienda' | 'coleccion';
   storePathSlug?: string;
-}): StoreCatalogVM {
+}): StoreCatalogUiState {
   const normalizedBase = normalizeBaseUrl(input.baseUrl);
+
+  // Permite reutilizar la misma UI en rutas nuevas (/tienda) y legacy (/coleccion)
+  // sin duplicar componentes.
   const routeSegment = input.routeSegment ?? 'tienda';
   const storePathSlug = input.storePathSlug ?? input.store.slug;
 
@@ -88,11 +95,11 @@ export function toStoreCatalogVM(input: {
       isActive: category === input.selectedCategory,
     })),
     selectedCategory: input.selectedCategory,
-    selectedProducts: input.selectedProducts.map((product) => toProductCardVM(product, normalizedBase)),
+    selectedProducts: input.selectedProducts.map((product) => toProductCardUiState(product, normalizedBase)),
   };
 }
 
-export function toProductDetailVM(product: Product, baseUrl: string): ProductDetailVM {
+export function toProductDetailUiState(product: Product, baseUrl: string): ProductDetailUiState {
   const normalizedBase = normalizeBaseUrl(baseUrl);
   const images = getProductImages(product);
 

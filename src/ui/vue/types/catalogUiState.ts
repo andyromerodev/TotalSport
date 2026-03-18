@@ -1,12 +1,15 @@
 import type { ProductVariant } from '../../../domain/catalog.types';
 
-export type StoreThemeVM = {
+// UiState = modelos pensados para render UI.
+// Equivalente Android: data classes que consume Compose como estado de pantalla.
+// Aqui evitamos que la UI dependa directamente de entidades de dominio crudas.
+export type StoreThemeUiState = {
   kicker: string;
   accent: string;
   soft: string;
 };
 
-export type StoreVM = {
+export type StoreCardUiState = {
   slug: string;
   title: string;
   description: string;
@@ -17,17 +20,17 @@ export type StoreVM = {
   coverSizes?: string;
   coverLoading?: 'lazy' | 'eager';
   coverFetchPriority?: 'auto' | 'high' | 'low';
-  theme: StoreThemeVM;
+  theme: StoreThemeUiState;
 };
 
-export type CategoryNavItemVM = {
+export type CategoryNavItemUiState = {
   name: string;
   slug: string;
   href: string;
   isActive: boolean;
 };
 
-export type ProductCardVM = {
+export type ProductCardUiState = {
   id: string;
   name: string;
   category: string;
@@ -39,16 +42,16 @@ export type ProductCardVM = {
   coverImage: string;
 };
 
-export type StoreCatalogVM = {
+export type StoreCatalogUiState = {
   storeSlug: string;
   storeTitle: string;
   storeDescription: string;
-  categories: CategoryNavItemVM[];
+  categories: CategoryNavItemUiState[];
   selectedCategory?: string;
-  selectedProducts: ProductCardVM[];
+  selectedProducts: ProductCardUiState[];
 };
 
-export type ProductDetailVM = {
+export type ProductDetailUiState = {
   id: string;
   name: string;
   category: string;
