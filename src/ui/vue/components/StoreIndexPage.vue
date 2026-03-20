@@ -9,7 +9,7 @@ const { homeStoreCardsUiState } = useHomeCatalog(props.stores);
 <template>
   <header class="hero">
     <h1>Tienditas</h1>
-    <p class="lead">Explora cada universo de productos por separado para una experiencia rapida y clara.</p>
+    <p class="lead">Explora cada universo de productos por separado para una experiencia rápida y clara.</p>
   </header>
 
   <section class="collection-grid" aria-label="Tienditas del catalogo">
