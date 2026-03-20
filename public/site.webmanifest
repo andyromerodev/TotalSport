@@ -1,0 +1,9 @@
+{
+  "name": "ALKILO",
+  "short_name": "ALKILO",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef3f1",
+  "theme_color": "#0a7f52",
+  "icons": []
+}
