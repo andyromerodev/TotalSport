@@ -496,6 +496,15 @@ h1 {
     height: 170px;
   }
 
+  .collection-card-content h2,
+  .collection-card-content p {
+    min-height: 0;
+    display: block;
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: initial;
+    overflow: visible;
+  }
+
   .btn,
   .btn-outline {
     width: 100%;
