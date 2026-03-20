@@ -42,7 +42,6 @@ const { homeStoreCardsUiState } = useHomeCatalog(props.stores);
         <p>{{ store.description }}</p>
         <div class="store-meta">
           <span>{{ store.count }} productos</span>
-          <span>Entrar</span>
         </div>
       </div>
     </a>

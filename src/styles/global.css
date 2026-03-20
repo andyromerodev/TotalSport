@@ -87,6 +87,8 @@ h1 {
 }
 
 .collection-card {
+  display: flex;
+  flex-direction: column;
   text-decoration: none;
   background: var(--surface);
   border: 1px solid var(--line);
@@ -159,35 +161,45 @@ h1 {
 }
 
 .collection-card-content {
+  flex: 1;
+  min-height: 0;
   padding: 1rem;
-  display: grid;
+  display: flex;
+  flex-direction: column;
   gap: 0.6rem;
 }
 
 .collection-card-content h2 {
   font-size: 1.2rem;
+  line-height: 1.3;
+  min-height: calc(3 * 1.3em);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .collection-card-content p {
   color: var(--muted);
   font-size: 0.92rem;
+  line-height: 1.35;
+  min-height: calc(4 * 1.35em);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .store-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin-top: 0.35rem;
+  margin-top: auto;
   font-size: 0.9rem;
 }
 
 .store-meta span:first-child {
   color: var(--brand-dark);
-  font-weight: 700;
-}
-
-.store-meta span:last-child {
-  color: var(--store-accent);
   font-weight: 700;
 }
 
