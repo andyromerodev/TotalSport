@@ -26,9 +26,7 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#0a7f52" />
-    <meta name="theme-color" content="#0a7f52" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#086b46" media="(prefers-color-scheme: dark)" />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="only light" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -56,6 +54,12 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
       <slot />
     </main>
     <script>
+      const THEME_COLOR = '#0a7f52';
+      const themeMeta = document.querySelector('meta[name="theme-color"]');
+      if (themeMeta) {
+        themeMeta.setAttribute('content', THEME_COLOR);
+      }
+
       const blurImages = document.querySelectorAll('img[data-blur-up]');
       for (const image of blurImages) {
         const markLoaded = () => image.classList.add('is-loaded');
