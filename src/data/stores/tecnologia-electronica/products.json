@@ -1,20 +1,25 @@
 [
   {
-    "id": "gkro",
-    "name": "GKRO",
-    "category": "Tecnologia",
-    "priceUsd": 0,
-    "description": "Producto GKRO. Precio por definir.",
-    "imageUrl": "gkro.png",
-    "images": [
-      "gkro.png",
-      "gkro-2.png",
-      "gkro-3.png",
-      "gkro-4.png",
-      "gkro-5.png"
-    ],
+    "id": "Batería-CR2032",
+    "name": "Batería CR2032",
+    "category": "Accesorios",
+    "priceUsd": 4,
+    "description": "Batería tipo boton CR2032.",
+    "imageUrl": "bateria-CR2032.jpg",
     "aliases": [
-      "gkro"
+      "Batería CR2032"
+    ],
+    "active": true
+  },
+  {
+    "id": "Batería-CR2450",
+    "name": "Batería CR2450",
+    "category": "Accesorios",
+    "priceUsd": 4,
+    "description": "Batería tipo boton CR2450.",
+    "imageUrl": "bateria-CR2450.jpg",
+    "aliases": [
+      "Batería CR2450"
     ],
     "active": true
   },

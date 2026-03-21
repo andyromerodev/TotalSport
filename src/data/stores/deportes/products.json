@@ -1,29 +1,5 @@
 [
   {
-    "id": "Batería-CR2032",
-    "name": "Batería CR2032",
-    "category": "Accesorios",
-    "priceUsd": 4,
-    "description": "Batería tipo boton CR2032.",
-    "imageUrl": "bateria-CR2032.jpg",
-    "aliases": [
-      "Batería CR2032"
-    ],
-    "active": true
-  },
-  {
-    "id": "Batería-CR2450",
-    "name": "Batería CR2450",
-    "category": "Accesorios",
-    "priceUsd": 4,
-    "description": "Batería tipo boton CR2450.",
-    "imageUrl": "bateria-CR2450.jpg",
-    "aliases": [
-      "Batería CR2450"
-    ],
-    "active": true
-  },
-  {
     "id": "bombita-aire",
     "name": "Bombita de aire",
     "category": "Accesorios",
@@ -549,6 +525,25 @@
       "medias-giro-7.png",
       "medias-giro-8.jpg"
     ]
+  },
+  {
+    "id": "medias-gkro",
+    "name": "Medias deportivas GKRO",
+    "category": "Ropa deportiva",
+    "priceUsd": 0,
+    "description": "Medias deportivas GKRO de varios colores",
+    "imageUrl": "gkro.png",
+    "images": [
+      "gkro.png",
+      "gkro-2.png",
+      "gkro-3.png",
+      "gkro-4.png",
+      "gkro-5.png"
+    ],
+    "aliases": [
+      "gkro"
+    ],
+    "active": true
   },
   {
     "id": "termo-silicona-wrels-250ml",
