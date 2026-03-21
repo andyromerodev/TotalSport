@@ -9,6 +9,10 @@
   --brand-dark: #07593a;
   --radius: 16px;
   --shadow: 0 8px 30px rgba(9, 28, 20, 0.08);
+
+  /* Store theme defaults (overridden per-store by Vue components) */
+  --store-accent: var(--brand);
+  --store-soft: rgba(10, 127, 82, 0.1);
 }
 
 * {
