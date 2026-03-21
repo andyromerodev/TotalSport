@@ -859,5 +859,35 @@
       "forro timon bucklos morado"
     ],
     "active": true
+  },
+  {
+    "id": "timon-ritchey",
+    "name": "Timon RITCHEY Curve Logic de aluminio",
+    "category": "Componentes bicicleta",
+    "priceUsd": 20,
+    "description": "Timón RITCHEY Curve Logic de aluminio.\n\nMedidas:\n• 42 cm de ancho\n• Peso: 297 gramos\n\n📍 Ciudad Deportiva, La Habana 🇨🇺\n\n📱 MOVIL: 50117539\n\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Negro"
+        ]
+      }
+    ],
+    "imageUrl": "timon-ritchey.jpg",
+    "images": [
+      "timon-ritchey.jpg",
+      "timon-ritchey-2.jpg",
+      "timon-ritchey-3.jpg",
+      "timon-ritchey-4.jpg"
+    ],
+    "aliases": [
+      "timon ritchey curve logic",
+      "timon ritchey aluminio",
+      "timon curva ritchey",
+      "timon carretera ritchey"
+    ],
+    "active": true
   }
+
 ]
