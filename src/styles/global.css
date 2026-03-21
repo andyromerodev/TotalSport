@@ -331,6 +331,7 @@ h1 {
 .description {
   color: var(--muted);
   font-size: 0.92rem;
+  white-space: pre-line;
 }
 
 .actions {
