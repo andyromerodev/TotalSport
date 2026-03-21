@@ -2,7 +2,7 @@
   {
     "id": "Batería-CR2032",
     "name": "Batería CR2032",
-    "category": "Accesorios",
+    "category": "Tecnologia",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2032.",
     "imageUrl": "bateria-CR2032.jpg",
@@ -14,7 +14,7 @@
   {
     "id": "Batería-CR2450",
     "name": "Batería CR2450",
-    "category": "Accesorios",
+    "category": "Tecnologia",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2450.",
     "imageUrl": "bateria-CR2450.jpg",
