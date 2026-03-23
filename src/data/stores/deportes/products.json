@@ -2,7 +2,7 @@
   {
     "id": "bombita-aire",
     "name": "Bombita de aire",
-    "category": "Accesorios",
+    "category": "Bombas",
     "priceUsd": 12,
     "description": "Bombita portatil para inflado.",
     "imageUrl": "bombita-aire.webp",
@@ -22,7 +22,7 @@
   {
     "id": "cintas-sudor",
     "name": "Cintas sudor",
-    "category": "Accesorios",
+    "category": "Cintas y Grip",
     "priceUsd": 1,
     "description": "Cintas para absorber sudor en entrenamiento.",
     "imageUrl": "cintas-sudor.webp",
@@ -39,7 +39,7 @@
   {
     "id": "zapatillas-adidas-42",
     "name": "Zapatillas ADIDAS talla 42",
-    "category": "Accesorios",
+    "category": "Zapatillas",
     "priceUsd": 50,
     "description": "Disponible en talla 42.",
     "variants": [
@@ -63,7 +63,7 @@
   {
     "id": "forro-timon-premium-negro",
     "name": "Forro para timón premium",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Forro premium para timón en color negro.",
     "variants": [
@@ -90,7 +90,7 @@
   {
     "id": "forros-manetas-shimano",
     "name": "Forros para manetas Shimano",
-    "category": "Componentes bicicleta",
+    "category": "Mandos y Transmisión",
     "priceUsd": 12,
     "description": "Compatible con generaciones Shimano 9v, 10v y 11v.",
     "imageUrl": "forros-manetas-shimano.webp",
@@ -107,7 +107,7 @@
   {
     "id": "placas-shimano",
     "name": "Placas Shimano",
-    "category": "Componentes bicicleta",
+    "category": "Pedales y Calas",
     "priceUsd": 15,
     "description": "Placas Shimano disponibles en 0° y 6°.",
     "variants": [
@@ -137,7 +137,7 @@
   {
     "id": "rondanas-11t-13t-aluminio",
     "name": "Rondanas 11T-13T de aluminio",
-    "category": "Componentes bicicleta",
+    "category": "Rondanas",
     "priceUsd": 10,
     "description": "Disponibles en dorado, rojo, azul y negro.",
     "variants": [
@@ -173,7 +173,7 @@
   {
     "id": "timon-carbon-fsa-kforce",
     "name": "Timón de carbón FSA KFORCE",
-    "category": "Componentes bicicleta",
+    "category": "Timones",
     "priceUsd": 35,
     "description": "Timon de carbono para ciclismo.",
     "imageUrl": "timon-kforce.webp",
@@ -186,7 +186,7 @@
   {
     "id": "guantillas-corte-largo",
     "name": "Guantillas corte largo",
-    "category": "Ropa deportiva",
+    "category": "Guantes y Guantillas",
     "priceUsd": 10,
     "description": "Color negro talla S. Color blanco tallas S y M.",
     "variants": [
@@ -218,7 +218,7 @@
   {
     "id": "licras-ciclismo-corte-laser-badana",
     "name": "Licras de ciclismo corte láser con badana",
-    "category": "Ropa deportiva",
+    "category": "Licras",
     "priceUsd": 25,
     "description": "Licras de ciclismo con badana.",
     "variants": [
@@ -252,7 +252,7 @@
   {
     "id": "licras-compresion-semienteras",
     "name": "Licras de compresión semienteras",
-    "category": "Ropa deportiva",
+    "category": "Licras",
     "priceUsd": 10,
     "description": "Desde el tobillo hasta 10 cm encima de la rodilla.",
     "variants": [
@@ -285,7 +285,7 @@
   {
     "id": "licras-pro-combat-cortas",
     "name": "Licras PRO COMBAT cortas",
-    "category": "Ropa deportiva",
+    "category": "Licras",
     "priceUsd": 10,
     "description": "Licras cortas en blanco y negro.",
     "variants": [
@@ -319,7 +319,7 @@
   {
     "id": "licras-pro-combat-largas",
     "name": "Licras PRO COMBAT largas",
-    "category": "Ropa deportiva",
+    "category": "Licras",
     "priceUsd": 10,
     "description": "Licras largas en blanco y negro.",
     "variants": [
@@ -353,7 +353,7 @@
   {
     "id": "mangas-proteccion-solar",
     "name": "Mangas protección solar",
-    "category": "Ropa deportiva",
+    "category": "Mangas",
     "priceUsd": 5,
     "description": "Mangas de proteccion UV.",
     "variants": [
@@ -381,7 +381,7 @@
   {
     "id": "mangas-rockbros",
     "name": "Mangas Rockbros",
-    "category": "Ropa deportiva",
+    "category": "Mangas",
     "priceUsd": 5,
     "description": "Mangas en color blanco.",
     "variants": [
@@ -405,7 +405,7 @@
   {
     "id": "mangas-wrels",
     "name": "Mangas WRELS",
-    "category": "Ropa deportiva",
+    "category": "Mangas",
     "priceUsd": 5,
     "description": "Mangas marca WRELS en color blanca y negra, talla L.",
     "variants": [
@@ -441,7 +441,7 @@
   {
     "id": "medias-aero-corte-laser",
     "name": "Medias Aero corte láser",
-    "category": "Ropa deportiva",
+    "category": "Medias",
     "priceUsd": 10,
     "description": "Modelos Team disponibles en varios colores.",
     "variants": [
@@ -482,7 +482,7 @@
   {
     "id": "medias-giro",
     "name": "Medias Giro",
-    "category": "Ropa deportiva",
+    "category": "Medias",
     "priceUsd": 4,
     "description": "Variedad de colores disponibles.",
     "variants": [
@@ -520,7 +520,7 @@
   {
     "id": "medias-gkro",
     "name": "Medias deportivas GKRO",
-    "category": "Ropa deportiva",
+    "category": "Medias",
     "priceUsd": 0,
     "description": "Medias deportivas GKRO de varios colores",
     "imageUrl": "gkro.webp",
@@ -539,7 +539,7 @@
   {
     "id": "termo-silicona-wrels-250ml",
     "name": "Termo de silicona WRELS de 250 ml",
-    "category": "Termos",
+    "category": "Termos y Botellas",
     "priceUsd": 5,
     "description": "Termo compacto de silicona para uso diario.",
     "variants": [
@@ -568,7 +568,7 @@
   {
     "id": "termo-silicona-wrels-500ml",
     "name": "Termo de silicona WRELS de 500 ml",
-    "category": "Termos",
+    "category": "Termos y Botellas",
     "priceUsd": 5,
     "description": "Termo de mayor capacidad para entrenamientos.",
     "variants": [
@@ -597,7 +597,7 @@
   {
     "id": "termo-elite",
     "name": "Termo Elite",
-    "category": "Termos",
+    "category": "Termos y Botellas",
     "priceUsd": 0,
     "description": "Termo Elite. Precio por definir.",
     "imageUrl": "termo-elite.webp",
@@ -613,7 +613,7 @@
   {
     "id": "termos-thinkrider-engomados-amarillo-claro",
     "name": "Termos Thinkrider engomados (Amarillo claro)",
-    "category": "Termos",
+    "category": "Termos y Botellas",
     "priceUsd": 16,
     "description": "Precio por pareja.",
     "variants": [
@@ -639,7 +639,7 @@
   {
     "id": "termos-thinkrider-engomados-rosados",
     "name": "Termos Thinkrider engomados (Rosados)",
-    "category": "Termos",
+    "category": "Termos y Botellas",
     "priceUsd": 16,
     "description": "Precio por pareja.",
     "variants": [
@@ -665,7 +665,7 @@
   {
     "id": "forro-timon-bucklos-negro",
     "name": "Forro de timón BUCKLOS (Negro)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -690,7 +690,7 @@
   {
     "id": "forro-timon-bucklos-blanco",
     "name": "Forro de timón BUCKLOS (Blanco)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -715,7 +715,7 @@
   {
     "id": "forro-timon-bucklos-rojo",
     "name": "Forro de timón BUCKLOS (Rojo)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -740,7 +740,7 @@
   {
     "id": "forro-timon-bucklos-rosado",
     "name": "Forro de timón BUCKLOS (Rosado)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -765,7 +765,7 @@
   {
     "id": "forro-timon-bucklos-naranja",
     "name": "Forro de timón BUCKLOS (Naranja)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -790,7 +790,7 @@
   {
     "id": "forro-timon-bucklos-azul",
     "name": "Forro de timón BUCKLOS (Azul)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -815,7 +815,7 @@
   {
     "id": "forro-timon-bucklos-verde-menta",
     "name": "Forro de timón BUCKLOS (Verde menta)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -840,7 +840,7 @@
   {
     "id": "forro-timon-bucklos-morado",
     "name": "Forro de timón BUCKLOS (Morado)",
-    "category": "Componentes bicicleta",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
     "description": "Cinta de timón BUCKLOS en PU + EVA. Incluye 2 cintas, 2 tapones de manillar y 2 tiras adhesivas. Peso aproximado: 66.9 g/par.",
     "variants": [
@@ -865,7 +865,7 @@
   {
     "id": "timon-ritchey",
     "name": "Timon RITCHEY Curve Logic de aluminio",
-    "category": "Componentes bicicleta",
+    "category": "Timones",
     "priceUsd": 20,
     "description": "Timón RITCHEY Curve Logic de aluminio.\n\nMedidas:\n• 42 cm de ancho\n• Peso: 297 gramos\n\n📍 Ciudad Deportiva, La Habana 🇨🇺\n\n📱 MOVIL: 50117539\n\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "variants": [
@@ -889,5 +889,4 @@
     ],
     "active": true
   }
-
 ]

@@ -10,14 +10,25 @@ defineProps<{ product: ProductCardUiState }>();
   <article class="card">
     <a class="image-link" :href="product.detailsHref">
       <p v-if="!product.inStock" class="stock-badge stock-badge-overlay">Agotado</p>
-      <img
-        class="blur-up-image is-loaded"
-        :src="product.coverImage"
-        :alt="product.name"
-        loading="lazy"
-        width="640"
-        height="640"
-      />
+      <div class="image-frame">
+        <img
+          class="card-image-bg"
+          :src="product.coverImage"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          width="640"
+          height="640"
+        />
+        <img
+          class="card-image-main"
+          :src="product.coverImage"
+          :alt="product.name"
+          loading="lazy"
+          width="640"
+          height="640"
+        />
+      </div>
     </a>
 
     <div class="card-content">
@@ -47,13 +58,43 @@ defineProps<{ product: ProductCardUiState }>();
 .image-link {
   position: relative;
   display: block;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: #eef3f1;
+}
+
+.image-frame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-bg,
+.card-image-main {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image-bg {
+  object-fit: cover;
+  filter: blur(18px);
+  transform: scale(1.12);
+  opacity: 0.6;
+}
+
+.card-image-main {
+  object-fit: contain;
+  padding: 0.45rem;
+  z-index: 1;
 }
 
 .stock-badge-overlay {
   position: absolute;
   top: 0.6rem;
   left: 0.6rem;
-  z-index: 1;
+  z-index: 2;
 }
 
 .card-content h3 {

@@ -282,6 +282,11 @@ h1 {
   gap: 1rem;
 }
 
+.grid.grid-compact {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 320px));
+  justify-content: start;
+}
+
 .card {
   background: var(--surface);
   border: 1px solid var(--line);

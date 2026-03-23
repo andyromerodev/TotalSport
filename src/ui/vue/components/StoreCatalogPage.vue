@@ -11,6 +11,7 @@ const { storeCatalogUiState, hasSelectedProducts } = useStoreCatalog(props.catal
 // computed = estado derivado reactivo (Compose: derivedStateOf).
 const view = computed(() => storeCatalogUiState.value);
 const showProducts = computed(() => hasSelectedProducts.value);
+const useCompactGrid = computed(() => (view.value?.selectedProducts.length ?? 0) <= 2);
 </script>
 
 <template>
@@ -37,7 +38,7 @@ const showProducts = computed(() => hasSelectedProducts.value);
         <p>{{ view.selectedProducts.length }} productos</p>
       </div>
 
-      <div v-if="showProducts" class="grid">
+      <div v-if="showProducts" class="grid" :class="{ 'grid-compact': useCompactGrid }">
         <ProductCard v-for="product in view.selectedProducts" :key="product.id" :product="product" />
       </div>
       <div v-else class="empty-state">
