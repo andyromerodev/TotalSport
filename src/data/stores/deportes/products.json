@@ -559,16 +559,19 @@
         ]
       }
     ],
-    "imageUrl": "termo-elite.webp",
+    "imageUrl": "termo-wrels.webp",
     "aliases": [
       "termo silicona wrels",
       "termo wrels"
     ],
     "active": true,
     "images": [
-      "termo-elite.webp",
-      "termo-amarillo.webp",
-      "termo-rosado.webp"
+      "termo-wrels.webp",
+      "termo-wrels-2.webp",
+      "termo-wrels-3.webp",
+      "termo-wrels-4.webp",
+      "termo-wrels-5.webp",
+      "termo-wrels-6.webp"
     ]
   },
   {
@@ -585,12 +588,20 @@
         ]
       }
     ],
-    "imageUrl": "termo-elite-2.webp",
+    "imageUrl": "termo-wrels.webp",
     "aliases": [
       "termo silicona wrels",
       "termo wrels"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "termo-wrels-4.webp",
+      "termo-wrels.webp",
+      "termo-wrels-2.webp",
+      "termo-wrels-3.webp",
+      "termo-wrels-5.webp",
+      "termo-wrels-6.webp"
+    ]
   },
   {
     "id": "termo-elite",
