@@ -285,11 +285,15 @@
         ]
       }
     ],
-    "imageUrl": "licras-pro-combat-largas.webp",
+    "imageUrl": "medias-compresion.webp",
     "aliases": [
       "licra compresion"
     ],
-    "active": true
+    "active": true,
+    "images": [
+      "medias-compresion.webp",
+      "medias-compresion-2.webp"
+    ]
   },
   {
     "id": "licras-pro-combat-cortas",
