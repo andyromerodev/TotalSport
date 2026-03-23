@@ -5,7 +5,7 @@
     "category": "Tecnologia",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2032.",
-    "imageUrl": "bateria-CR2032.jpg",
+    "imageUrl": "bateria-CR2032.webp",
     "aliases": [
       "Batería CR2032"
     ],
@@ -17,7 +17,7 @@
     "category": "Tecnologia",
     "priceUsd": 4,
     "description": "Batería tipo boton CR2450.",
-    "imageUrl": "bateria-CR2450.jpg",
+    "imageUrl": "bateria-CR2450.webp",
     "aliases": [
       "Batería CR2450"
     ],
@@ -29,15 +29,15 @@
     "category": "Tecnologia",
     "priceUsd": 40,
     "description": "Mouse Logitech. Precio por definir.",
-    "imageUrl": "logi.jpg",
+    "imageUrl": "logi.webp",
     "images": [
-      "logi.jpg",
-      "logi-2.jpg",
-      "logi-3.jpg",
-      "logi-4.jpg",
-      "logi-5.jpg",
-      "logi-6.jpg",
-      "logi-7.jpg"
+      "logi.webp",
+      "logi-2.webp",
+      "logi-3.webp",
+      "logi-4.webp",
+      "logi-5.webp",
+      "logi-6.webp",
+      "logi-7.webp"
     ],
     "aliases": [
       "logitech",
@@ -52,10 +52,10 @@
     "category": "Tecnologia",
     "priceUsd": 0,
     "description": "Audifonos Redmi Buds Lite. Precio por definir.",
-    "imageUrl": "redmi-buds-lite.png",
+    "imageUrl": "redmi-buds-lite.webp",
     "images": [
-      "redmi-buds-lite.png",
-      "redmi-buds-lite-2.png"
+      "redmi-buds-lite.webp",
+      "redmi-buds-lite-2.webp"
     ],
     "aliases": [
       "redmi buds",

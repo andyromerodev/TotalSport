@@ -5,14 +5,14 @@
     "category": "Regalos",
     "priceUsd": 0,
     "description": "Linterna recargable. Precio por definir.",
-    "imageUrl": "linterna.png",
+    "imageUrl": "linterna.webp",
     "images": [
-      "linterna.png",
-      "linterna-2.png",
-      "linterna-3.png",
-      "linterna-4.png",
-      "linterna-5.png",
-      "linterna-6.png"
+      "linterna.webp",
+      "linterna-2.webp",
+      "linterna-3.webp",
+      "linterna-4.webp",
+      "linterna-5.webp",
+      "linterna-6.webp"
     ],
     "aliases": [
       "linterna"
@@ -25,11 +25,11 @@
     "category": "Regalos",
     "priceUsd": 0,
     "description": "Articulo Stitch para regalo. Precio por definir.",
-    "imageUrl": "stitch.png",
+    "imageUrl": "stitch.webp",
     "images": [
-      "stitch.png",
-      "stitch-2.png",
-      "stitch-3.png"
+      "stitch.webp",
+      "stitch-2.webp",
+      "stitch-3.webp"
     ],
     "aliases": [
       "stitch",
