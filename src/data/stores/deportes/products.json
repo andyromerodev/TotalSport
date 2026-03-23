@@ -5,18 +5,18 @@
     "category": "Accesorios",
     "priceUsd": 12,
     "description": "Bombita portatil para inflado.",
-    "imageUrl": "bombita-aire.png",
+    "imageUrl": "bombita-aire.webp",
     "aliases": [
       "bombita aire"
     ],
     "active": true,
     "images": [
-      "bombita-aire.png",
-      "bombita-aire-2.png",
-      "bombita-aire-3.png",
-      "bombita-aire-4.png",
-      "bombita-aire-5.png",
-      "bombita-aire-6.png"
+      "bombita-aire.webp",
+      "bombita-aire-2.webp",
+      "bombita-aire-3.webp",
+      "bombita-aire-4.webp",
+      "bombita-aire-5.webp",
+      "bombita-aire-6.webp"
     ]
   },
   {
@@ -25,15 +25,15 @@
     "category": "Accesorios",
     "priceUsd": 1,
     "description": "Cintas para absorber sudor en entrenamiento.",
-    "imageUrl": "cintas-sudor.jpg",
+    "imageUrl": "cintas-sudor.webp",
     "aliases": [
       "cinta sudor"
     ],
     "active": true,
     "images": [
-      "cintas-sudor.jpg",
-      "cintas-sudor-2.jpg",
-      "cintas-sudor-3.jpg"
+      "cintas-sudor.webp",
+      "cintas-sudor-2.webp",
+      "cintas-sudor-3.webp"
     ]
   },
   {
@@ -50,14 +50,14 @@
         ]
       }
     ],
-    "imageUrl": "zapatillas-adidas-42.jpg",
+    "imageUrl": "zapatillas-adidas-42.webp",
     "aliases": [
       "zapatillas adidas"
     ],
     "active": true,
     "images": [
-      "zapatillas-adidas-42.jpg",
-      "zapatillas-adidas-42-2.jpg"
+      "zapatillas-adidas-42.webp",
+      "zapatillas-adidas-42-2.webp"
     ]
   },
   {
@@ -74,11 +74,11 @@
         ]
       }
     ],
-    "imageUrl": "forro-timon-premium-negro.jpg",
+    "imageUrl": "forro-timon-premium-negro.webp",
     "images": [
-      "forro-timon-premium-negro.jpg",
-      "forro-timon-premium-negro-2.jpg",
-      "forro-timon-premium-negro-3.png"
+      "forro-timon-premium-negro.webp",
+      "forro-timon-premium-negro-2.webp",
+      "forro-timon-premium-negro-3.webp"
     ],
     "aliases": [
       "forro timon premium",
@@ -93,15 +93,15 @@
     "category": "Componentes bicicleta",
     "priceUsd": 12,
     "description": "Compatible con generaciones Shimano 9v, 10v y 11v.",
-    "imageUrl": "forros-manetas-shimano.jpg",
+    "imageUrl": "forros-manetas-shimano.webp",
     "aliases": [
       "forros manetas shimano"
     ],
     "active": true,
     "images": [
-      "forros-manetas-shimano.jpg",
-      "forros-manetas-shimano-2.jpg",
-      "forros-manetas-shimano-3.jpg"
+      "forros-manetas-shimano.webp",
+      "forros-manetas-shimano-2.webp",
+      "forros-manetas-shimano-3.webp"
     ]
   },
   {
@@ -119,7 +119,7 @@
         ]
       }
     ],
-    "imageUrl": "placas-shimano.png",
+    "imageUrl": "placas-shimano.webp",
     "aliases": [
       "placas base pedal",
       "placas shimano 0",
@@ -129,9 +129,9 @@
     ],
     "active": true,
     "images": [
-      "placas-shimano.png",
-      "placas-shimano-2.png",
-      "placas-shimano-3.png"
+      "placas-shimano.webp",
+      "placas-shimano-2.webp",
+      "placas-shimano-3.webp"
     ]
   },
   {
@@ -158,16 +158,16 @@
         ]
       }
     ],
-    "imageUrl": "rondanas-11t-13t-aluminio.jpg",
+    "imageUrl": "rondanas-11t-13t-aluminio.webp",
     "aliases": [
       "rondanas 11t",
       "rondanas 13t"
     ],
     "active": true,
     "images": [
-      "rondanas-11t-13t-aluminio.jpg",
-      "rondanas-11t-13t-aluminio-2.png",
-      "rondanas-11t-13t-aluminio-3.png"
+      "rondanas-11t-13t-aluminio.webp",
+      "rondanas-11t-13t-aluminio-2.webp",
+      "rondanas-11t-13t-aluminio-3.webp"
     ]
   },
   {
@@ -176,7 +176,7 @@
     "category": "Componentes bicicleta",
     "priceUsd": 35,
     "description": "Timon de carbono para ciclismo.",
-    "imageUrl": "timon-carbon-fsa-kforce.jpg",
+    "imageUrl": "timon-kforce.webp",
     "aliases": [
       "timón fsa kforce",
       "timon fsa kforce"
@@ -189,7 +189,7 @@
     "category": "Componentes bicicleta",
     "priceUsd": 20,
     "description": "Timon Ritchey con geometria Curve Logic.",
-    "imageUrl": "timon-ritchey-curve-logic.jpg",
+    "imageUrl": "timon-ritchey.webp",
     "aliases": [
       "timón ritchey",
       "timon ritchey"
@@ -218,14 +218,14 @@
         ]
       }
     ],
-    "imageUrl": "guantillas-corte-largo.jpg",
+    "imageUrl": "guantillas-corte-largo.webp",
     "aliases": [
       "guantillas"
     ],
     "active": true,
     "images": [
-      "guantillas-corte-largo.jpg",
-      "guantillas-corte-largo-2.jpg"
+      "guantillas-corte-largo.webp",
+      "guantillas-corte-largo-2.webp"
     ]
   },
   {
@@ -251,15 +251,15 @@
         ]
       }
     ],
-    "imageUrl": "licras-ciclismo-corte-laser-badana.jpg",
+    "imageUrl": "licras-ciclismo-corte-laser-badana.webp",
     "aliases": [
       "licra con badana"
     ],
     "active": true,
     "images": [
-      "licras-ciclismo-corte-laser-badana.jpg",
-      "licras-ciclismo-corte-laser-badana-2.jpg",
-      "licras-ciclismo-corte-laser-badana-3.jpg"
+      "licras-ciclismo-corte-laser-badana.webp",
+      "licras-ciclismo-corte-laser-badana-2.webp",
+      "licras-ciclismo-corte-laser-badana-3.webp"
     ]
   },
   {
@@ -285,7 +285,7 @@
         ]
       }
     ],
-    "imageUrl": "licras-compresion-semienteras.jpg",
+    "imageUrl": "licras-pro-combat-largas.webp",
     "aliases": [
       "licra compresion"
     ],
@@ -315,14 +315,14 @@
         ]
       }
     ],
-    "imageUrl": "licras-pro-combat-cortas.jpg",
+    "imageUrl": "licras-pro-combat-cortas.webp",
     "aliases": [
       "licra pro combat"
     ],
     "active": true,
     "images": [
-      "licras-pro-combat-cortas.jpg",
-      "licras-pro-combat-cortas-2.jpg"
+      "licras-pro-combat-cortas.webp",
+      "licras-pro-combat-cortas-2.webp"
     ]
   },
   {
@@ -349,14 +349,14 @@
         ]
       }
     ],
-    "imageUrl": "licras-pro-combat-largas.jpg",
+    "imageUrl": "licras-pro-combat-largas.webp",
     "aliases": [
       "licra pro combat"
     ],
     "active": true,
     "images": [
-      "licras-pro-combat-largas.jpg",
-      "licras-pro-combat-largas-2.jpg"
+      "licras-pro-combat-largas.webp",
+      "licras-pro-combat-largas-2.webp"
     ]
   },
   {
@@ -375,16 +375,16 @@
         ]
       }
     ],
-    "imageUrl": "mangas-proteccion-solar.jpg",
+    "imageUrl": "mangas-proteccion-solar.webp",
     "aliases": [
       "mangas proteccion solar"
     ],
     "active": true,
     "images": [
-      "mangas-proteccion-solar.jpg",
-      "mangas-proteccion-solar-2.jpg",
-      "mangas-proteccion-solar-3.jpg",
-      "mangas-proteccion-solar-4.jpg"
+      "mangas-proteccion-solar.webp",
+      "mangas-proteccion-solar-2.webp",
+      "mangas-proteccion-solar-3.webp",
+      "mangas-proteccion-solar-4.webp"
     ]
   },
   {
@@ -401,14 +401,14 @@
         ]
       }
     ],
-    "imageUrl": "mangas-rockbros.png",
+    "imageUrl": "mangas-rockbros.webp",
     "aliases": [
       "mangas rockbros"
     ],
     "active": true,
     "images": [
-      "mangas-rockbros.png",
-      "mangas-rockbros-2.png"
+      "mangas-rockbros.webp",
+      "mangas-rockbros-2.webp"
     ]
   },
   {
@@ -432,13 +432,13 @@
         ]
       }
     ],
-    "imageUrl": "mangas-wrels.png",
+    "imageUrl": "mangas-wrels.webp",
     "images": [
-      "mangas-wrels.png",
-      "mangas-wrels-2.png",
-      "mangas-wrels-3.png",
-      "mangas-wrels-4.png",
-      "mangas-wrels-5.png"
+      "mangas-wrels.webp",
+      "mangas-wrels-2.webp",
+      "mangas-wrels-3.webp",
+      "mangas-wrels-4.webp",
+      "mangas-wrels-4.webp"
     ],
     "aliases": [
       "mangas wrels",
@@ -478,14 +478,14 @@
         ]
       }
     ],
-    "imageUrl": "medias-aero-corte-laser.jpg",
+    "imageUrl": "medias-aero-corte-laser.webp",
     "aliases": [
       "medias aero"
     ],
     "active": true,
     "images": [
-      "medias-aero-corte-laser.jpg",
-      "medias-aero-corte-laser-2.jpg"
+      "medias-aero-corte-laser.webp",
+      "medias-aero-corte-laser-2.webp"
     ]
   },
   {
@@ -511,19 +511,19 @@
         ]
       }
     ],
-    "imageUrl": "medias-giro.png",
+    "imageUrl": "medias-giro.webp",
     "aliases": [
       "medias giro"
     ],
     "active": true,
     "images": [
-      "medias-giro.png",
-      "medias-giro-2.png",
-      "medias-giro-3.png",
-      "medias-giro-5.png",
-      "medias-giro-6.png",
-      "medias-giro-7.png",
-      "medias-giro-8.jpg"
+      "medias-giro.webp",
+      "medias-giro-2.webp",
+      "medias-giro-3.webp",
+      "medias-giro-5.webp",
+      "medias-giro-6.webp",
+      "medias-giro-7.webp",
+      "medias-giro-8.webp"
     ]
   },
   {
@@ -532,13 +532,13 @@
     "category": "Ropa deportiva",
     "priceUsd": 0,
     "description": "Medias deportivas GKRO de varios colores",
-    "imageUrl": "gkro.png",
+    "imageUrl": "gkro.webp",
     "images": [
-      "gkro.png",
-      "gkro-2.png",
-      "gkro-3.png",
-      "gkro-4.png",
-      "gkro-5.png"
+      "gkro.webp",
+      "gkro-2.webp",
+      "gkro-3.webp",
+      "gkro-4.webp",
+      "gkro-5.webp"
     ],
     "aliases": [
       "gkro"
@@ -559,16 +559,16 @@
         ]
       }
     ],
-    "imageUrl": "termo-silicona-wrels-250ml.jpg",
+    "imageUrl": "termo-elite.webp",
     "aliases": [
       "termo silicona wrels",
       "termo wrels"
     ],
     "active": true,
     "images": [
-      "termo-silicona-wrels-250ml.jpg",
-      "termo-silicona-wrels-250ml-2.jpg",
-      "termo-silicona-wrels-250ml-3.jpg"
+      "termo-elite.webp",
+      "termo-amarillo.webp",
+      "termo-rosado.webp"
     ]
   },
   {
@@ -585,7 +585,7 @@
         ]
       }
     ],
-    "imageUrl": "termo-silicona-wrels-500ml.jpg",
+    "imageUrl": "termo-elite-2.webp",
     "aliases": [
       "termo silicona wrels",
       "termo wrels"
@@ -598,10 +598,10 @@
     "category": "Termos",
     "priceUsd": 0,
     "description": "Termo Elite. Precio por definir.",
-    "imageUrl": "termo-elite.jpg",
+    "imageUrl": "termo-elite.webp",
     "images": [
-      "termo-elite.jpg",
-      "termo-elite-2.jpg"
+      "termo-elite.webp",
+      "termo-elite-2.webp"
     ],
     "aliases": [
       "termo elite"
@@ -628,7 +628,7 @@
         ]
       }
     ],
-    "imageUrl": "termo-amarillo.jpg",
+    "imageUrl": "termo-amarillo.webp",
     "aliases": [
       "termo thinkrider"
     ],
@@ -654,7 +654,7 @@
         ]
       }
     ],
-    "imageUrl": "termo-rosado.jpg",
+    "imageUrl": "termo-rosado.webp",
     "aliases": [
       "termo thinkrider"
     ],
@@ -874,12 +874,12 @@
         ]
       }
     ],
-    "imageUrl": "timon-ritchey.jpg",
+    "imageUrl": "timon-ritchey.webp",
     "images": [
-      "timon-ritchey.jpg",
-      "timon-ritchey-2.jpg",
-      "timon-ritchey-3.jpg",
-      "timon-ritchey-4.jpg"
+      "timon-ritchey.webp",
+      "timon-ritchey-2.webp",
+      "timon-ritchey-3.webp",
+      "timon-ritchey-4.webp"
     ],
     "aliases": [
       "timon ritchey curve logic",
