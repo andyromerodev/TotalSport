@@ -184,19 +184,6 @@
     "active": true
   },
   {
-    "id": "timon-ritchey-curve-logic",
-    "name": "Timón RITCHEY Curve Logic",
-    "category": "Componentes bicicleta",
-    "priceUsd": 20,
-    "description": "Timon Ritchey con geometria Curve Logic.",
-    "imageUrl": "timon-ritchey.webp",
-    "aliases": [
-      "timón ritchey",
-      "timon ritchey"
-    ],
-    "active": true
-  },
-  {
     "id": "guantillas-corte-largo",
     "name": "Guantillas corte largo",
     "category": "Ropa deportiva",
