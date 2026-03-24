@@ -295,6 +295,84 @@ h1 {
   overflow: hidden;
 }
 
+.shimmer-grid {
+  pointer-events: none;
+}
+
+.shimmer-card {
+  border-color: color-mix(in srgb, var(--line) 65%, var(--surface));
+}
+
+.shimmer-media {
+  aspect-ratio: 1 / 1;
+  border-radius: 0;
+}
+
+.shimmer-content {
+  padding: 1rem;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.shimmer-block {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #e5ece8;
+  border-radius: 10px;
+}
+
+.shimmer-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  transform: translateX(-100%);
+  animation: shimmer-slide 1.15s linear infinite;
+}
+
+.shimmer-line {
+  height: 0.9rem;
+}
+
+.shimmer-line-title {
+  width: 76%;
+  height: 1rem;
+}
+
+.shimmer-line-text {
+  width: 100%;
+}
+
+.shimmer-line-price {
+  width: 38%;
+  margin-top: 0.25rem;
+}
+
+.shimmer-actions {
+  margin-top: 0.2rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.shimmer-pill {
+  width: 44%;
+  height: 2rem;
+  border-radius: 999px;
+}
+
+@keyframes shimmer-slide {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-block::after {
+    animation: none;
+  }
+}
+
 .image-link {
   display: block;
   aspect-ratio: 1 / 1;
@@ -514,6 +592,33 @@ h1 {
     -webkit-line-clamp: unset;
     -webkit-box-orient: initial;
     overflow: visible;
+  }
+
+  .category-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .category-nav::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+    display: none;
+  }
+
+  .category-nav a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    scroll-snap-align: start;
+  }
+
+  .grid.grid-compact {
+    grid-template-columns: 1fr;
+    justify-content: stretch;
   }
 
   .btn,
