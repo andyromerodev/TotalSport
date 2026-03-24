@@ -5,16 +5,6 @@ const statusEl = document.getElementById('status');
 const runtimeMeta = document.getElementById('runtime-meta');
 const productsCount = document.getElementById('products-count');
 
-const movementForm = document.getElementById('movement-form');
-const productSelect = document.getElementById('productId');
-const typeSelect = document.getElementById('type');
-const qtyInput = document.getElementById('qty');
-const adjustmentWrap = document.getElementById('adjustment-wrap');
-const adjustmentSign = document.getElementById('adjustmentSign');
-const unitCostInput = document.getElementById('unitCostUsd');
-const unitSaleInput = document.getElementById('unitSaleUsd');
-const noteInput = document.getElementById('note');
-
 const fromInput = document.getElementById('from');
 const toInput = document.getElementById('to');
 const searchInput = document.getElementById('search');
@@ -30,6 +20,7 @@ const currency = new Intl.NumberFormat('en-US', {
 
 let products = [];
 let ledger = [];
+
 const movementLabel = {
   ENTRY: 'Entrada',
   EXIT: 'Salida',
@@ -70,12 +61,6 @@ function renderMetrics(dashboard) {
     .join('');
 }
 
-function renderProductOptions() {
-  productSelect.innerHTML = products
-    .map((item) => `<option value="${item.productId}">${item.name} (${item.currentStock})</option>`)
-    .join('');
-}
-
 function renderProductsTable() {
   const query = searchInput.value.trim().toLowerCase();
   const filtered = products.filter((item) => {
@@ -93,13 +78,38 @@ function renderProductsTable() {
     .map((item) => {
       const lowClass = item.currentStock <= 0 ? 'stock-low' : '';
       return `
-      <tr>
+      <tr data-product-id="${item.productId}" data-product-name="${item.name}">
         <td>${item.name}<br /><span class="muted">${item.productId}</span></td>
         <td>${item.storeTitle}<br /><span class="muted">${item.category}</span></td>
-        <td class="${lowClass}">${item.currentStock}</td>
-        <td>${currency.format(item.costUsd)}</td>
-        <td>${currency.format(item.salePriceUsd)}</td>
+        <td class="${lowClass}">
+          <input class="cell-input stock-input" type="number" min="0" step="1" value="${item.currentStock}" />
+        </td>
+        <td>
+          <input class="cell-input cost-input" type="number" min="0" step="0.01" value="${item.costUsd}" />
+        </td>
+        <td>
+          <input class="cell-input price-input" type="number" min="0" step="0.01" value="${item.salePriceUsd}" />
+        </td>
         <td>${currency.format(item.profitUsd)}</td>
+        <td>
+          <div class="row-actions">
+            <button class="finance-save btn-tertiary" type="button">Guardar datos</button>
+            <div class="movement-inline">
+              <select class="row-movement-type" aria-label="Tipo de movimiento para ${item.name}">
+                <option value="ENTRY">Entrada</option>
+                <option value="EXIT">Salida</option>
+                <option value="ADJUSTMENT">Ajuste</option>
+                <option value="SALE">Venta</option>
+              </select>
+              <input class="row-movement-qty" type="number" min="1" step="1" value="1" aria-label="Cantidad para ${item.name}" />
+              <select class="row-adjustment-sign hidden" aria-label="Signo de ajuste para ${item.name}">
+                <option value="IN">Sumar</option>
+                <option value="OUT">Restar</option>
+              </select>
+              <button class="row-movement-save btn-secondary" type="button">Registrar</button>
+            </div>
+          </div>
+        </td>
       </tr>
     `;
     })
@@ -137,7 +147,6 @@ async function fetchJson(url, options) {
 async function loadProducts() {
   const data = await fetchJson('/api/products');
   products = data.items;
-  renderProductOptions();
   renderProductsTable();
 }
 
@@ -170,46 +179,155 @@ async function refreshAll() {
   await Promise.all([loadProducts(), loadDashboard(), loadLedger(), loadRuntimeMeta()]);
 }
 
-typeSelect.addEventListener('change', () => {
-  adjustmentWrap.classList.toggle('hidden', typeSelect.value !== 'ADJUSTMENT');
-});
+function getRowPayload(row) {
+  const stockInput = row.querySelector('.stock-input');
+  const costInput = row.querySelector('.cost-input');
+  const priceInput = row.querySelector('.price-input');
 
-searchInput.addEventListener('input', renderProductsTable);
+  const currentStock = Number(stockInput.value);
+  const costUsd = Number(costInput.value);
+  const salePriceUsd = Number(priceInput.value);
 
-movementForm.addEventListener('submit', async (event) => {
-  event.preventDefault();
-
-  const payload = {
-    productId: productSelect.value,
-    type: typeSelect.value,
-    qty: Number(qtyInput.value),
-    note: noteInput.value.trim()
-  };
-
-  if (adjustmentSign.value && typeSelect.value === 'ADJUSTMENT') {
-    payload.adjustmentSign = adjustmentSign.value;
+  if (!Number.isInteger(currentStock) || currentStock < 0) {
+    throw new Error('Stock debe ser un entero mayor o igual a 0.');
   }
 
-  if (unitCostInput.value) payload.unitCostUsd = Number(unitCostInput.value);
-  if (unitSaleInput.value) payload.unitSaleUsd = Number(unitSaleInput.value);
+  if (!Number.isFinite(costUsd) || costUsd < 0) {
+    throw new Error('Costo debe ser un numero mayor o igual a 0.');
+  }
+
+  if (!Number.isFinite(salePriceUsd) || salePriceUsd < 0) {
+    throw new Error('Precio debe ser un numero mayor o igual a 0.');
+  }
+
+  return { currentStock, costUsd, salePriceUsd };
+}
+
+async function saveRowFinance(row) {
+  const productId = row.dataset.productId;
+  const productName = row.dataset.productName ?? productId;
+  const payload = getRowPayload(row);
+
+  const saveButton = row.querySelector('.finance-save');
+  saveButton.disabled = true;
 
   try {
-    setStatus('Guardando movimiento...');
+    setStatus(`Guardando datos de ${productName}...`);
+    await fetchJson(`/api/products/${encodeURIComponent(productId)}/finance`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    await refreshAll();
+    setStatus(`Datos guardados para ${productName}.`);
+  } catch (error) {
+    setStatus(error.message, true);
+  } finally {
+    saveButton.disabled = false;
+  }
+}
+
+async function registerRowMovement(row) {
+  const productId = row.dataset.productId;
+  const productName = row.dataset.productName ?? productId;
+
+  const typeSelect = row.querySelector('.row-movement-type');
+  const qtyInput = row.querySelector('.row-movement-qty');
+  const signSelect = row.querySelector('.row-adjustment-sign');
+
+  const qty = Number(qtyInput.value);
+  if (!Number.isInteger(qty) || qty <= 0) {
+    throw new Error('Cantidad debe ser un entero mayor que 0.');
+  }
+
+  const payload = {
+    productId,
+    type: typeSelect.value,
+    qty,
+    note: 'Movimiento desde tabla'
+  };
+
+  if (typeSelect.value === 'ADJUSTMENT') {
+    payload.adjustmentSign = signSelect.value;
+  }
+
+  const moveButton = row.querySelector('.row-movement-save');
+  moveButton.disabled = true;
+
+  try {
+    setStatus(`Registrando movimiento de ${productName}...`);
     await fetchJson('/api/movements', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(payload)
     });
 
-    qtyInput.value = '';
-    unitCostInput.value = '';
-    unitSaleInput.value = '';
-    noteInput.value = '';
-
     await refreshAll();
-    setStatus('Movimiento guardado.');
+    setStatus(`Movimiento registrado para ${productName}.`);
   } catch (error) {
     setStatus(error.message, true);
+  } finally {
+    moveButton.disabled = false;
+  }
+}
+
+searchInput.addEventListener('input', renderProductsTable);
+
+productsTable.addEventListener('change', (event) => {
+  const typeSelect = event.target.closest('.row-movement-type');
+  if (!typeSelect) return;
+
+  const row = typeSelect.closest('tr');
+  if (!row) return;
+
+  const signSelect = row.querySelector('.row-adjustment-sign');
+  signSelect.classList.toggle('hidden', typeSelect.value !== 'ADJUSTMENT');
+});
+
+productsTable.addEventListener('click', async (event) => {
+  const financeButton = event.target.closest('.finance-save');
+  if (financeButton) {
+    const row = financeButton.closest('tr');
+    if (!row) return;
+    await saveRowFinance(row);
+    return;
+  }
+
+  const movementButton = event.target.closest('.row-movement-save');
+  if (movementButton) {
+    const row = movementButton.closest('tr');
+    if (!row) return;
+    try {
+      await registerRowMovement(row);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
+  }
+});
+
+productsTable.addEventListener('keydown', async (event) => {
+  if (event.key !== 'Enter') return;
+
+  const isCellInput = event.target.classList.contains('cell-input');
+  const isMovementQty = event.target.classList.contains('row-movement-qty');
+
+  if (isCellInput) {
+    event.preventDefault();
+    const row = event.target.closest('tr');
+    if (!row) return;
+    await saveRowFinance(row);
+    return;
+  }
+
+  if (isMovementQty) {
+    event.preventDefault();
+    const row = event.target.closest('tr');
+    if (!row) return;
+    try {
+      await registerRowMovement(row);
+    } catch (error) {
+      setStatus(error.message, true);
+    }
   }
 });
 
@@ -225,7 +343,7 @@ refreshButton.addEventListener('click', async () => {
 exportButton.addEventListener('click', async () => {
   try {
     const data = await fetchJson('/api/export-public-stock', { method: 'POST' });
-    setStatus(`Stock público exportado (${data.exported} registros).`);
+    setStatus(`Stock publico exportado (${data.exported} registros).`);
   } catch (error) {
     setStatus(error.message, true);
   }

@@ -8,6 +8,7 @@ import { getDashboardUseCase } from './application/GetDashboardUseCase.mjs';
 import { getLedgerUseCase } from './application/GetLedgerUseCase.mjs';
 import { registerMovementUseCase } from './application/RegisterMovementUseCase.mjs';
 import { exportPublicStockUseCase } from './application/ExportPublicStockUseCase.mjs';
+import { updateFinanceRowUseCase } from './application/UpdateFinanceRowUseCase.mjs';
 
 const rootDir = process.cwd();
 const uiDir = path.resolve(rootDir, 'scripts/admin-panel');
@@ -68,6 +69,14 @@ async function handleApi(req, res, url) {
     const payload = await readBody(req);
     const result = await registerMovementUseCase(payload);
     return sendJson(res, 201, result);
+  }
+
+  if (req.method === 'PATCH' && url.pathname.startsWith('/api/products/') && url.pathname.endsWith('/finance')) {
+    const productPath = url.pathname.slice('/api/products/'.length, -'/finance'.length);
+    const productId = decodeURIComponent(productPath);
+    const payload = await readBody(req);
+    const result = await updateFinanceRowUseCase(productId, payload);
+    return sendJson(res, 200, result);
   }
 
   if (req.method === 'POST' && url.pathname === '/api/export-public-stock') {
