@@ -48,6 +48,27 @@ const baseUrl = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_UR
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
     <title>{title}</title>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZS0K5B7VKD"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-ZS0K5B7VKD', { send_page_view: false });
+
+      let lastTrackedUrl = '';
+      const trackPageView = () => {
+        if (window.location.href === lastTrackedUrl) return;
+        lastTrackedUrl = window.location.href;
+        gtag('event', 'page_view', {
+          page_location: window.location.href,
+          page_path: window.location.pathname,
+          page_title: document.title
+        });
+      };
+
+      document.addEventListener('astro:page-load', trackPageView);
+      trackPageView();
+    </script>
   </head>
   <body>
     <ClientRouter />
