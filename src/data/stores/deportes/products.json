@@ -552,7 +552,11 @@
     "priceUsd": 8,
     "description": "Medias Aero de color azul plateada.",
     "variants": [{ "name": "Color", "values": ["Azul plateada"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-azul-plateada-1.webp",
+    "images": [
+      "medias-aero-azul-plateada-1.webp",
+      "medias-aero-azul-plateada-2.webp"
+    ],
     "aliases": ["medias aero azul plateada"],
     "active": true
   },
@@ -563,7 +567,11 @@
     "priceUsd": 8,
     "description": "Medias Aero de color gris oscuro casi negro.",
     "variants": [{ "name": "Color", "values": ["Gris oscuro casi negro"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-gris-oscuro-1.webp",
+    "images": [
+      "medias-aero-gris-oscuro-1.webp",
+      "medias-aero-gris-oscuro-2.webp"
+    ],
     "aliases": ["medias aero gris oscuro"],
     "active": true
   },
@@ -574,7 +582,8 @@
     "priceUsd": 8,
     "description": "Medias Aero del equipo FDJ, color blanco.",
     "variants": [{ "name": "Team", "values": ["FDJ"] }, { "name": "Color", "values": ["Blanco"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-fdj-blancas.webp",
+    "images": ["medias-aero-fdj-blancas.webp"],
     "aliases": ["medias fdj blancas"],
     "active": true
   },
@@ -585,7 +594,8 @@
     "priceUsd": 8,
     "description": "Medias Aero del equipo Quick Step, color azul.",
     "variants": [{ "name": "Team", "values": ["QuickStep"] }, { "name": "Color", "values": ["Azul"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-quick-step-azules.webp",
+    "images": ["medias-aero-quick-step-azules.webp"],
     "aliases": ["medias quick step azules"],
     "active": true
   },
@@ -596,7 +606,8 @@
     "priceUsd": 8,
     "description": "Medias Aero del equipo Lotto, color rojo.",
     "variants": [{ "name": "Team", "values": ["Lotto"] }, { "name": "Color", "values": ["Rojo"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-lotto-rojas.webp",
+    "images": ["medias-aero-lotto-rojas.webp"],
     "aliases": ["medias lotto rojas"],
     "active": true
   },
@@ -607,7 +618,8 @@
     "priceUsd": 8,
     "description": "Medias Aero de Italia Team, color azul.",
     "variants": [{ "name": "Team", "values": ["Italia Team"] }, { "name": "Color", "values": ["Azul"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-italia-azules.webp",
+    "images": ["medias-aero-italia-azules.webp"],
     "aliases": ["medias italia azules"],
     "active": true
   },
@@ -618,7 +630,8 @@
     "priceUsd": 8,
     "description": "Medias Aero del equipo Jumbo Visma, color amarillo.",
     "variants": [{ "name": "Team", "values": ["Jumbo Visma"] }, { "name": "Color", "values": ["Amarillo"] }],
-    "imageUrl": "medias-aero-corte-laser.webp",
+    "imageUrl": "medias-aero-jumbo-visma-amarillas.webp",
+    "images": ["medias-aero-jumbo-visma-amarillas.webp"],
     "aliases": ["medias jumbo visma amarillas"],
     "active": true
   },
@@ -662,7 +675,8 @@
     "priceUsd": 0,
     "description": "Medias deportivas GKRO de color negro.",
     "variants": [{ "name": "Color", "values": ["Negro"] }],
-    "imageUrl": "gkro.webp",
+    "imageUrl": "medias-gkro-negras.webp",
+    "images": ["medias-gkro-negras.webp"],
     "aliases": ["medias gkro negras"],
     "active": true
   },
@@ -673,7 +687,8 @@
     "priceUsd": 0,
     "description": "Medias deportivas GKRO de color blanco.",
     "variants": [{ "name": "Color", "values": ["Blanco"] }],
-    "imageUrl": "gkro.webp",
+    "imageUrl": "medias-gkro-blancas.webp",
+    "images": ["medias-gkro-blancas.webp"],
     "aliases": ["medias gkro blancas"],
     "active": true
   },
@@ -695,7 +710,8 @@
     "priceUsd": 0,
     "description": "Medias deportivas GKRO de color verde aqua.",
     "variants": [{ "name": "Color", "values": ["Verde aqua"] }],
-    "imageUrl": "gkro.webp",
+    "imageUrl": "medias-gkro-verde-aqua.webp",
+    "images": ["medias-gkro-verde-aqua.webp"],
     "aliases": ["medias gkro verde aqua"],
     "active": true
   },

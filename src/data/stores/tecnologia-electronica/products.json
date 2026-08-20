@@ -24,6 +24,23 @@
     "active": true
   },
   {
+    "id": "micas-iphone-14-pro-max",
+    "name": "Micas para iPhone 14 Pro Max",
+    "category": "Telefonía",
+    "priceUsd": 0,
+    "description": "Paquete de 5 micas HD para iPhone 14 Pro Max. Vidrio con dureza 9H, resistente a golpes y rayones, transparente y con protección antihuellas.",
+    "imageUrl": "micas-iphone-14-pro-max.webp",
+    "images": [
+      "micas-iphone-14-pro-max.webp"
+    ],
+    "aliases": [
+      "micas iphone 14 pro max",
+      "mica iphone 14 pro max",
+      "protector iphone 14 pro max"
+    ],
+    "active": true
+  },
+  {
     "id": "logi",
     "name": "Combo de teclado y mouse Logitech",
     "category": "Tecnologia",
