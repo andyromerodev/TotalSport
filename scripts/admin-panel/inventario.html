@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Inventario — Lote Mayo 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #1a1e24;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --green: #0a7f52;
+  --green-bg: #e8f5ee;
+  --red: #dc2626;
+  --red-bg: #fef2f2;
+  --amber: #d97706;
+  --amber-bg: #fffbeb;
+  --radius: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  padding: 2rem 1.5rem;
+}
+.container { max-width: 1480px; margin: 0 auto; }
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+header h1 { font-size: 1.5rem; font-weight: 800; letter-spacing: -0.02em; }
+.header-left .subtitle { color: var(--muted); font-size: 0.85rem; margin-top: 0.2rem; }
+.header-right { display: flex; gap: 0.5rem; align-items: center; }
+.btn {
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.15s;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.btn:hover { background: #f1f5f9; }
+.btn-primary { background: var(--green); color: #fff; border-color: var(--green); }
+.btn-primary:hover { background: #086b44; }
+.btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+#saveStatus { font-size: 0.82rem; color: var(--muted); }
+
+.summary-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+.summary-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.85rem 1rem;
+}
+.summary-card .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  font-weight: 600;
+}
+.summary-card .value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+.summary-card .value.positive { color: var(--green); }
+.summary-card .value.negative { color: var(--red); }
+
+.table-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow-x: auto;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+thead th {
+  background: #f8fafc;
+  border-bottom: 2px solid var(--border);
+  padding: 0.6rem 0.4rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+}
+thead th.section-col {
+  background: #eef3f1;
+  color: var(--green);
+}
+thead th:first-child { padding-left: 0.75rem; }
+thead th:last-child { padding-right: 0.75rem; }
+tbody td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+tbody td:first-child { padding-left: 0.75rem; }
+tbody td:last-child { padding-right: 0.75rem; }
+tbody tr:hover { background: #f8fafc; }
+tbody tr.is-negative { background: var(--red-bg); }
+tbody tr.is-total {
+  background: var(--green-bg);
+  font-weight: 700;
+  font-size: 0.86rem;
+}
+tbody tr.is-total td { border-bottom: none; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0.25rem 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+  min-width: 0;
+  transition: border-color 0.15s;
+}
+input:focus { outline: none; border-color: var(--green); box-shadow: 0 0 0 2px rgba(10,127,82,0.15); }
+input.num-input { text-align: right; width: 70px; }
+input.text-input { width: 130px; }
+input.wide-input { width: 180px; }
+input.pct-input { text-align: right; width: 50px; }
+input:read-only {
+  background: #f8fafc;
+  color: var(--muted);
+  border-color: transparent;
+  cursor: default;
+}
+.calc { font-weight: 600; }
+.calc.positive { color: var(--green); }
+.calc.negative { color: var(--red); }
+
+hr {
+  border: none;
+  border-top: 1px dashed var(--border);
+  margin: 0.5rem 0;
+}
+.btn-del {
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+}
+.btn-del:hover {
+  color: var(--red);
+  background: var(--red-bg);
+}
+
+/* Tooltip en inputs de producto */
+.tip-wrap {
+  position: relative;
+  display: inline-block;
+}
+.tip-wrap .tip-text {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  z-index: 50;
+  bottom: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1e24;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: normal;
+  max-width: min(50vw, 360px);
+  word-wrap: break-word;
+  padding: 0.45rem 0.7rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  line-height: 1.35;
+  pointer-events: none;
+  transition: opacity 0.15s, visibility 0.15s;
+}
+.tip-wrap .tip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1a1e24;
+}
+.tip-wrap:hover .tip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Tooltips en headers */
+th {
+  position: relative;
+  cursor: help;
+}
+th .tip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--muted);
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  margin-left: 0.25rem;
+  vertical-align: middle;
+  cursor: help;
+  transition: background 0.15s;
+}
+th:hover .tip-icon {
+  background: var(--green);
+}
+th .tip-text {
+  display: none;
+  position: absolute;
+  z-index: 100;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1e24;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  white-space: nowrap;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  line-height: 1.4;
+  pointer-events: none;
+}
+th .tip-text::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1a1e24;
+}
+th:hover .tip-text {
+  display: block;
+}
+
+@media print {
+  th .tip-text, th .tip-icon { display: none !important; }
+  body { padding: 0.3in; background: white; }
+  .btn, #saveStatus, .header-right, .btn-primary { display: none; }
+  .table-wrap { border: none; }
+}
+@media (max-width: 900px) {
+  body { padding: 0.75rem; }
+  input.num-input { width: 55px; }
+  input.text-input { width: 90px; }
+  input.wide-input { width: 120px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <div class="header-left">
+    <h1>📦 Control de Inventario</h1>
+    <p class="subtitle" id="subtitle">Lote Mayo 2026 · Tiendita de Deportes · Cada lote tiene su propio precio de compra y costo de envío</p>
+  </div>
+  <div class="header-right">
+    <span id="saveStatus"></span>
+    <a class="btn" href="/">← Panel</a>
+    <button class="btn" onclick="addRow()">➕ Añadir</button>
+    <button class="btn" onclick="window.print()">🖨️</button>
+    <button class="btn" onclick="exportTxt()">📄 TXT</button>
+    <button class="btn" style="background:#9a4f76;color:#fff;border-color:#9a4f76" onclick="exportHermana(this)">👩 Exportar para hermana</button>
+    <button class="btn btn-primary" id="saveBtn" onclick="save()">💾 Guardar</button>
+  </div>
+</header>
+
+<div class="summary-cards" id="summaryCards">
+  <div class="summary-card"><div class="label">Productos</div><div class="value" id="sProducts">—</div></div>
+  <div class="summary-card"><div class="label">Unidades</div><div class="value" id="sUnits">—</div></div>
+  <div class="summary-card"><div class="label">Peso total</div><div class="value" id="sWeight">—</div></div>
+  <div class="summary-card"><div class="label">Costo compra total</div><div class="value" id="sBuyCost">—</div></div>
+  <div class="summary-card"><div class="label">Envío total</div><div class="value" id="sShipping">—</div></div>
+  <div class="summary-card"><div class="label">Costo Cuba total</div><div class="value" id="sTotalCost">—</div></div>
+  <div class="summary-card"><div class="label">Venta total</div><div class="value positive" id="sRevenue">—</div></div>
+  <div class="summary-card"><div class="label">Ganancia bruta</div><div class="value positive" id="sGrossProfit">—</div></div>
+  <div class="summary-card"><div class="label">Aportación Hermana</div><div class="value" id="sSister">—</div></div>
+  <div class="summary-card"><div class="label">Ganancia neta</div><div class="value positive" id="sNetProfit">—</div></div>
+</div>
+
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th colspan="3" class="section-col">📦 Producto</th>
+      <th colspan="5" class="section-col">💰 Datos del lote</th>
+      <th colspan="6" class="section-col">📊 Resultados calculados</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>Producto<span class="tip-icon">?</span><span class="tip-text">Nombre del producto o lote recibido</span></th>
+      <th class="num">Qty<span class="tip-icon">?</span><span class="tip-text">Cantidad de unidades en este lote</span></th>
+      <th class="num">Peso lb<span class="tip-icon">?</span><span class="tip-text">Peso total del lote en libras (no por unidad)</span></th>
+      <th class="num">Precio compra ud.<span class="tip-icon">?</span><span class="tip-text">Lo que pagaste por unidad en AliExpress/Amazon, sin incluir envío</span></th>
+      <th class="num">Envío / lb<span class="tip-icon">?</span><span class="tip-text">Costo del envío por libra. Varía entre $4–$6 según el tamaño del paquete</span></th>
+      <th class="num">Costo Cuba ud.<span class="tip-icon">?</span><span class="tip-text">Precio compra + (peso ÷ cantidad × envío/lb). Costo real del producto puesto en Cuba</span></th>
+      <th class="num">Venta ud.<span class="tip-icon">?</span><span class="tip-text">Precio al que vendes cada unidad al cliente final</span></th>
+      <th class="num">Ganancia ud.<span class="tip-icon">?</span><span class="tip-text">Venta − Costo Cuba. Lo que ganas por unidad antes del % de tu hermana</span></th>
+      <th class="num">Aportación Hermana<span class="tip-icon">?</span><span class="tip-text">Ganancia × (% Hermana ÷ 100). El monto que le corresponde a tu hermana</span></th>
+      <th class="num">% Hermana<span class="tip-icon">?</span><span class="tip-text">Porcentaje de la ganancia que va para tu hermana. Normalmente 25%</span></th>
+      <th class="num">Ganancia neta ud.<span class="tip-icon">?</span><span class="tip-text">Ganancia − Aportación Hermana. Tu ganancia real por unidad</span></th>
+      <th class="num">Margen %<span class="tip-icon">?</span><span class="tip-text">(Ganancia neta ÷ Venta) × 100. Rentabilidad porcentual sobre el precio de venta</span></th>
+      <th class="num">Total neto<span class="tip-icon">?</span><span class="tip-text">Ganancia neta ud. × Cantidad. Ganancia total del lote después del % de tu hermana</span></th>
+      <th>Nota<span class="tip-icon">?</span><span class="tip-text">Nota opcional para llevar información extra del lote o producto</span></th>
+    </tr>
+  </thead>
+  <tbody id="tableBody">
+  </tbody>
+</table>
+</div>
+
+<p style="margin-top:1rem;color:var(--muted);font-size:0.78rem;">
+  <strong>Edita</strong> Precio compra, Peso lb, Envío/lb, Venta y % Hermana. 
+  <strong>Costo Cuba</strong> = Precio compra + (Peso ÷ Qty × Envío/lb). 
+  Las columnas calculadas se actualizan solas.
+</p>
+</div>
+
+<script>
+let data = null;
+
+async function load() {
+  try {
+    const res = await fetch('/api/inventario');
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+    render();
+  } catch (e) {
+    document.getElementById('tableBody').innerHTML =
+      '<tr><td colspan="15" style="text-align:center;padding:2rem;color:var(--red)">❌ Error al cargar: ' + e.message + '</td></tr>';
+  }
+}
+
+function calc(row) {
+  const envioPorUnidad = row.cantidad > 0 ? (row.pesoLb * row.costoEnvioLb) / row.cantidad : 0;
+  const costoCuba = row.precioCompra + envioPorUnidad;
+  const ganancia = row.precioVenta - costoCuba;
+  const hermanaShare = ganancia > 0 ? ganancia * (row.porcentajeHermana / 100) : 0;
+  const gananciaNeta = ganancia - hermanaShare;
+  const totalNeto = gananciaNeta * row.cantidad;
+  const margen = row.precioVenta > 0 ? (gananciaNeta / row.precioVenta) * 100 : 0;
+  return { costoCuba, ganancia, hermanaShare, gananciaNeta, totalNeto, margen, envioPorUnidad };
+}
+
+function fmt(n) { return n.toFixed(2); }
+
+function handleInputChange(e) {
+  const inp = e.target;
+  if (inp.tagName !== 'INPUT' || !inp.dataset.idx) return;
+  const idx = parseInt(inp.dataset.idx);
+  const field = inp.dataset.field;
+  const val = inp.type === 'number' ? parseFloat(inp.value) || 0 : inp.value;
+  if (data.rows[idx]) data.rows[idx][field] = val;
+  render();
+  markDirty();
+}
+
+function render() {
+  const tbody = document.getElementById('tableBody');
+  tbody.innerHTML = '';
+
+  let totals = { qty: 0, weight: 0, buyCost: 0, shipping: 0, costCuba: 0, revenue: 0, gross: 0, sister: 0, net: 0 };
+
+  data.rows.forEach((row, i) => {
+    const c = calc(row);
+    totals.qty += row.cantidad;
+    totals.weight += row.pesoLb;
+    totals.buyCost += row.precioCompra * row.cantidad;
+    totals.shipping += row.pesoLb * row.costoEnvioLb;
+    totals.costCuba += c.costoCuba * row.cantidad;
+    totals.revenue += row.precioVenta * row.cantidad;
+    totals.gross += c.ganancia * row.cantidad;
+    totals.sister += c.hermanaShare * row.cantidad;
+    totals.net += c.totalNeto;
+
+    const tr = document.createElement('tr');
+    if (c.ganancia < 0) tr.className = 'is-negative';
+
+    tr.innerHTML =
+      '<td style="text-align:center"><button type="button" class="btn-del" data-idx="' + i + '" onclick="deleteRow(' + i + ')" title="Eliminar">✕</button></td>' +
+      '<td><input class="text-input wide-input" type="text" value="' + esc(row.producto) + '" data-idx="' + i + '" data-field="producto"></td>' +
+      '<td class="num"><input class="num-input" type="number" step="1" min="0" value="' + row.cantidad + '" data-idx="' + i + '" data-field="cantidad"></td>' +
+      '<td class="num"><input class="num-input" type="number" step="0.01" min="0" value="' + row.pesoLb + '" data-idx="' + i + '" data-field="pesoLb"></td>' +
+      '<td class="num"><input class="num-input" type="number" step="0.01" min="0" value="' + row.precioCompra + '" data-idx="' + i + '" data-field="precioCompra"></td>' +
+      '<td class="num"><input class="num-input envio-input" type="number" step="0.01" min="0" value="' + row.costoEnvioLb + '" data-idx="' + i + '" data-field="costoEnvioLb" title="Costo de envio por libra" style="background:#fffbeb;border-color:#fcd34d;"></td>' +
+      '<td class="num calc">' + fmt(c.costoCuba) + '</td>' +
+      '<td class="num"><input class="num-input" type="number" step="0.01" min="0" value="' + row.precioVenta + '" data-idx="' + i + '" data-field="precioVenta"></td>' +
+      '<td class="num calc ' + (c.ganancia >= 0 ? 'positive' : 'negative') + '">' + fmt(c.ganancia) + '</td>' +
+      '<td class="num calc">' + fmt(c.hermanaShare) + '</td>' +
+      '<td class="num"><input class="pct-input" type="number" step="1" min="0" max="100" value="' + row.porcentajeHermana + '" data-idx="' + i + '" data-field="porcentajeHermana"></td>' +
+      '<td class="num calc ' + (c.gananciaNeta >= 0 ? 'positive' : 'negative') + '">' + fmt(c.gananciaNeta) + '</td>' +
+      '<td class="num calc ' + (c.margen >= 0 ? 'positive' : 'negative') + '">' + c.margen.toFixed(1) + '%</td>' +
+      '<td class="num calc ' + (totals.net >= 0 ? 'positive' : 'negative') + '">' + fmt(c.totalNeto) + '</td>' +
+      '<td><input class="text-input" type="text" value="' + esc(row.nota || '') + '" data-idx="' + i + '" data-field="nota"></td>';
+    tbody.appendChild(tr);
+  });
+
+  const marginTotal = totals.revenue > 0 ? (totals.net / totals.revenue) * 100 : 0;
+  const trTotal = document.createElement('tr');
+  trTotal.className = 'is-total';
+  trTotal.innerHTML =
+    '<td></td><td>TOTAL LOTE</td>' +
+    '<td class="num">' + totals.qty + '</td>' +
+    '<td class="num">' + totals.weight.toFixed(2) + '</td>' +
+    '<td class="num">' + fmt(totals.buyCost) + '</td>' +
+    '<td class="num">' + fmt(totals.shipping) + '</td>' +
+    '<td class="num">' + fmt(totals.costCuba) + '</td>' +
+    '<td class="num">—</td>' +
+    '<td class="num">—</td>' +
+    '<td class="num">' + fmt(totals.sister) + '</td>' +
+    '<td class="num">—</td>' +
+    '<td class="num">—</td>' +
+    '<td class="num">' + marginTotal.toFixed(1) + '%</td>' +
+    '<td class="num">' + fmt(totals.net) + '</td>' +
+    '<td></td>';
+  tbody.appendChild(trTotal);
+
+  document.getElementById('sProducts').textContent = data.rows.length;
+  document.getElementById('sUnits').textContent = totals.qty;
+  document.getElementById('sWeight').textContent = totals.weight.toFixed(2) + ' lb';
+  document.getElementById('sBuyCost').textContent = fmt(totals.buyCost);
+  document.getElementById('sShipping').textContent = fmt(totals.shipping);
+  document.getElementById('sTotalCost').textContent = fmt(totals.costCuba);
+  document.getElementById('sRevenue').textContent = fmt(totals.revenue);
+  document.getElementById('sGrossProfit').textContent = fmt(totals.gross);
+  document.getElementById('sSister').textContent = fmt(totals.sister);
+  document.getElementById('sNetProfit').textContent = fmt(totals.net);
+}
+
+function markDirty() {
+  document.getElementById('saveStatus').textContent = '✏️ Sin guardar';
+}
+
+async function save() {
+  const btn = document.getElementById('saveBtn');
+  const status = document.getElementById('saveStatus');
+  btn.disabled = true;
+  status.textContent = '⏳ Guardando...';
+
+  try {
+    const res = await fetch('/api/inventario', {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) throw new Error('Error al guardar');
+    status.textContent = '✅ Guardado';
+    setTimeout(() => { status.textContent = ''; }, 3000);
+  } catch (e) {
+    status.textContent = '❌ Error: ' + e.message;
+  }
+  btn.disabled = false;
+}
+
+function esc(s) { return String(s).replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
+
+function addRow() {
+  data.rows.push({
+    producto: '',
+    cantidad: 1,
+    pesoLb: 0,
+    precioCompra: 0,
+    costoEnvioLb: 0,
+    precioVenta: 0,
+    porcentajeHermana: 25,
+    nota: ''
+  });
+  render();
+  markDirty();
+  window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+}
+
+function deleteRow(idx) {
+  if (!confirm('Eliminar "' + (data.rows[idx].producto || 'producto sin nombre') + '"?')) return;
+  data.rows.splice(idx, 1);
+  render();
+  markDirty();
+}
+
+// Event delegation: un solo listener para todos los inputs del tbody
+document.getElementById('tableBody').addEventListener('change', handleInputChange);
+
+async function exportHermana(btn) {
+  const orig = btn.textContent;
+  btn.textContent = '⏳ Generando...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('/api/export-hermana');
+    if (!res.ok) throw new Error('Error del servidor');
+    const blob = await res.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'para-mi-hermana.html';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  } catch(e) {
+    alert('Error al exportar: ' + e.message + '. Asegurate de que el servidor admin este corriendo (pnpm admin:start)');
+  }
+  btn.textContent = orig;
+  btn.disabled = false;
+}
+
+function exportTxt() {
+  const pad = (s, n) => String(s).padEnd(n);
+  const rpad = (n) => String(n).padStart(8);
+
+  let lines = [];
+  lines.push('='.repeat(140));
+  lines.push('  INVENTARIO — LOTE MAYO 2026  '.padStart(76));
+  lines.push('='.repeat(140));
+  lines.push('');
+  lines.push(`${'Producto'.padEnd(38)} Qty  Peso lb  Compra  Env/lb  Venta  %Hna  CostoCuba  Ganancia  AportHna  G.Neta  Margen  TotalNeto`);
+  lines.push('-'.repeat(140));
+
+  let t = { qty:0, peso:0, compra:0, envio:0, venta:0, costoCuba:0, ganancia:0, hermana:0, neta:0 };
+
+  data.rows.forEach(r => {
+    const envioUd = r.cantidad > 0 ? (r.pesoLb * r.costoEnvioLb) / r.cantidad : 0;
+    const cc = r.precioCompra + envioUd;
+    const g = r.precioVenta - cc;
+    const h = g > 0 ? g * (r.porcentajeHermana / 100) : 0;
+    const gn = g - h;
+    const tn = gn * r.cantidad;
+    const m = r.precioVenta > 0 ? (gn / r.precioVenta) * 100 : 0;
+
+    t.qty += r.cantidad;
+    t.peso += r.pesoLb;
+    t.compra += r.precioCompra * r.cantidad;
+    t.envio += r.pesoLb * r.costoEnvioLb;
+    t.venta += r.precioVenta * r.cantidad;
+    t.costoCuba += cc * r.cantidad;
+    t.ganancia += g * r.cantidad;
+    t.hermana += h * r.cantidad;
+    t.neta += tn;
+
+    lines.push(
+      pad(r.producto, 38) +
+      String(r.cantidad).padStart(4) +
+      r.pesoLb.toFixed(2).padStart(8) +
+      r.precioCompra.toFixed(2).padStart(7) +
+      r.costoEnvioLb.toFixed(2).padStart(6) +
+      r.precioVenta.toFixed(2).padStart(7) +
+      pad(r.porcentajeHermana + '%', 5) +
+      cc.toFixed(2).padStart(9) +
+      g.toFixed(2).padStart(9) +
+      h.toFixed(2).padStart(9) +
+      gn.toFixed(2).padStart(8) +
+      (m.toFixed(1) + '%').padStart(7) +
+      tn.toFixed(2).padStart(10)
+    );
+    if (r.nota) lines.push('  → ' + r.nota);
+  });
+
+  lines.push('-'.repeat(140));
+  const mTotal = t.venta > 0 ? (t.neta / t.venta) * 100 : 0;
+  lines.push(
+    'TOTAL'.padEnd(38) +
+    String(t.qty).padStart(4) +
+    t.peso.toFixed(2).padStart(8) +
+    t.compra.toFixed(2).padStart(7) +
+    t.envio.toFixed(2).padStart(6) +
+    t.venta.toFixed(2).padStart(7) +
+    '     ' +
+    t.costoCuba.toFixed(2).padStart(9) +
+    t.ganancia.toFixed(2).padStart(9) +
+    t.hermana.toFixed(2).padStart(9) +
+    t.neta.toFixed(2).padStart(8) +
+    (mTotal.toFixed(1) + '%').padStart(7) +
+    t.neta.toFixed(2).padStart(10)
+  );
+  lines.push('='.repeat(140));
+  lines.push('');
+
+  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'inventario-mayo-2026.txt';
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+load();
+</script>
+</body>
+</html>

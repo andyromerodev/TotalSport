@@ -25,12 +25,13 @@ export function resolveAdminDataPaths() {
   return {
     adminDataDir,
     financePath: path.resolve(adminDataDir, 'products-finance.json'),
-    ledgerPath: path.resolve(adminDataDir, 'inventory-ledger.json')
+    ledgerPath: path.resolve(adminDataDir, 'inventory-ledger.json'),
+    inventarioPath: path.resolve(adminDataDir, 'inventario-lote-mayo-2026.json')
   };
 }
 
 export async function ensureAdminDataFiles() {
-  const { adminDataDir, financePath, ledgerPath } = resolveAdminDataPaths();
+  const { adminDataDir, financePath, ledgerPath, inventarioPath } = resolveAdminDataPaths();
   await mkdir(adminDataDir, { recursive: true });
 
   try {
@@ -43,6 +44,12 @@ export async function ensureAdminDataFiles() {
     await readFile(ledgerPath, 'utf-8');
   } catch {
     await writeJson(ledgerPath, []);
+  }
+
+  try {
+    await readFile(inventarioPath, 'utf-8');
+  } catch {
+    await writeJson(inventarioPath, { meta: { title: 'Inventario', store: '', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString() }, rows: [] });
   }
 }
 
@@ -65,4 +72,16 @@ export async function saveAdminData(finance, ledger) {
   const { financePath, ledgerPath } = resolveAdminDataPaths();
   await writeJson(financePath, finance);
   await writeJson(ledgerPath, ledger);
+}
+
+export async function loadInventario() {
+  const { inventarioPath } = resolveAdminDataPaths();
+  const raw = await readFile(inventarioPath, 'utf-8');
+  return JSON.parse(raw);
+}
+
+export async function saveInventario(data) {
+  const { inventarioPath } = resolveAdminDataPaths();
+  data.meta.updatedAt = new Date().toISOString();
+  await writeJson(inventarioPath, data);
 }
