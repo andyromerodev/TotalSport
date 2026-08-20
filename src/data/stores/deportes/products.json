@@ -758,22 +758,6 @@
     ]
   },
   {
-    "id": "termo-elite",
-    "name": "Termo Elite",
-    "category": "Termos y Botellas",
-    "priceUsd": 0,
-    "description": "Termo Elite. Precio por definir.",
-    "imageUrl": "termo-elite.webp",
-    "images": [
-      "termo-elite.webp",
-      "termo-elite-2.webp"
-    ],
-    "aliases": [
-      "termo elite"
-    ],
-    "active": true
-  },
-  {
     "id": "termos-thinkrider-engomados-amarillo-claro",
     "name": "Termos Thinkrider engomados (Amarillo claro)",
     "category": "Termos y Botellas",
@@ -1058,10 +1042,9 @@
     "category": "Guantes y Guantillas",
     "priceUsd": 10,
     "description": "Guantillas HUWAI.",
-    "imageUrl": "guantillas-vilico-enterizas-negras.webp",
+    "imageUrl": "guantillas-huwai.webp",
     "images": [
-      "guantillas-vilico-enterizas-negras.webp",
-      "guantillas-vilico-enterizas-blancas.webp"
+      "guantillas-huwai.webp"
     ],
     "active": true
   },
@@ -1087,7 +1070,11 @@
         ]
       }
     ],
-    "imageUrl": "guantillas-foto-pendiente.svg",
+    "imageUrl": "guantillas-vilico-enterizas-negras.webp",
+    "images": [
+      "guantillas-vilico-enterizas-negras.webp",
+      "guantillas-vilico-enterizas-blancas.webp"
+    ],
     "active": true
   },
   {
@@ -1163,7 +1150,10 @@
     "priceUsd": 8,
     "description": "Termo Thinkrider engomado Negro 750ml. Precio por unidad: 8 USD.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "termo-thinkrider-negro-750ml.webp",
+    "images": [
+      "termo-thinkrider-negro-750ml.webp"
+    ]
   },
   {
     "id": "termo-fly-elite-750ml",
@@ -1172,7 +1162,10 @@
     "priceUsd": 8,
     "description": "Termo Fly Elite 750ml. Precio por unidad: 8 USD.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "termo-fly-elite-750ml.webp",
+    "images": [
+      "termo-fly-elite-750ml.webp"
+    ]
   },
   {
     "id": "termo-fly-elite-550ml",
@@ -1181,7 +1174,10 @@
     "priceUsd": 8,
     "description": "Termo Fly Elite 550ml. Precio por unidad: 8 USD.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "termo-fly-elite-550ml.webp",
+    "images": [
+      "termo-fly-elite-550ml.webp"
+    ]
   },
   {
     "id": "portatermos",
@@ -1208,7 +1204,11 @@
     "priceUsd": 5,
     "description": "Cierra cadena\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "cierra-cadena-1.webp",
+    "images": [
+      "cierra-cadena-1.webp",
+      "cierra-cadena-2.webp"
+    ]
   },
   {
     "id": "adaptador-pedales-shimano",
@@ -1243,7 +1243,12 @@
     "priceUsd": 6,
     "description": "Soporte portamóvil para bicicleta\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "portamovil-1.webp",
+    "images": [
+      "portamovil-1.webp",
+      "portamovil-2.webp",
+      "portamovil-3.webp"
+    ]
   },
   {
     "id": "llave-allen",
