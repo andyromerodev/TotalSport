@@ -636,6 +636,7 @@
     "description": "Medias Giro de color verde fluorescente.",
     "variants": [{ "name": "Color", "values": ["Verde fluorescente"] }],
     "imageUrl": "medias-giro-verdes.jpeg",
+    "images": ["medias-giro-verdes.jpeg"],
     "aliases": ["medias giro verdes fluorescentes", "medias giro verdes", "medias giro amarillas"],
     "active": true
   },
@@ -647,6 +648,7 @@
     "description": "Medias Giro de color rosado.",
     "variants": [{ "name": "Color", "values": ["Rosado"] }],
     "imageUrl": "medias-giro-rosadas.jpeg",
+    "images": ["medias-giro-rosadas.jpeg"],
     "aliases": ["medias giro rosadas"],
     "active": true
   },
@@ -658,6 +660,7 @@
     "description": "Medias Giro de color rojo.",
     "variants": [{ "name": "Color", "values": ["Rojo"] }],
     "imageUrl": "medias-giro-rojas.jpeg",
+    "images": ["medias-giro-rojas.jpeg"],
     "aliases": ["medias giro rojas"],
     "active": true
   },
