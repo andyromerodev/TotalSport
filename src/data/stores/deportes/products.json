@@ -1217,7 +1217,11 @@
     "priceUsd": 10,
     "description": "Adaptador pedales Shimano\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "adaptador-pedales-shimano-1.webp",
+    "images": [
+      "adaptador-pedales-shimano-1.webp",
+      "adaptador-pedales-shimano-2.webp"
+    ]
   },
   {
     "id": "linterna-recargable",

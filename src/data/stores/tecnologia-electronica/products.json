@@ -81,5 +81,23 @@
       "teclado keychron"
     ],
     "active": true
+  },
+  {
+    "id": "ecualizador-baterias-24v",
+    "name": "Ecualizador de baterías 24V PWNNP",
+    "category": "Tecnologia",
+    "priceUsd": 0,
+    "description": "Controlador y ecualizador de baterías PowMr modelo BE24-N. Compatible con sistemas de 24V, 36V y 48V, y baterías de gel, AGM y plomo-ácido. Mantiene equilibrada la tensión entre módulos para mejorar la estabilidad, seguridad y vida útil del banco de baterías. Diseño compacto, certificación CE e instalación sencilla en sistemas solares domésticos o profesionales.",
+    "imageUrl": "ecualizador-baterias-24v-1.webp",
+    "images": [
+      "ecualizador-baterias-24v-1.webp",
+      "ecualizador-baterias-24v-2.webp"
+    ],
+    "aliases": [
+      "ecualizador de baterias 24v",
+      "battery equalizer 24v",
+      "pwnnp"
+    ],
+    "active": true
   }
 ]
