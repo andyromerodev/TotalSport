@@ -1094,33 +1094,6 @@
     "active": true
   },
   {
-    "id": "gafas-blancas",
-    "name": "Gafas blancas",
-    "category": "Gafas",
-    "priceUsd": 10,
-    "description": "Gafas blancas\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "imageUrl": "pendiente-foto.webp",
-    "active": true
-  },
-  {
-    "id": "gafas-negras",
-    "name": "Gafas negras",
-    "category": "Gafas",
-    "priceUsd": 10,
-    "description": "Gafas negras\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "imageUrl": "pendiente-foto.webp",
-    "active": true
-  },
-  {
-    "id": "gafas-fotocromaticas",
-    "name": "Gafas fotocromáticas",
-    "category": "Gafas",
-    "priceUsd": 10,
-    "description": "Gafas fotocromáticas\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "active": true,
-    "imageUrl": "pendiente-foto.webp"
-  },
-  {
     "id": "ciclocomputador-igpsport",
     "name": "Ciclocomputador IGPSport",
     "category": "Ciclocomputadores",
@@ -1196,22 +1169,19 @@
     ]
   },
   {
-    "id": "portatermos",
-    "name": "Portatermos (portabotellas)",
-    "category": "Termos y Botellas",
-    "priceUsd": 15,
-    "description": "Portatermos para bicicleta\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "active": true,
-    "imageUrl": "pendiente-foto.webp"
-  },
-  {
     "id": "tornillos-allen",
-    "name": "Tornillos Allen",
+    "name": "Juego de tornillos RIDER RACE",
     "category": "Herramientas",
     "priceUsd": 6,
-    "description": "Tornillos Allen\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "description": "Juego de tornillos RIDER RACE para bicicleta, disponible en colores rojo, negro y dorado.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "imageUrl": "tornillos-rider-race-1.png",
+    "images": [
+      "tornillos-rider-race-1.png",
+      "tornillos-rider-race-2.png",
+      "tornillos-rider-race-3.png"
+    ],
+    "aliases": ["juego de tornillos rider race", "tornillos rider race"]
   },
   {
     "id": "cierra-cadena",
@@ -1281,5 +1251,16 @@
     "description": "Llave Allen\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "active": true,
     "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "ruedas-mavic-aksium",
+    "name": "Ruedas Mavic Aksium",
+    "category": "Ruedas",
+    "priceUsd": 80,
+    "description": "Juego completo de ruedas de ruta 700C Mavic Aksium Race de aluminio para freno de zapata. Buje trasero con núcleo Shimano/SRAM compatible con 9, 10 y 11 velocidades. Incluye 20 radios rectos delante, 24 detrás y cierres rápidos. Perfil bajo y resistente, con etiquetas y pista de frenado en buen estado general. Peso aproximado del par: 1.8 kg.\n\n📍 Centro Habana",
+    "imageUrl": "ruedas-mavic-aksium.png",
+    "images": ["ruedas-mavic-aksium.png"],
+    "aliases": ["llantas mavic aksium", "ruedas mavic aksium race", "ruedas de ruta mavic"],
+    "active": true
   }
 ]
