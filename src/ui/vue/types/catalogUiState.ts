@@ -40,6 +40,7 @@ export type ProductCardUiState = {
   detailsHref: string;
   whatsappHref: string;
   coverImage: string;
+  variants?: ProductVariant[];
 };
 
 export type StoreCatalogUiState = {

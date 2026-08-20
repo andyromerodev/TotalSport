@@ -65,6 +65,7 @@ export function toProductCardUiState(product: Product, baseUrl: string): Product
     detailsHref: `${normalizedBase}productos/${product.id}/`,
     whatsappHref: buildWhatsAppLink(product.name),
     coverImage,
+    variants: product.variants,
   };
 }
 

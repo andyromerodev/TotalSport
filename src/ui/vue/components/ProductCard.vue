@@ -36,6 +36,12 @@ defineProps<{ product: ProductCardUiState }>();
       <p class="price">{{ product.priceUsd }} USD</p>
       <p v-if="product.description" class="description">{{ product.description }}</p>
 
+      <div v-if="product.variants?.length" class="card-variants" aria-label="Variantes disponibles">
+        <p v-for="variant in product.variants" :key="variant.name" class="variant-line">
+          <strong>{{ variant.name }}:</strong> {{ variant.values.join(', ') }}
+        </p>
+      </div>
+
       <div class="actions">
         <a class="btn btn-outline" :href="product.detailsHref">Ver detalle</a>
         <a
@@ -119,5 +125,22 @@ defineProps<{ product: ProductCardUiState }>();
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.card-variants {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0.7rem 0 0;
+  color: #52645e;
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.variant-line {
+  margin: 0;
+}
+
+.variant-line strong {
+  color: #1c2925;
 }
 </style>
