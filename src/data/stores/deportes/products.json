@@ -630,13 +630,13 @@
   },
   {
     "id": "medias-giro-amarillas",
-    "name": "Medias Giro amarillas",
+    "name": "Medias Giro verdes fluorescentes",
     "category": "Medias",
     "priceUsd": 4,
-    "description": "Medias Giro de color amarillo.",
-    "variants": [{ "name": "Color", "values": ["Amarillo"] }],
-    "imageUrl": "medias-giro.webp",
-    "aliases": ["medias giro amarillas"],
+    "description": "Medias Giro de color verde fluorescente.",
+    "variants": [{ "name": "Color", "values": ["Verde fluorescente"] }],
+    "imageUrl": "medias-giro-verdes.jpeg",
+    "aliases": ["medias giro verdes fluorescentes", "medias giro verdes", "medias giro amarillas"],
     "active": true
   },
   {
@@ -646,7 +646,7 @@
     "priceUsd": 4,
     "description": "Medias Giro de color rosado.",
     "variants": [{ "name": "Color", "values": ["Rosado"] }],
-    "imageUrl": "medias-giro.webp",
+    "imageUrl": "medias-giro-rosadas.jpeg",
     "aliases": ["medias giro rosadas"],
     "active": true
   },
@@ -657,7 +657,7 @@
     "priceUsd": 4,
     "description": "Medias Giro de color rojo.",
     "variants": [{ "name": "Color", "values": ["Rojo"] }],
-    "imageUrl": "medias-giro.webp",
+    "imageUrl": "medias-giro-rojas.jpeg",
     "aliases": ["medias giro rojas"],
     "active": true
   },
@@ -668,8 +668,8 @@
     "priceUsd": 4,
     "description": "Medias deportivas GKRO de color negro.",
     "variants": [{ "name": "Color", "values": ["Negro"] }],
-    "imageUrl": "medias-gkro-negras.webp",
-    "images": ["medias-gkro-negras.webp"],
+    "imageUrl": "medias-gkro-negras.jpeg",
+    "images": ["medias-gkro-negras.jpeg"],
     "aliases": ["medias gkro negras"],
     "active": true
   },
@@ -680,8 +680,8 @@
     "priceUsd": 4,
     "description": "Medias deportivas GKRO de color blanco.",
     "variants": [{ "name": "Color", "values": ["Blanco"] }],
-    "imageUrl": "medias-gkro-blancas.webp",
-    "images": ["medias-gkro-blancas.webp"],
+    "imageUrl": "medias-gkro-blancas.jpeg",
+    "images": ["medias-gkro-blancas.jpeg"],
     "aliases": ["medias gkro blancas"],
     "active": true
   },
@@ -692,7 +692,8 @@
     "priceUsd": 4,
     "description": "Medias deportivas GKRO de color verde militar.",
     "variants": [{ "name": "Color", "values": ["Verde militar"] }],
-    "imageUrl": "gkro.webp",
+    "imageUrl": "medias-gkro-verde-militar.jpeg",
+    "images": ["medias-gkro-verde-militar.jpeg"],
     "aliases": ["medias gkro verde militar"],
     "active": true
   },
@@ -703,8 +704,8 @@
     "priceUsd": 4,
     "description": "Medias deportivas GKRO de color verde aqua.",
     "variants": [{ "name": "Color", "values": ["Verde aqua"] }],
-    "imageUrl": "medias-gkro-verde-aqua.webp",
-    "images": ["medias-gkro-verde-aqua.webp"],
+    "imageUrl": "medias-gkro-verde-aqua.jpeg",
+    "images": ["medias-gkro-verde-aqua.jpeg"],
     "aliases": ["medias gkro verde aqua"],
     "active": true
   },
