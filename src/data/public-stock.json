@@ -144,9 +144,15 @@
     "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
-    "productId": "guantillas-sencillas",
+    "productId": "guantillas-vilico-enterizas-negras",
     "inStock": true,
-    "availableQty": 3,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "guantillas-vilico-enterizas-blancas",
+    "inStock": true,
+    "availableQty": 2,
     "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
@@ -319,6 +325,12 @@
   },
   {
     "productId": "medias-gkro-verde-militar",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "ruedas-mavic-aksium",
     "inStock": true,
     "availableQty": 1,
     "updatedAt": "2026-08-20T00:00:00.000Z"

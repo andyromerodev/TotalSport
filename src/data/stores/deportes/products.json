@@ -195,7 +195,7 @@
     "name": "Rondanas 11T-13T de aluminio",
     "category": "Rondanas",
     "priceUsd": 8,
-    "description": "PAREJA DE RONDANAS 11T-13T.\n\n🔥Precio - 8 USD cada par🔥\n\n👉Color disponible: Azul.\n\n📱Móvil - 50117539📱\n📍Ciudad Deportiva📍\n\n🏠Tenemos mensajería disponible🏠\n\n📱Canal en Telegram con las ofertas:📱\nhttps://t.me/sportstotal\n\n📱Canal en Whatsapp con las ofertas:📱\nhttps://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "description": "PAREJA DE RONDANAS 11T-13T.\n\n🔥Precio - 8 USD cada par🔥\n\n👉Color disponible: Azul.\n👉Existencia: 4 pares.\n\n📱Móvil - 50117539📱\n📍Ciudad Deportiva📍\n\n🏠Tenemos mensajería disponible🏠\n\n📱Canal en Telegram con las ofertas:📱\nhttps://t.me/sportstotal\n\n📱Canal en Whatsapp con las ofertas:📱\nhttps://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "variants": [
       {
         "name": "Medida",
@@ -211,17 +211,13 @@
         ]
       }
     ],
-    "imageUrl": "rondanas-11t-13t-aluminio.webp",
+    "imageUrl": "rondanas-11t-13t-azules.png",
     "aliases": [
       "rondanas 11t",
       "rondanas 13t"
     ],
     "active": true,
-    "images": [
-      "rondanas-11t-13t-aluminio.webp",
-      "rondanas-11t-13t-aluminio-2.webp",
-      "rondanas-11t-13t-aluminio-3.webp"
-    ]
+    "images": ["rondanas-11t-13t-azules.png"]
   },
   {
     "id": "timon-carbon-fsa-kforce",
@@ -250,15 +246,12 @@
         ]
       }
     ],
-    "imageUrl": "guantillas-corte-largo.webp",
+    "imageUrl": "guantillas-vilico-medio-dedo-rojas.png",
     "aliases": [
       "guantillas"
     ],
     "active": true,
-    "images": [
-      "guantillas-corte-largo.webp",
-      "guantillas-corte-largo-2.webp"
-    ]
+    "images": ["guantillas-vilico-medio-dedo-rojas.png"]
   },
   {
     "id": "licras-ciclismo-corte-laser-badana",
@@ -1065,42 +1058,28 @@
     "active": true
   },
   {
-    "id": "guantillas-sencillas",
-    "name": "Guantillas Vilico de dedos completos",
+    "id": "guantillas-vilico-enterizas-negras",
+    "name": "Guantillas Vilico de dedos completos negras",
     "category": "Guantes y Guantillas",
     "priceUsd": 6,
-    "description": "Guantillas Vilico de dedos completos: negras talla M y blancas tallas S y M.",
-    "variants": [
-      {
-        "name": "Color",
-        "values": [
-          "Negro",
-          "Blanco"
-        ]
-      },
-      {
-        "name": "Talla",
-        "values": [
-          "S",
-          "M"
-        ]
-      }
-    ],
+    "description": "Guantillas Vilico de dedos completos, color negro. Talla M.",
+    "variants": [{ "name": "Color", "values": ["Negro"] }, { "name": "Talla", "values": ["M"] }],
     "imageUrl": "guantillas-vilico-enterizas-negras.webp",
-    "images": [
-      "guantillas-vilico-enterizas-negras.webp",
-      "guantillas-vilico-enterizas-blancas.webp"
-    ],
+    "images": ["guantillas-vilico-enterizas-negras.webp"],
+    "aliases": ["guantillas vilico enterizas negras", "guantillas vilico negras"],
     "active": true
   },
   {
-    "id": "ciclocomputador-igpsport",
-    "name": "Ciclocomputador IGPSport",
-    "category": "Ciclocomputadores",
-    "priceUsd": 50,
-    "description": "Ciclocomputador IGPSport\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "active": true,
-    "imageUrl": "pendiente-foto.webp"
+    "id": "guantillas-vilico-enterizas-blancas",
+    "name": "Guantillas Vilico de dedos completos blancas",
+    "category": "Guantes y Guantillas",
+    "priceUsd": 6,
+    "description": "Guantillas Vilico de dedos completos, color blanco. Tallas S y M.",
+    "variants": [{ "name": "Color", "values": ["Blanco"] }, { "name": "Talla", "values": ["S", "M"] }],
+    "imageUrl": "guantillas-vilico-enterizas-blancas.webp",
+    "images": ["guantillas-vilico-enterizas-blancas.webp"],
+    "aliases": ["guantillas vilico enterizas blancas", "guantillas vilico blancas"],
+    "active": true
   },
   {
     "id": "sensor-cadencia-velocidad-geoid",
@@ -1169,19 +1148,37 @@
     ]
   },
   {
-    "id": "tornillos-allen",
-    "name": "Juego de tornillos RIDER RACE",
+    "id": "tornillos-rider-race-rojos",
+    "name": "Juego de tornillos RIDER RACE rojos",
     "category": "Herramientas",
     "priceUsd": 6,
-    "description": "Juego de tornillos RIDER RACE para bicicleta, disponible en colores rojo, negro y dorado.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "description": "Juego de tornillos RIDER RACE para bicicleta, color rojo.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana",
     "active": true,
     "imageUrl": "tornillos-rider-race-1.png",
-    "images": [
-      "tornillos-rider-race-1.png",
-      "tornillos-rider-race-2.png",
-      "tornillos-rider-race-3.png"
-    ],
-    "aliases": ["juego de tornillos rider race", "tornillos rider race"]
+    "images": ["tornillos-rider-race-1.png"],
+    "aliases": ["tornillos rider race rojos", "tornillos rider race rojo"]
+  },
+  {
+    "id": "tornillos-rider-race-negros",
+    "name": "Juego de tornillos RIDER RACE negros",
+    "category": "Herramientas",
+    "priceUsd": 6,
+    "description": "Juego de tornillos RIDER RACE para bicicleta, color negro.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana",
+    "active": true,
+    "imageUrl": "tornillos-rider-race-2.png",
+    "images": ["tornillos-rider-race-2.png"],
+    "aliases": ["tornillos rider race negros", "tornillos rider race negro"]
+  },
+  {
+    "id": "tornillos-rider-race-dorados",
+    "name": "Juego de tornillos RIDER RACE dorados",
+    "category": "Herramientas",
+    "priceUsd": 6,
+    "description": "Juego de tornillos RIDER RACE para bicicleta, color dorado.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana",
+    "active": true,
+    "imageUrl": "tornillos-rider-race-3.png",
+    "images": ["tornillos-rider-race-3.png"],
+    "aliases": ["tornillos rider race dorados", "tornillos rider race dorado"]
   },
   {
     "id": "cierra-cadena",
@@ -1242,15 +1239,6 @@
       "portamovil-2.webp",
       "portamovil-3.webp"
     ]
-  },
-  {
-    "id": "llave-allen",
-    "name": "Llave Allen",
-    "category": "Herramientas",
-    "priceUsd": 10,
-    "description": "Llave Allen\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "active": true,
-    "imageUrl": "pendiente-foto.webp"
   },
   {
     "id": "ruedas-mavic-aksium",
