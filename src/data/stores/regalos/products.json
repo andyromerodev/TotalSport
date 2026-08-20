@@ -1,25 +1,5 @@
 [
   {
-    "id": "linterna-recargable",
-    "name": "Linterna recargable",
-    "category": "Regalos",
-    "priceUsd": 0,
-    "description": "Linterna recargable. Precio por definir.",
-    "imageUrl": "linterna.webp",
-    "images": [
-      "linterna.webp",
-      "linterna-2.webp",
-      "linterna-3.webp",
-      "linterna-4.webp",
-      "linterna-5.webp",
-      "linterna-6.webp"
-    ],
-    "aliases": [
-      "linterna"
-    ],
-    "active": true
-  },
-  {
     "id": "stitch",
     "name": "Stitch",
     "category": "Regalos",

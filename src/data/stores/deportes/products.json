@@ -88,20 +88,76 @@
     "active": true
   },
   {
-    "id": "forros-manetas-shimano",
-    "name": "Forros para manetas Shimano",
-    "category": "Mandos y Transmisión",
+    "id": "forro-timon-scsp-negro",
+    "name": "Forro de timón SCSP negro",
+    "category": "Cintas y Grip",
     "priceUsd": 12,
-    "description": "📱 MOVIL: 50117539\n\nForros para manillas o manetas Shimano de varios modelos.\n\nModelos disponibles:\nST-R2000 / R3000\nST-R7000 / R8000\nST-6600 / 5600 / 5601 / 5603 / 6601 / 6603\n\nPRECIO 12 USD.\n\n📍 Ciudad Deportiva, La Habana 🇨🇺\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "imageUrl": "forros-manetas-shimano.webp",
+    "description": "Forro de timón SCSP negro con textura tridimensional antideslizante y tapones impermeables.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Negro"
+        ]
+      }
+    ],
+    "imageUrl": "forro-timon-scsp.webp",
     "aliases": [
-      "forros manetas shimano"
+      "forro timon scsp",
+      "forro premium scsp"
     ],
     "active": true,
     "images": [
-      "forros-manetas-shimano.webp",
-      "forros-manetas-shimano-2.webp",
-      "forros-manetas-shimano-3.webp"
+      "forro-timon-scsp.webp",
+      "forro-timon-scsp-tapones.webp"
+    ]
+  },
+  {
+    "id": "forros-manetas-shimano-st-r7000-r8000",
+    "name": "Forros para manetas Shimano ST-R7000 / R8000",
+    "category": "Mandos y Transmisión",
+    "priceUsd": 12,
+    "description": "Forros para manetas Shimano ST-R7000 / R8000.",
+    "variants": [{ "name": "Modelo", "values": ["ST-R7000 / R8000"] }],
+    "imageUrl": "forro-manetas-shimano-st-r7000-r8000.webp",
+    "aliases": ["forros manetas shimano st-r7000", "forros manetas shimano r8000"],
+    "active": true,
+    "images": [
+      "forro-manetas-shimano-st-r7000-r8000.webp",
+      "forros-manetas-shimano-instalacion.webp",
+      "forros-manetas-shimano-identificacion.webp"
+    ]
+  },
+  {
+    "id": "forros-manetas-shimano-st-5700",
+    "name": "Forros para manetas Shimano ST-5700",
+    "category": "Mandos y Transmisión",
+    "priceUsd": 12,
+    "description": "Forros para manetas Shimano ST-5700.",
+    "variants": [{ "name": "Modelo", "values": ["ST-5700"] }],
+    "imageUrl": "forro-manetas-shimano-st-5700.webp",
+    "aliases": ["forros manetas shimano st-5700"],
+    "active": true,
+    "images": [
+      "forro-manetas-shimano-st-5700.webp",
+      "forros-manetas-shimano-instalacion.webp",
+      "forros-manetas-shimano-identificacion.webp"
+    ]
+  },
+  {
+    "id": "forros-manetas-shimano-st-7020-7025",
+    "name": "Forros para manetas Shimano ST-7020 / 7025",
+    "category": "Mandos y Transmisión",
+    "priceUsd": 12,
+    "description": "Forros para manetas Shimano ST-7020 / 7025.",
+    "variants": [{ "name": "Modelo", "values": ["ST-7020 / 7025"] }],
+    "imageUrl": "forro-manetas-shimano-st-7020-7025.webp",
+    "aliases": ["forros manetas shimano st-7020", "forros manetas shimano st-7025"],
+    "active": true,
+    "images": [
+      "forro-manetas-shimano-st-7020-7025.webp",
+      "forros-manetas-shimano-instalacion.webp",
+      "forros-manetas-shimano-identificacion.webp"
     ]
   },
   {
@@ -139,7 +195,7 @@
     "name": "Rondanas 11T-13T de aluminio",
     "category": "Rondanas",
     "priceUsd": 8,
-    "description": "PAREJA DE RONDANAS 11T-13T.\n\n🔥Precio - 8 USD cada par🔥\n\n👉Colores disponibles: Azul y Doradas.\n\n📱Móvil - 50117539📱\n📍Ciudad Deportiva📍\n\n🏠Tenemos mensajería disponible🏠\n\n📱Canal en Telegram con las ofertas:📱\nhttps://t.me/sportstotal\n\n📱Canal en Whatsapp con las ofertas:📱\nhttps://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "description": "PAREJA DE RONDANAS 11T-13T.\n\n🔥Precio - 8 USD cada par🔥\n\n👉Color disponible: Azul.\n\n📱Móvil - 50117539📱\n📍Ciudad Deportiva📍\n\n🏠Tenemos mensajería disponible🏠\n\n📱Canal en Telegram con las ofertas:📱\nhttps://t.me/sportstotal\n\n📱Canal en Whatsapp con las ofertas:📱\nhttps://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
     "variants": [
       {
         "name": "Medida",
@@ -151,7 +207,6 @@
       {
         "name": "Color",
         "values": [
-          "Dorado",
           "Azul"
         ]
       }
@@ -183,23 +238,15 @@
   },
   {
     "id": "guantillas-corte-largo",
-    "name": "Guantillas corte largo",
+    "name": "Guantillas Vilico de medio dedo",
     "category": "Guantes y Guantillas",
     "priceUsd": 10,
-    "description": "Color negro talla S. Color blanco tallas S y M.",
+    "description": "Guantillas Vilico de medio dedo, color rojo.",
     "variants": [
       {
         "name": "Color",
         "values": [
-          "Negro",
-          "Blanco"
-        ]
-      },
-      {
-        "name": "Talla",
-        "values": [
-          "S",
-          "M"
+          "Rojo"
         ]
       }
     ],
@@ -229,10 +276,7 @@
       {
         "name": "Talla",
         "values": [
-          "S",
-          "M",
-          "L",
-          "XL"
+          "L"
         ]
       }
     ],
@@ -265,8 +309,7 @@
         "values": [
           "S",
           "M",
-          "L",
-          "XL"
+          "L"
         ]
       }
     ],
@@ -298,9 +341,7 @@
         "name": "Talla",
         "values": [
           "S",
-          "M",
-          "L",
-          "XL"
+          "M"
         ]
       }
     ],
@@ -333,8 +374,7 @@
         "values": [
           "S",
           "M",
-          "L",
-          "XL"
+          "L"
         ]
       }
     ],
@@ -349,32 +389,101 @@
     ]
   },
   {
-    "id": "mangas-proteccion-solar",
-    "name": "Mangas protección solar",
-    "category": "Mangas",
-    "priceUsd": 5,
-    "description": "Mangas de proteccion UV.",
+    "id": "licras-pro-combat-largas-blancas",
+    "name": "Licras PRO COMBAT largas blancas",
+    "category": "Licras",
+    "priceUsd": 10,
+    "description": "Licras PRO COMBAT largas de color blanco.",
     "variants": [
       {
         "name": "Color",
         "values": [
-          "Blanco",
-          "Gris",
+          "Blanco"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M"
+        ]
+      }
+    ],
+    "imageUrl": "licras-pro-combat-largas-2.webp",
+    "aliases": [
+      "licra pro combat larga blanca",
+      "licras pro combat blancas"
+    ],
+    "active": true
+  },
+  {
+    "id": "mangas-bhtaki-negras",
+    "name": "Mangas BHTAKI negras",
+    "category": "Mangas",
+    "priceUsd": 5,
+    "description": "Mangas BHTAKI de color negro.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Negra"
+        ]
+      }
+    ],
+    "imageUrl": "mangas-proteccion-solar.webp",
+    "aliases": [
+      "mangas bhtaki negras",
+      "mangas negras"
+    ],
+    "active": true
+  },
+  {
+    "id": "mangas-bhtaki-verdes",
+    "name": "Mangas BHTAKI verdes",
+    "category": "Mangas",
+    "priceUsd": 5,
+    "description": "Mangas BHTAKI de color verde.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
           "Verde"
         ]
       }
     ],
     "imageUrl": "mangas-proteccion-solar.webp",
     "aliases": [
-      "mangas proteccion solar"
+      "mangas bhtaki verdes",
+      "mangas verdes"
     ],
-    "active": true,
-    "images": [
-      "mangas-proteccion-solar.webp",
-      "mangas-proteccion-solar-2.webp",
-      "mangas-proteccion-solar-3.webp",
-      "mangas-proteccion-solar-4.webp"
-    ]
+    "active": true
+  },
+  {
+    "id": "mangas-bhtaki-blancas",
+    "name": "Mangas BHTAKI blancas",
+    "category": "Mangas",
+    "priceUsd": 5,
+    "description": "Mangas BHTAKI de color blanco, talla L.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Blanca"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "L"
+        ]
+      }
+    ],
+    "imageUrl": "mangas-proteccion-solar.webp",
+    "aliases": [
+      "mangas bhtaki blancas",
+      "mangas blancas"
+    ],
+    "active": true
   },
   {
     "id": "mangas-rockbros",
@@ -437,101 +546,157 @@
     "active": true
   },
   {
-    "id": "medias-aero-corte-laser",
-    "name": "Medias Aero corte láser",
+    "id": "medias-aero-azul-plateada",
+    "name": "Medias Aero azul plateada",
     "category": "Medias",
     "priceUsd": 8,
-    "description": "Medias aero de corte laser.\n\nPRECIO - 8 USD LA PAREJA.\n\n👉Colores y modelos disponibles:\n\nNegro\nAzul oscuro\nGris oscuro\nBlanco\nNegro\nNaranja\nModelos del Team:\nIneos\nUAE\nMovistar\nVisma\nFDJ Groupama\nLotto\nQuickSteo\nItalia team\n\n📱Móvil - 50117539📱\n📍Ciudad Deportiva📍\n\n🏠Tenemos mensajería disponible🏠\n\n📱Canal en Telegram con las ofertas:📱\nhttps://t.me/sportstotal\n\n📱Canal en Whatsapp con las ofertas:📱\nhttps://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
-    "variants": [
-      {
-        "name": "Color",
-        "values": [
-          "Negro",
-          "Azul oscuro",
-          "Gris oscuro",
-          "Blanco",
-          "Naranja"
-        ]
-      },
-      {
-        "name": "Team",
-        "values": [
-          "Ineos",
-          "UAE",
-          "Movistar",
-          "Visma",
-          "FDJ Groupama",
-          "Lotto",
-          "QuickStep",
-          "Italia Team"
-        ]
-      }
-    ],
+    "description": "Medias Aero de color azul plateada.",
+    "variants": [{ "name": "Color", "values": ["Azul plateada"] }],
     "imageUrl": "medias-aero-corte-laser.webp",
-    "aliases": [
-      "medias aero"
-    ],
-    "active": true,
-    "images": [
-      "medias-aero-corte-laser.webp",
-      "medias-aero-corte-laser-2.webp"
-    ]
+    "aliases": ["medias aero azul plateada"],
+    "active": true
   },
   {
-    "id": "medias-giro",
-    "name": "Medias Giro",
+    "id": "medias-aero-gris-oscuro",
+    "name": "Medias Aero gris oscuro",
+    "category": "Medias",
+    "priceUsd": 8,
+    "description": "Medias Aero de color gris oscuro casi negro.",
+    "variants": [{ "name": "Color", "values": ["Gris oscuro casi negro"] }],
+    "imageUrl": "medias-aero-corte-laser.webp",
+    "aliases": ["medias aero gris oscuro"],
+    "active": true
+  },
+  {
+    "id": "medias-aero-fdj-blancas",
+    "name": "Medias Aero FDJ blancas",
+    "category": "Medias",
+    "priceUsd": 8,
+    "description": "Medias Aero del equipo FDJ, color blanco.",
+    "variants": [{ "name": "Team", "values": ["FDJ"] }, { "name": "Color", "values": ["Blanco"] }],
+    "imageUrl": "medias-aero-corte-laser.webp",
+    "aliases": ["medias fdj blancas"],
+    "active": true
+  },
+  {
+    "id": "medias-aero-quick-step-azules",
+    "name": "Medias Aero Quick Step azules",
+    "category": "Medias",
+    "priceUsd": 8,
+    "description": "Medias Aero del equipo Quick Step, color azul.",
+    "variants": [{ "name": "Team", "values": ["QuickStep"] }, { "name": "Color", "values": ["Azul"] }],
+    "imageUrl": "medias-aero-corte-laser.webp",
+    "aliases": ["medias quick step azules"],
+    "active": true
+  },
+  {
+    "id": "medias-aero-lotto-rojas",
+    "name": "Medias Aero Lotto rojas",
+    "category": "Medias",
+    "priceUsd": 8,
+    "description": "Medias Aero del equipo Lotto, color rojo.",
+    "variants": [{ "name": "Team", "values": ["Lotto"] }, { "name": "Color", "values": ["Rojo"] }],
+    "imageUrl": "medias-aero-corte-laser.webp",
+    "aliases": ["medias lotto rojas"],
+    "active": true
+  },
+  {
+    "id": "medias-aero-italia-azules",
+    "name": "Medias Aero Italia azules",
+    "category": "Medias",
+    "priceUsd": 8,
+    "description": "Medias Aero de Italia Team, color azul.",
+    "variants": [{ "name": "Team", "values": ["Italia Team"] }, { "name": "Color", "values": ["Azul"] }],
+    "imageUrl": "medias-aero-corte-laser.webp",
+    "aliases": ["medias italia azules"],
+    "active": true
+  },
+  {
+    "id": "medias-aero-jumbo-visma-amarillas",
+    "name": "Medias Aero Jumbo Visma amarillas",
+    "category": "Medias",
+    "priceUsd": 8,
+    "description": "Medias Aero del equipo Jumbo Visma, color amarillo.",
+    "variants": [{ "name": "Team", "values": ["Jumbo Visma"] }, { "name": "Color", "values": ["Amarillo"] }],
+    "imageUrl": "medias-aero-corte-laser.webp",
+    "aliases": ["medias jumbo visma amarillas"],
+    "active": true
+  },
+  {
+    "id": "medias-giro-amarillas",
+    "name": "Medias Giro amarillas",
     "category": "Medias",
     "priceUsd": 4,
-    "description": "Variedad de colores disponibles.",
-    "variants": [
-      {
-        "name": "Colores",
-        "values": [
-          "Celeste con negro",
-          "Azul marino con celeste",
-          "Blanco",
-          "Verde oliva con gris",
-          "Negro",
-          "Negro con detalles blancos (Modelo CRX)",
-          "Rosado (Fucsia)",
-          "Amarillo neón",
-          "Naranja",
-          "Rojo"
-        ]
-      }
-    ],
+    "description": "Medias Giro de color amarillo.",
+    "variants": [{ "name": "Color", "values": ["Amarillo"] }],
     "imageUrl": "medias-giro.webp",
-    "aliases": [
-      "medias giro"
-    ],
-    "active": true,
-    "images": [
-      "medias-giro.webp",
-      "medias-giro-2.webp",
-      "medias-giro-3.webp",
-      "medias-giro-5.webp",
-      "medias-giro-6.webp",
-      "medias-giro-7.webp",
-      "medias-giro-8.webp"
-    ]
+    "aliases": ["medias giro amarillas"],
+    "active": true
   },
   {
-    "id": "medias-gkro",
-    "name": "Medias deportivas GKRO",
+    "id": "medias-giro-rosadas",
+    "name": "Medias Giro rosadas",
+    "category": "Medias",
+    "priceUsd": 4,
+    "description": "Medias Giro de color rosado.",
+    "variants": [{ "name": "Color", "values": ["Rosado"] }],
+    "imageUrl": "medias-giro.webp",
+    "aliases": ["medias giro rosadas"],
+    "active": true
+  },
+  {
+    "id": "medias-giro-rojas",
+    "name": "Medias Giro rojas",
+    "category": "Medias",
+    "priceUsd": 4,
+    "description": "Medias Giro de color rojo.",
+    "variants": [{ "name": "Color", "values": ["Rojo"] }],
+    "imageUrl": "medias-giro.webp",
+    "aliases": ["medias giro rojas"],
+    "active": true
+  },
+  {
+    "id": "medias-gkro-negras",
+    "name": "Medias GKRO negras",
     "category": "Medias",
     "priceUsd": 0,
-    "description": "Medias deportivas GKRO de varios colores",
+    "description": "Medias deportivas GKRO de color negro.",
+    "variants": [{ "name": "Color", "values": ["Negro"] }],
     "imageUrl": "gkro.webp",
-    "images": [
-      "gkro.webp",
-      "gkro-2.webp",
-      "gkro-3.webp",
-      "gkro-4.webp",
-      "gkro-5.webp"
-    ],
-    "aliases": [
-      "gkro"
-    ],
+    "aliases": ["medias gkro negras"],
+    "active": true
+  },
+  {
+    "id": "medias-gkro-blancas",
+    "name": "Medias GKRO blancas",
+    "category": "Medias",
+    "priceUsd": 0,
+    "description": "Medias deportivas GKRO de color blanco.",
+    "variants": [{ "name": "Color", "values": ["Blanco"] }],
+    "imageUrl": "gkro.webp",
+    "aliases": ["medias gkro blancas"],
+    "active": true
+  },
+  {
+    "id": "medias-gkro-verde-militar",
+    "name": "Medias GKRO verde militar",
+    "category": "Medias",
+    "priceUsd": 0,
+    "description": "Medias deportivas GKRO de color verde militar.",
+    "variants": [{ "name": "Color", "values": ["Verde militar"] }],
+    "imageUrl": "gkro.webp",
+    "aliases": ["medias gkro verde militar"],
+    "active": true
+  },
+  {
+    "id": "medias-gkro-verde-aqua",
+    "name": "Medias GKRO verde aqua",
+    "category": "Medias",
+    "priceUsd": 0,
+    "description": "Medias deportivas GKRO de color verde aqua.",
+    "variants": [{ "name": "Color", "values": ["Verde aqua"] }],
+    "imageUrl": "gkro.webp",
+    "aliases": ["medias gkro verde aqua"],
     "active": true
   },
   {
@@ -612,13 +777,13 @@
     "id": "termos-thinkrider-engomados-amarillo-claro",
     "name": "Termos Thinkrider engomados (Amarillo claro)",
     "category": "Termos y Botellas",
-    "priceUsd": 16,
-    "description": "Precio por pareja.",
+    "priceUsd": 8,
+    "description": "Precio por unidad: 8 USD.",
     "variants": [
       {
         "name": "Presentacion",
         "values": [
-          "Pareja"
+          "Individual"
         ]
       },
       {
@@ -638,13 +803,13 @@
     "id": "termos-thinkrider-engomados-rosados",
     "name": "Termos Thinkrider engomados (Rosados)",
     "category": "Termos y Botellas",
-    "priceUsd": 16,
-    "description": "Precio por pareja.",
+    "priceUsd": 8,
+    "description": "Precio por unidad: 8 USD.",
     "variants": [
       {
         "name": "Presentacion",
         "values": [
-          "Pareja"
+          "Individual"
         ]
       },
       {
@@ -886,5 +1051,207 @@
       "timon carretera ritchey"
     ],
     "active": true
+  },
+  {
+    "id": "guantillas-vilico",
+    "name": "Guantillas HUWAI",
+    "category": "Guantes y Guantillas",
+    "priceUsd": 10,
+    "description": "Guantillas HUWAI.",
+    "imageUrl": "guantillas-vilico-enterizas-negras.webp",
+    "images": [
+      "guantillas-vilico-enterizas-negras.webp",
+      "guantillas-vilico-enterizas-blancas.webp"
+    ],
+    "active": true
+  },
+  {
+    "id": "guantillas-sencillas",
+    "name": "Guantillas Vilico de dedos completos",
+    "category": "Guantes y Guantillas",
+    "priceUsd": 6,
+    "description": "Guantillas Vilico de dedos completos: negras talla M y blancas tallas S y M.",
+    "variants": [
+      {
+        "name": "Color",
+        "values": [
+          "Negro",
+          "Blanco"
+        ]
+      },
+      {
+        "name": "Talla",
+        "values": [
+          "S",
+          "M"
+        ]
+      }
+    ],
+    "imageUrl": "guantillas-foto-pendiente.svg",
+    "active": true
+  },
+  {
+    "id": "gafas-blancas",
+    "name": "Gafas blancas",
+    "category": "Gafas",
+    "priceUsd": 10,
+    "description": "Gafas blancas\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "imageUrl": "pendiente-foto.webp",
+    "active": true
+  },
+  {
+    "id": "gafas-negras",
+    "name": "Gafas negras",
+    "category": "Gafas",
+    "priceUsd": 10,
+    "description": "Gafas negras\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "imageUrl": "pendiente-foto.webp",
+    "active": true
+  },
+  {
+    "id": "gafas-fotocromaticas",
+    "name": "Gafas fotocromáticas",
+    "category": "Gafas",
+    "priceUsd": 10,
+    "description": "Gafas fotocromáticas\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "ciclocomputador-igpsport",
+    "name": "Ciclocomputador IGPSport",
+    "category": "Ciclocomputadores",
+    "priceUsd": 50,
+    "description": "Ciclocomputador IGPSport\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "sensor-cadencia-velocidad-geoid",
+    "name": "Sensor de cadencia-velocidad GEOID CS600",
+    "category": "Sensores",
+    "priceUsd": 15,
+    "description": "Sensor inteligente GEOID CS600 para medir velocidad y cadencia con precisión.\n\nTransmisión inalámbrica Bluetooth 5.0 y ANT+ para conectarse a computadoras de bicicleta y aplicaciones compatibles. Protección IP66 contra agua y polvo, sensor geomagnético de alta precisión, diseño compacto y ligero de aproximadamente 100 g, y fácil instalación. Batería reemplazable con hasta 500 horas de duración.",
+    "variants": [
+      {
+        "name": "Modo",
+        "values": [
+          "Cadencia",
+          "Velocidad"
+        ]
+      }
+    ],
+    "imageUrl": "sensor-geoid-1.webp",
+    "aliases": [
+      "sensor geoid",
+      "geoid cs600",
+      "sensor cadencia geoid",
+      "sensor velocidad geoid"
+    ],
+    "active": true,
+    "images": [
+      "sensor-geoid-1.webp",
+      "sensor-geoid-2.webp",
+      "sensor-geoid-3.webp",
+      "sensor-geoid-4.webp"
+    ]
+  },
+  {
+    "id": "termo-thinkrider-negro",
+    "name": "Termo Thinkrider engomado (Negro) 750ml",
+    "category": "Termos y Botellas",
+    "priceUsd": 8,
+    "description": "Termo Thinkrider engomado Negro 750ml. Precio por unidad: 8 USD.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "termo-fly-elite-750ml",
+    "name": "Termo Fly Elite 750ml",
+    "category": "Termos y Botellas",
+    "priceUsd": 8,
+    "description": "Termo Fly Elite 750ml. Precio por unidad: 8 USD.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "termo-fly-elite-550ml",
+    "name": "Termo Fly Elite 550ml",
+    "category": "Termos y Botellas",
+    "priceUsd": 8,
+    "description": "Termo Fly Elite 550ml. Precio por unidad: 8 USD.\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "portatermos",
+    "name": "Portatermos (portabotellas)",
+    "category": "Termos y Botellas",
+    "priceUsd": 15,
+    "description": "Portatermos para bicicleta\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "tornillos-allen",
+    "name": "Tornillos Allen",
+    "category": "Herramientas",
+    "priceUsd": 6,
+    "description": "Tornillos Allen\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "cierra-cadena",
+    "name": "Cierra cadena",
+    "category": "Herramientas",
+    "priceUsd": 5,
+    "description": "Cierra cadena\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "adaptador-pedales-shimano",
+    "name": "Adaptador pedales Shimano",
+    "category": "Pedales y Calas",
+    "priceUsd": 10,
+    "description": "Adaptador pedales Shimano\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "linterna-recargable",
+    "name": "Linterna recargable",
+    "category": "Iluminación",
+    "priceUsd": 10,
+    "description": "Linterna recargable\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "linterna.webp",
+    "images": [
+      "linterna.webp",
+      "linterna-2.webp",
+      "linterna-3.webp",
+      "linterna-4.webp",
+      "linterna-5.webp",
+      "linterna-6.webp"
+    ]
+  },
+  {
+    "id": "portamovil",
+    "name": "Portamóvil",
+    "category": "Accesorios",
+    "priceUsd": 6,
+    "description": "Soporte portamóvil para bicicleta\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
+  },
+  {
+    "id": "llave-allen",
+    "name": "Llave Allen",
+    "category": "Herramientas",
+    "priceUsd": 10,
+    "description": "Llave Allen\n\n📱 MOVIL: 50117539\n📍 Ciudad Deportiva, La Habana\n📢 Ofertas en:\n🔹 https://t.me/sportstotal\n🔹 https://whatsapp.com/channel/0029Vb6UA4lEQIagQQYDhx34",
+    "active": true,
+    "imageUrl": "pendiente-foto.webp"
   }
 ]

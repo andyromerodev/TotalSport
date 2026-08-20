@@ -1,242 +1,440 @@
 [
   {
+    "productId": "adaptador-pedales-shimano",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
     "productId": "Batería-CR2032",
-    "inStock": true,
-    "availableQty": 10,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "Batería-CR2450",
-    "inStock": true,
-    "availableQty": 3,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "bombita-aire",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "ciclocomputador-igpsport",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "cierra-cadena",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "cintas-sudor",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-azul",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-blanco",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-morado",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-naranja",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-negro",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-rojo",
     "inStock": false,
     "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-rosado",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-bucklos-verde-menta",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "forro-timon-premium-negro",
     "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 7,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
-    "productId": "forros-manetas-shimano",
+    "productId": "forro-timon-scsp-negro",
     "inStock": true,
-    "availableQty": 11,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "forros-manetas-shimano-st-5700",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "forros-manetas-shimano-st-7020-7025",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "forros-manetas-shimano-st-r7000-r8000",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "gafas-blancas",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "gafas-fotocromaticas",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "gafas-negras",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "guantillas-corte-largo",
-    "inStock": false,
-    "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "guantillas-sencillas",
+    "inStock": true,
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "guantillas-vilico",
+    "inStock": true,
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "keychron",
     "inStock": false,
     "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "licras-ciclismo-corte-laser-badana",
     "inStock": true,
-    "availableQty": 2,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "licras-compresion-semienteras",
     "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "licras-pro-combat-cortas",
     "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "licras-pro-combat-largas",
     "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "licras-pro-combat-largas-blancas",
+    "inStock": true,
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "linterna-recargable",
     "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 2,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "llave-allen",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "logi",
-    "inStock": true,
-    "availableQty": 2,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
-    "productId": "mangas-proteccion-solar",
+    "productId": "mangas-bhtaki-blancas",
     "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "availableQty": 2,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "mangas-bhtaki-negras",
+    "inStock": true,
+    "availableQty": 3,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "mangas-bhtaki-verdes",
+    "inStock": true,
+    "availableQty": 2,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "mangas-rockbros",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "mangas-wrels",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
-    "productId": "medias-aero-corte-laser",
+    "productId": "medias-aero-azul-plateada",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
-    "productId": "medias-giro",
+    "productId": "medias-aero-fdj-blancas",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
-    "productId": "medias-gkro",
+    "productId": "medias-aero-gris-oscuro",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-aero-italia-azules",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-aero-jumbo-visma-amarillas",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-aero-lotto-rojas",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-aero-quick-step-azules",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-giro-amarillas",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-giro-rojas",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-giro-rosadas",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-gkro-blancas",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-gkro-negras",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-gkro-verde-aqua",
+    "inStock": true,
+    "availableQty": 2,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "medias-gkro-verde-militar",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "placas-shimano",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "portamovil",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "portatermos",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "redmi-buds-lite",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "rondanas-11t-13t-aluminio",
     "inStock": true,
+    "availableQty": 2,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "sensor-cadencia-velocidad-geoid",
+    "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "stitch",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "termo-elite",
     "inStock": false,
     "availableQty": 0,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "termo-fly-elite-550ml",
+    "inStock": true,
+    "availableQty": 2,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "termo-fly-elite-750ml",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "termo-silicona-wrels-250ml",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "termo-silicona-wrels-500ml",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "termo-thinkrider-negro",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "termos-thinkrider-engomados-amarillo-claro",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "termos-thinkrider-engomados-rosados",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "timon-carbon-fsa-kforce",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "timon-ritchey",
-    "inStock": true,
-    "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "tornillos-allen",
+    "inStock": false,
+    "availableQty": 0,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   },
   {
     "productId": "zapatillas-adidas-42",
     "inStock": true,
     "availableQty": 1,
-    "updatedAt": "2026-03-24T20:16:34.595Z"
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   }
 ]
