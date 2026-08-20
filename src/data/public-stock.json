@@ -448,5 +448,23 @@
     "inStock": true,
     "availableQty": 1,
     "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "tornillos-rider-race-rojos",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "tornillos-rider-race-negros",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
+  },
+  {
+    "productId": "tornillos-rider-race-dorados",
+    "inStock": true,
+    "availableQty": 1,
+    "updatedAt": "2026-08-20T00:00:00.000Z"
   }
 ]
