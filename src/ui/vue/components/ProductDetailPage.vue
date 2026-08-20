@@ -2,6 +2,8 @@
 import { computed, ref } from 'vue';
 import { useProductDetail } from '../composables/useProductDetail';
 import type { ProductDetailUiState } from '../types/catalogUiState';
+import CurrencyToggle from './CurrencyToggle.vue';
+import { useCurrencyPreference } from '../composables/useCurrencyPreference';
 
 // defineProps: contrato de entrada del componente.
 const props = defineProps<{ product: ProductDetailUiState }>();
@@ -23,6 +25,7 @@ const dragOriginY = ref(0);
 
 // computed = estado derivado reactivo.
 const vm = computed(() => productDetailUiState.value);
+const { currency, formatPrice } = useCurrencyPreference();
 const images = computed(() => vm.value?.images ?? []);
 const shareImage = computed(() => images.value[0] ?? 'https://placehold.co/900x900?text=Sin+foto');
 const transformStyle = computed(() => `translate(${translateX.value}px, ${translateY.value}px) scale(${scale.value})`);
@@ -128,7 +131,8 @@ function endDrag() {
     <div>
       <p class="eyebrow">{{ vm.category }}</p>
       <h1>{{ vm.name }}</h1>
-      <p class="price">{{ vm.priceUsd }} USD</p>
+      <CurrencyToggle v-model="currency" />
+      <p class="price">{{ formatPrice(vm.priceUsd) }}</p>
       <p v-if="!vm.inStock" class="stock-badge detail-stock-badge">Agotado</p>
       <p v-if="vm.description" class="description">{{ vm.description }}</p>
 

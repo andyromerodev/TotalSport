@@ -626,3 +626,93 @@ h1 {
     width: 100%;
   }
 }
+/* Currency selector is global because it is rendered inside hydrated Vue islands. */
+.currency-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  width: fit-content;
+  margin: 1.2rem 0 0 auto;
+  padding: 0.45rem 0.55rem 0.45rem 0.85rem;
+  border: 1px solid #cfe3da;
+  border-radius: 999px;
+  background: #f5fbf8;
+  color: #1c2925;
+  box-shadow: 0 8px 24px rgba(24, 71, 54, 0.08);
+}
+
+.currency-label,
+.currency-rate {
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.currency-rate {
+  color: #52645e;
+  font-weight: 500;
+}
+
+.currency-options {
+  display: flex;
+  gap: 0.15rem;
+  padding: 0.18rem;
+  border-radius: 999px;
+  background: #dceee7;
+}
+
+.currency-options button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.42rem 0.72rem;
+  background: transparent;
+  color: #356252;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+  font-weight: 800;
+  transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.currency-options button:hover {
+  transform: translateY(-1px);
+}
+
+.currency-options button.active {
+  background: #087f52;
+  color: white;
+}
+
+@media (max-width: 640px) {
+  .currency-toggle {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 0.5rem 0.7rem;
+    width: 100%;
+    margin: 1rem 0 0;
+    padding: 0.7rem 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .currency-label {
+    font-size: 0.88rem;
+  }
+
+  .currency-options {
+    justify-self: end;
+  }
+
+  .currency-options button {
+    padding: 0.38rem 0.66rem;
+  }
+
+  .currency-rate {
+    grid-column: 1 / -1;
+    padding-top: 0.45rem;
+    border-top: 1px solid #dceee7;
+    color: #527064;
+    font-size: 0.72rem;
+    text-align: left;
+  }
+}

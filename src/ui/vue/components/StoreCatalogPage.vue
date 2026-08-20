@@ -3,6 +3,8 @@ import { computed } from 'vue';
 import { useStoreCatalog } from '../composables/useStoreCatalog';
 import { useCategoryNavTransition } from '../composables/useCategoryNavTransition';
 import ProductCard from './ProductCard.vue';
+import CurrencyToggle from './CurrencyToggle.vue';
+import { useCurrencyPreference } from '../composables/useCurrencyPreference';
 import type { StoreCatalogUiState } from '../types/catalogUiState';
 
 // Props tipadas que vienen del server render de Astro.
@@ -19,12 +21,14 @@ const shimmerCardCount = computed(() => {
 });
 const { categoryNavRef, isCategoryTransitioning, isCategoryActive, onCategoryClick } =
   useCategoryNavTransition(view);
+const { currency, formatPrice } = useCurrencyPreference();
 </script>
 
 <template>
   <header class="hero">
     <h1>{{ view?.storeTitle }}</h1>
     <p class="lead">{{ view?.storeDescription }}</p>
+    <CurrencyToggle v-model="currency" />
   </header>
 
   <section v-if="view && view.categories.length">
@@ -62,7 +66,13 @@ const { categoryNavRef, isCategoryTransitioning, isCategoryActive, onCategoryCli
         </article>
       </div>
       <div v-else-if="showProducts" class="grid" :class="{ 'grid-compact': useCompactGrid }">
-        <ProductCard v-for="product in view.selectedProducts" :key="product.id" :product="product" />
+        <ProductCard
+          v-for="product in view.selectedProducts"
+          :key="product.id"
+          :product="product"
+          :currency="currency"
+          :format-price="formatPrice"
+        />
       </div>
       <div v-else class="empty-state">
         <h2>Sin productos por ahora</h2>

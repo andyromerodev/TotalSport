@@ -3,7 +3,9 @@ import type { ProductCardUiState } from '../types/catalogUiState';
 
 // defineProps: declara props de entrada del componente (tipadas en TS).
 // Equivalente Android: parametros de un @Composable.
-defineProps<{ product: ProductCardUiState }>();
+import type { Currency } from '../composables/useCurrencyPreference';
+
+const props = defineProps<{ product: ProductCardUiState; currency?: Currency; formatPrice?: (priceUsd: number) => string }>();
 </script>
 
 <template>
@@ -33,7 +35,7 @@ defineProps<{ product: ProductCardUiState }>();
 
     <div class="card-content">
       <h3>{{ product.name }}</h3>
-      <p class="price">{{ product.priceUsd }} USD</p>
+      <p class="price">{{ props.formatPrice?.(product.priceUsd) ?? `${product.priceUsd} ${props.currency ?? 'USD'}` }}</p>
       <p v-if="product.description" class="description">{{ product.description }}</p>
 
       <div v-if="product.variants?.length" class="card-variants" aria-label="Variantes disponibles">
