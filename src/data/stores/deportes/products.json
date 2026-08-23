@@ -423,7 +423,8 @@
         ]
       }
     ],
-    "imageUrl": "mangas-proteccion-solar.webp",
+    "imageUrl": "mangas-bhtaki-negras.webp",
+    "images": ["mangas-bhtaki-negras.webp"],
     "aliases": [
       "mangas bhtaki negras",
       "mangas negras"
@@ -444,7 +445,8 @@
         ]
       }
     ],
-    "imageUrl": "mangas-proteccion-solar.webp",
+    "imageUrl": "mangas-bhtaki-verdes.webp",
+    "images": ["mangas-bhtaki-verdes.webp"],
     "aliases": [
       "mangas bhtaki verdes",
       "mangas verdes"
@@ -471,7 +473,8 @@
         ]
       }
     ],
-    "imageUrl": "mangas-proteccion-solar.webp",
+    "imageUrl": "mangas-bhtaki-blancas.webp",
+    "images": ["mangas-bhtaki-blancas.webp"],
     "aliases": [
       "mangas bhtaki blancas",
       "mangas blancas"
